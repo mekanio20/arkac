@@ -1,0 +1,53 @@
+<template>
+    <div class="relative inline-block text-left">
+        <button @click="toggle"
+            class="w-full font-inter font-medium bg-arkac-gray-800 text-arkac-gray-700 rounded-lg px-8 py-4 text-left flex justify-between items-center !cursor-pointer">
+            {{ selected.name || placeholder }}
+            <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="#444444">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </button>
+
+        <div v-if="open" class="absolute mt-2 w-full rounded-lg bg-arkac-gray-800 z-10">
+            <ul>
+                <li v-for="category in categories" :key="category.id" @click="select(category)" :class="[
+                    'text-nowrap overflow-hidden text-ellipsis cursor-pointer px-6 py-4 hover:bg-arkac-blue-300 hover:text-arkac-blue-200 font-inter font-semibold text-base',
+                    selected.id === category.id ? 'bg-arkac-blue-300 text-arkac-blue-200' : 'text-arkac-gray-700'
+                ]">
+                    {{ category.name }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            open: false,
+            selected: '',
+        }
+    },
+    props: {
+        placeholder: {
+            type: String,
+            default: 'Kategoriýa saýlamak'
+        },
+        categories: {
+            type: Array,
+            default: []
+        }
+    },
+    methods: {
+        toggle() {
+            this.open = !this.open;
+        },
+        select(category) {
+            this.selected = category;
+            this.open = false;
+        }
+    }
+}
+</script>
