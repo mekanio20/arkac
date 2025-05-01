@@ -27,8 +27,8 @@
 
 @font-face {
   font-family: "Inter";
-  src: url("/src/assets/fonts/Inter/Inter-VariableFont_wght.ttf") format("truetype");
-  font-weight: 500;
+  src: url("/src/assets/fonts/Inter/static/Inter-Regular.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
 }
 
