@@ -37,7 +37,7 @@
 
         <!-- View All Button -->
         <div class="text-center mt-16">
-            <Button />
+            <Button text="Ählisini görmek" />
         </div>
     </div>
 </template>

@@ -1,8 +1,9 @@
 <template>
     <button
-        class="inline-flex items-center justify-center px-12 py-4 border-[1px] border-arkac-gray-200 rounded-full text-black transition-colors">
-        <span class="font-inter text-sm mr-4 uppercase">ählisini görmek</span>
-        <ArrowRight />
+        class="w-fit inline-flex items-center justify-center px-12 py-4 border-[1px] rounded-full transition-colors"
+        :class="[borderColor, bgColor, textColor]">
+        <span class="font-inter text-sm mr-4 uppercase">{{ text }}</span>
+        <ArrowRight :color="iconColor" />
     </button>
 </template>
 
@@ -11,6 +12,28 @@ import ArrowRight from '@/components/icons/arrow-right.vue';
 export default {
     components: {
         ArrowRight
+    },
+    props: {
+        text: {
+            type: String,
+            required: true
+        },
+        textColor: {
+            type: String,
+            default: "text-black"
+        },
+        iconColor: {
+            type: String,
+            default: "black"
+        },
+        borderColor: {
+            type: String,
+            default: "border-arkac-gray-200"
+        },
+        bgColor: {
+            type: String,
+            default: "bg-transparent"
+        }
     }
 }
 </script>

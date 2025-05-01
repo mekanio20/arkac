@@ -12,7 +12,7 @@
             <ShopCard v-for="item in shops" :key="item.id" :floor="item.floor" :image="item.image" :name="item.name" :category="item.category" />
         </div>
         <div class="flex items-center justify-center py-20">
-            <Button />
+            <Button text="Ählisini görmek" />
         </div>
     </div>
 </template>

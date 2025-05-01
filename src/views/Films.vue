@@ -33,9 +33,6 @@
                 <CinemaCard v-for="item in movies" :key="item.id" :img="item.img" :title="item.title"
                     :category="item.category" />
             </div>
-            <div class="flex items-center justify-center pt-20 pb-20">
-                <Button />
-            </div>
         </div>
         <!-- Footer -->
         <Footer />
@@ -48,7 +45,6 @@ import Navbar from '@/components/Navbar.vue';
 import TitleSection from '@/components/TitleSection.vue';
 import Footer from '@/components/Footer.vue';
 import CinemaCard from '@/components/CinemaCard.vue';
-import Button from '@/components/base/button.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -58,7 +54,7 @@ import Prev from '@/components/icons/prev.vue';
 import Next from '@/components/icons/next.vue';
 export default {
     name: 'Films',
-    components: { Header, Navbar, TitleSection, Footer, CinemaCard, Button, Swiper, SwiperSlide, Prev, Next },
+    components: { Header, Navbar, TitleSection, Footer, CinemaCard, Swiper, SwiperSlide, Prev, Next },
     data() {
         return {
             modules: [Navigation, Pagination],

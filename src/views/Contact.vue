@@ -22,11 +22,7 @@
                         <input type="text" placeholder="Habarlaşmak"
                             class="w-full pb-3 placeholder:text-black border-b border-black focus:outline-none" />
                     </div>
-                    <button type="submit"
-                        class="bg-arkac-blue-200 hover:bg-sky-600 font-inter text-base text-white px-16 py-[10px] rounded-full flex items-center gap-3">
-                        UGRATMAK
-                        <ArrowRight color="white" />
-                    </button>
+                    <Button text="Ugratmak" bgColor="bg-arkac-blue-200" borderColor="border-arkac-blue-200" textColor="text-white" iconColor="white" />
                 </form>
 
                 <!-- Contact Section -->
@@ -90,7 +86,7 @@ import Header from '@/components/Header.vue';
 import Navbar from '@/components/Navbar.vue';
 import TitleSection from '@/components/TitleSection.vue';
 import Footer from '@/components/Footer.vue';
-import ArrowRight from '@/components/icons/arrow-right.vue';
+import Button from '@/components/base/button.vue';
 export default {
     name: 'Cafes',
     components: {
@@ -98,7 +94,7 @@ export default {
         Navbar,
         TitleSection,
         Footer,
-        ArrowRight
+        Button
     }
 }
 </script>

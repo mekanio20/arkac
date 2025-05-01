@@ -25,7 +25,7 @@
                 </SwiperSlide>
             </Swiper>
             <div class="flex items-center justify-center pt-20">
-                <Button />
+                <Button text="Ählisini görmek" />
             </div>
         </div>
     </div>

@@ -9,9 +9,11 @@ export default {
           100: "#e0f0ff",
           200: "#27B7F2",
           300: "#D8F0FF",
+          400: "#F0F9FF",
           500: "#0f96ff",
           600: "#0077ea",
           700: "#0062d1",
+          800: "#3CBCFA",
         },
         "arkac-text": "#333333",
         "arkac-gray": {

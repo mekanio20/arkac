@@ -53,6 +53,11 @@ export default {
                 },
                 {
                     id: 6,
+                    name: 'Biz barada',
+                    url: '/about'
+                },
+                {
+                    id: 7,
                     name: 'Habarlaşmak',
                     url: '/contact'
                 }

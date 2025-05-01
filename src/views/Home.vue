@@ -106,7 +106,7 @@
       <!-- News Section -->
       <News />
       <!-- Stats Display  -->
-      <StatsDisplay />
+      <StatsDisplay leftImage="/imgs/a1.png" rightImage="/imgs/a2.png" bottomCenterImage="/imgs/a3.png" bottomLeftImage="/imgs/a4.png" bottomRightImage="/imgs/a1.png" />
       <!-- Service Section -->
       <Service />
       <!-- Cinema Section -->
