@@ -18,7 +18,7 @@
             </div>
             <!-- Shop Cards -->
             <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 pt-14 pb-20">
-                <ShopCard v-for="item in shops" :key="item.id" :floor="item.floor" :image="item.image" :name="item.name"
+                <ShopCard v-for="item in shops" :key="item.id" :id="item.id" :floor="item.floor" :image="item.image" :name="item.name"
                     :category="item.category" />
             </div>
         </div>

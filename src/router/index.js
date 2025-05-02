@@ -38,6 +38,16 @@ const router = createRouter({
       name: "About",
       component: () => import("@/views/About.vue"),
     },
+    {
+      path: "/shop/detail/:id",
+      name: "ShopDetail",
+      component: () => import("@/views/ShopDetail.vue")
+    },
+    {
+      path: "/news/detail/:id",
+      name: "NewsDetail",
+      component: () => import("@/views/NewsDetail.vue")
+    },
   ],
   scrollBehavior() {
     document.getElementById("app").scrollIntoView();

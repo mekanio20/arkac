@@ -1,5 +1,5 @@
 <template>
-    <div class="h-[330px] px-8 py-6 border border-arkac-gray-400 rounded-2xl flex flex-col justify-between space-y-4">
+    <router-link :to="`/shop/detail/${id}`" class="h-[330px] px-8 py-6 border border-arkac-gray-400 rounded-2xl flex flex-col justify-between space-y-4">
         <div class="flex space-x-2">
             <span class="px-3 py-1 text-sm bg-arkac-blue-300 text-arkac-blue-200 rounded-md">
                 {{ floor }}
@@ -15,16 +15,20 @@
             <img :src="image" alt="Logo" class="w-24 h-24 rounded-full object-cover" />
         </div>
 
-        <div class="">
+        <div>
             <h2 class="text-lg font-semibold">{{ name }}</h2>
             <p class="text-gray-400 text-sm mt-1">{{ category }}</p>
         </div>
-    </div>
+    </router-link>
 </template>
 
 <script>
 export default {
     props: {
+        id: {
+            type: Number,
+            required: true
+        },
         floor: {
             type: String,
             required: true

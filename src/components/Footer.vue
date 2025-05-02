@@ -15,72 +15,36 @@
                         AŞGABAT, TÜRKMENISTAN
                     </h2>
 
-                    <a href="#"
+                    <router-link to="/contact"
                         class="inline-flex items-center space-x-3 px-6 py-3 arkac-button-gradient text-white rounded-full hover:bg-blue-500 transition-colors duration-300">
                         <Mail />
                         <span class="font-avenir font-medium text-base mt-1">
                             Habarlaşmak
                         </span>
-                    </a>
+                    </router-link>
                 </div>
                 <div class="flex-1 flex justify-between">
                     <!-- Middle Column - First Link Group -->
                     <div class="w-full md:w-1/3 mb-8 md:mb-0">
                         <ul class="space-y-4">
-                            <li class="flex items-center space-x-2">
+                            <li v-for="item in _1categories" :key="item.id" class="flex items-center space-x-2">
                                 <FooterStar />
-                                <a href="#"
-                                    class="font-inter text-[17px] hover:text-blue-500 transition-colors duration-300">Dükanlar</a>
-                            </li>
-                            <li class="flex items-center space-x-2">
-                                <FooterStar />
-                                <a href="#"
-                                    class="font-inter text-[17px] hover:text-blue-500 transition-colors duration-300">Kafe
-                                    we
-                                    restoranlar</a>
-                            </li>
-                            <li class="flex items-center space-x-2">
-                                <FooterStar />
-                                <a href="#"
-                                    class="font-inter text-[17px] hover:text-blue-500 transition-colors duration-300">Hyzmatlar</a>
-                            </li>
-                            <li class="flex items-center space-x-2">
-                                <FooterStar />
-                                <a href="#"
-                                    class="font-inter text-[17px] hover:text-blue-500 transition-colors duration-300">Kinoteatr</a>
-                            </li>
-                            <li class="flex items-center space-x-2">
-                                <FooterStar />
-                                <a href="#"
-                                    class="font-inter text-[17px] hover:text-blue-500 transition-colors duration-300">Täzelikler
-                                    we çäreler</a>
+                                <router-link :to="item.url"
+                                    class="font-inter text-[17px] hover:text-blue-500 transition-colors duration-300">
+                                    {{ item.name }}
+                                </router-link>
                             </li>
                         </ul>
                     </div>
                     <!-- Right Column - Second Link Group -->
                     <div class="w-full md:w-1/3">
                         <ul class="space-y-4">
-                            <li class="flex items-center space-x-2">
+                            <li v-for="item in _2categories" :key="item.id" class="flex items-center space-x-2">
                                 <FooterStar />
-                                <a href="#"
-                                    class="font-inter text-[17px] hover:text-blue-500 transition-colors duration-300">Biz
-                                    barada</a>
-                            </li>
-                            <li class="flex items-center space-x-2">
-                                <FooterStar />
-                                <a href="#"
-                                    class="font-inter text-[17px] hover:text-blue-500 transition-colors duration-300">Habarlaşmak</a>
-                            </li>
-                            <li class="flex items-center space-x-2">
-                                <FooterStar />
-                                <a href="#"
-                                    class="font-inter text-[17px] hover:text-blue-500 transition-colors duration-300">Shema</a>
-                            </li>
-                            <li class="flex items-center space-x-2">
-                                <FooterStar />
-                                <a href="#"
-                                    class="font-inter text-[17px] hover:text-blue-500 transition-colors duration-300">Nirede
-                                    ýerleşýär?</a>
+                                <router-link :to="item.url"
+                                    class="font-inter text-[17px] hover:text-blue-500 transition-colors duration-300">
+                                    {{ item.name }}    
+                                </router-link>
                             </li>
                         </ul>
                     </div>
@@ -109,6 +73,7 @@ import TiktokIcon from './icons/tiktok.vue';
 import FacebookIcon from './icons/facebook.vue';
 import XIcon from './icons/x.vue';
 import Mail from './icons/mail.vue';
+import { routerKey } from 'vue-router';
 export default {
     name: 'Footer',
     components: {
@@ -118,6 +83,59 @@ export default {
         TiktokIcon,
         FacebookIcon,
         XIcon,
+    },
+    data() {
+        return {
+            _1categories: [
+                {
+                    id: 1,
+                    name: 'Dükanlar',
+                    url: '/shops'
+                },
+                {
+                    id: 2,
+                    name: 'Kafe we restoranlar',
+                    url: '/cafes'
+                },
+                {
+                    id: 3,
+                    name: 'Hyzmatlar',
+                    url: ''
+                },
+                {
+                    id: 4,
+                    name: 'Kinoteatr',
+                    url: '/films'
+                },
+                {
+                    id: 5,
+                    name: 'Täzelikler we Çäreler',
+                    url: '/news'
+                }
+            ],
+            _2categories: [
+                {
+                    id: 6,
+                    name: 'Biz barada',
+                    url: '/about'
+                },
+                {
+                    id: 7,
+                    name: 'Habarlaşmak',
+                    url: '/contact'
+                },
+                {
+                    id: 8,
+                    name: 'Shema',
+                    url: ''
+                },
+                {
+                    id: 9,
+                    name: 'Nirede ýerleşýär?',
+                    url: ''
+                }
+            ]
+        }
     },
     methods: {
         scrollToTop() {

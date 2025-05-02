@@ -100,7 +100,8 @@
             </div>
         </div>
         <!-- Stats Display -->
-        <StatsDisplay :isAbout="true" leftImage="/imgs/b4.png" rightImage="/imgs/b2.png" bottomCenterImage="/imgs/b3.png" bottomLeftImage="/imgs/b4.png" bottomRightImage="/imgs/b4.png" />
+        <StatsDisplay :isAbout="true" leftImage="/imgs/b4.png" rightImage="/imgs/b2.png"
+            bottomCenterImage="/imgs/b3.png" bottomLeftImage="/imgs/b4.png" bottomRightImage="/imgs/b4.png" />
         <!-- Terms Card -->
         <div class="container">
             <TermsCard />

@@ -9,7 +9,7 @@
             </SwiperSlide>
         </Swiper>
         <div class="grid grid-cols-4 gap-10">
-            <ShopCard v-for="item in shops" :key="item.id" :floor="item.floor" :image="item.image" :name="item.name" :category="item.category" />
+            <ShopCard v-for="item in shops" :key="item.id" :id="item.id" :floor="item.floor" :image="item.image" :name="item.name" :category="item.category" />
         </div>
         <div class="flex items-center justify-center py-20">
             <Button text="Ählisini görmek" />

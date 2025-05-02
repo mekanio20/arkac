@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col justify-between space-y-6">
+    <router-link :to="`/news/detail/${id}`" class="flex flex-col justify-between space-y-6">
         <div class="relative flex items-center justify-center group cursor-pointer">
             <img :src="image" class="w-full h-[285px] object-cover rounded-[10px]" />
             <!-- Arrow icon -->
@@ -17,7 +17,7 @@
             <span class="mx-2"> - </span>
             <span class="text-arkac-gray-100">{{ date }}</span>
         </div>
-    </div>
+    </router-link>
 </template>
 
 <script>
@@ -27,6 +27,10 @@ export default {
         ArrowLeft
     },
     props: {
+        id: {
+            type: Number,
+            required: true
+        },
         title: {
             type: String,
             required: true

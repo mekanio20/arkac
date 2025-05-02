@@ -5,13 +5,11 @@
         <Swiper 
             class="py-20" 
             :modules="modules" 
-            :slidesPerView="1.3" 
+            :slidesPerView="1.5"
             :spaceBetween="30"
-            :grabCursor="true"
-            :centeredSlides="true"
         >
             <SwiperSlide v-for="(slide, index) in slides" :key="index">
-                <div class="relative py-20">
+                <div class="relative py-20 w-[862px]">
                     <img :src="slide" class="w-full object-cover">
                 </div>
             </SwiperSlide>
@@ -36,8 +34,8 @@ export default {
             modules: [Navigation, Pagination, Autoplay, EffectCoverflow],
             slides: [
                 '/imgs/about-1.png',
-                '/imgs/about-1.png',
-                '/imgs/about-1.png',
+                '/imgs/news-1.webp',
+                '/imgs/news-2.webp',
             ]
         }
     }
