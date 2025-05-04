@@ -3,34 +3,34 @@
         <!--  -->
         <div class="relative flex items-center justify-center mb-8 pt-20">
             <!-- Center Social Icons -->
-            <div class="absolute -top-[150px] left-1/2 transform -translate-x-1/2 flex justify-center space-x-6 z-50">
+            <div class="container absolute -top-[150px] sm:left-1/2 right-0 transform sm:-translate-x-1/2 flex justify-end space-x-4 md:space-x-6 z-50">
                 <!-- Instagram Icon -->
                 <a href="#" class="text-black transition-transform duration-300 hover:scale-110 animate-pulse-text"
                     style="animation-delay: 0.1s" aria-label="Instagram">
-                    <InstagramIcon />
+                    <InstagramIcon class="w-4 h-4 md:w-6 md:h-6" />
                 </a>
 
                 <!-- TikTok Icon -->
                 <a href="#" class="text-black transition-transform duration-300 hover:scale-110 animate-pulse-text"
                     style="animation-delay: 0.2s" aria-label="TikTok">
-                    <TikTokIcon />
+                    <TikTokIcon class="w-4 h-4 md:w-6 md:h-6" />
                 </a>
 
                 <!-- X Icon -->
                 <a href="#" class="text-black transition-transform duration-300 hover:scale-110 animate-pulse-text"
                     style="animation-delay: 0.3s" aria-label="Twitter/X">
-                    <XIcon />
+                    <XIcon class="w-4 h-4 md:w-6 md:h-6" />
                 </a>
 
                 <!-- Facebook Icon -->
                 <a href="#" class="text-black transition-transform duration-300 hover:scale-110 animate-pulse-text"
                     style="animation-delay: 0.4s" aria-label="Facebook">
-                    <FacebookIcon />
+                    <FacebookIcon class="w-4 h-4 md:w-6 md:h-6" />
                 </a>
             </div>
             <!-- Left image -->
             <div class="absolute left-0 -top-40 transform -translate-y-1/2 animate-float-right">
-                <img :src="leftImage" class="rounded-lg shadow-md" />
+                <img :src="leftImage" class="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-lg shadow-md" />
             </div>
 
             <!-- Right text -->
@@ -47,7 +47,7 @@
 
             <!-- Right image -->
             <div class="absolute right-0 -top-20 transform -translate-y-1/2 animate-float-left">
-                <img :src="rightImage" class="rounded-lg shadow-md" />
+                <img :src="rightImage" class="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-lg shadow-md" />
             </div>
         </div>
 
@@ -56,7 +56,7 @@
             <!-- Left image -->
             <div class="absolute left-0 bottom-10 transform translate-y-1/2 animate-float-right"
                 style="animation-delay: 0.5s">
-                <img :src="bottomCenterImage" class=" w-[150px] rounded-lg shadow-md" />
+                <img :src="bottomCenterImage" class="w-24 h-24 md:w-32 md:h-32 lg:w-[150px] rounded-lg shadow-md" />
             </div>
 
             <!-- Center text -->
@@ -68,13 +68,13 @@
             <!-- Bottom center image -->
             <div class="absolute -bottom-[150px] left-1/4 transform translate-y-1/4 animate-float-left"
                 style="animation-delay: 1s">
-                <img :src="bottomLeftImage" class="shadow-md" />
+                <img :src="bottomLeftImage" class="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 shadow-md" />
             </div>
 
             <!-- Right image -->
             <div class="absolute right-0 bottom-0 transform translate-y-1/2 animate-float-right"
                 style="animation-delay: 1.5s">
-                <img :src="bottomRightImage" class="rounded-lg shadow-md" />
+                <img :src="bottomRightImage" class="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-lg shadow-md" />
             </div>
         </div>
     </div>

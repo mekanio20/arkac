@@ -1,36 +1,38 @@
 <template>
     <footer class="relative bg-[url('/imgs/footer.png')] bg-cover bg-no-repeat">
         <div class="absolute -top-[90px] left-0 right-0 h-[200px] bg-white clip-path-wave"></div>
-        <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-10 justify-center">
-            <img src="/svgs/instagram.svg" alt="Instagram">
-            <img src="/svgs/tiktok.svg" alt="Tiktok">
-            <img src="/svgs/x.svg" alt="X">
-            <img src="/svgs/facebook.svg" alt="Facebook">
+        <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-4 md:space-x-6 lg:space-x-10 justify-center">
+            <img src="/svgs/instagram.svg" alt="Instagram" class="w-4 h-4 md:w-6 md:h-6">
+            <img src="/svgs/tiktok.svg" alt="Tiktok" class="w-4 h-4 md:w-6 md:h-6">
+            <img src="/svgs/x.svg" alt="X" class="w-4 h-4 md:w-6 md:h-6">
+            <img src="/svgs/facebook.svg" alt="Facebook" class="w-4 h-4 md:w-6 md:h-6">
         </div>
-        <div class="container mx-auto pt-40 pb-8 px-4">
-            <div class="flex justify-between md:flex-row pb-10">
-                <div class="flex-1">
-                    <h2 class="font-inter font-medium text-3xl mb-6 uppercase leading-[42px]">
+        <div class="container mx-auto pt-20 md:pt-40 pb-8 px-4">
+            <div class="flex flex-col lg:flex-row lg:space-y-0 space-y-10 justify-between md:pt-0 pt-20 pb-10">
+                <div class="flex-1 space-y-10">
+                    <h2 class="font-inter font-medium text-xl md:text-2xl lg:text-3xl uppercase leading-normal md:leading-[42px] text-left">
                         MAGTYMGULY ŞAÝOLY,<br>
                         AŞGABAT, TÜRKMENISTAN
                     </h2>
 
-                    <router-link to="/contact"
-                        class="inline-flex items-center space-x-3 px-6 py-3 arkac-button-gradient text-white rounded-full hover:bg-blue-500 transition-colors duration-300">
-                        <Mail />
-                        <span class="font-avenir font-medium text-base mt-1">
-                            Habarlaşmak
-                        </span>
-                    </router-link>
+                    <div class="md:flex justify-start hidden">
+                        <router-link to="/contact"
+                            class="inline-flex items-center space-x-3 px-4 md:px-6 py-2 md:py-3 arkac-button-gradient text-white rounded-full hover:bg-blue-500 transition-colors duration-300">
+                            <Mail class="w-4 h-4 md:w-5 md:h-5" />
+                            <span class="font-avenir font-medium text-sm md:text-base mt-1">
+                                Habarlaşmak
+                            </span>
+                        </router-link>
+                    </div>
                 </div>
-                <div class="flex-1 flex justify-between">
+                <div class="flex-1 flex flex-col md:flex-row justify-between">
                     <!-- Middle Column - First Link Group -->
                     <div class="w-full md:w-1/3 mb-8 md:mb-0">
-                        <ul class="space-y-4">
+                        <ul class="space-y-3 md:space-y-4">
                             <li v-for="item in _1categories" :key="item.id" class="flex items-center space-x-2">
-                                <FooterStar />
+                                <FooterStar class="w-3 h-3 md:w-4 md:h-4" />
                                 <router-link :to="item.url"
-                                    class="font-inter text-[17px] hover:text-blue-500 transition-colors duration-300">
+                                    class="font-inter text-sm md:text-base lg:text-[17px] hover:text-blue-500 transition-colors duration-300">
                                     {{ item.name }}
                                 </router-link>
                             </li>
@@ -38,25 +40,34 @@
                     </div>
                     <!-- Right Column - Second Link Group -->
                     <div class="w-full md:w-1/3">
-                        <ul class="space-y-4">
+                        <ul class="space-y-3 md:space-y-4">
                             <li v-for="item in _2categories" :key="item.id" class="flex items-center space-x-2">
-                                <FooterStar />
+                                <FooterStar class="w-3 h-3 md:w-4 md:h-4" />
                                 <router-link :to="item.url"
-                                    class="font-inter text-[17px] hover:text-blue-500 transition-colors duration-300">
+                                    class="font-inter text-sm md:text-base lg:text-[17px] hover:text-blue-500 transition-colors duration-300">
                                     {{ item.name }}    
                                 </router-link>
                             </li>
                         </ul>
                     </div>
                 </div>
+                <div class="w-full md:hidden block">
+                        <router-link to="/contact"
+                            class="w-full inline-flex items-center justify-center space-x-3 px-4 md:px-6 py-2 md:py-3 arkac-button-gradient text-white rounded-full hover:bg-blue-500 transition-colors duration-300">
+                            <Mail class="w-4 h-4 md:w-5 md:h-5" />
+                            <span class="font-avenir font-medium text-sm md:text-base mt-1">
+                                Habarlaşmak
+                            </span>
+                        </router-link>
+                    </div>
             </div>
 
             <!-- Bottom section with copyright and back to top -->
-            <div class="border-t border-white mt-12 pt-8 flex justify-between items-center">
-                <p class="arkac-text-gradient font-inter font-medium text-lg uppercase">© ARKAÇ, 2025</p>
+            <div class="border-t border-white mt-8 md:mt-12 pt-4 md:pt-8 flex justify-between items-center space-y-4 md:space-y-0">
+                <p class="arkac-text-gradient font-inter font-medium text-base md:text-lg uppercase">© ARKAÇ, 2025</p>
                 <button @click="scrollToTop"
-                    class="bg-blue-400 text-white p-3 rounded-full hover:bg-blue-500 transition-colors duration-300 focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    class="bg-blue-400 text-white p-2 md:p-3 rounded-full hover:bg-blue-500 transition-colors duration-300 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
                     </svg>

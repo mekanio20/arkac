@@ -1,113 +1,130 @@
 <template>
-    <div class="w-full h-full">
-        <div class="min-h-screen relative bg-gradient-arkac">
+    <div class="w-full">
+        <div class="min-h-screen relative bg-gradient-arkac overflow-hidden">
             <!-- Header -->
             <Header />
-            <!-- Blur Stars -->
-            <div class="absolute top-48 left-80">
-                <BlurStar />
-            </div>
-            <div class="absolute top-72 -left-4">
-                <BlurStar />
-            </div>
-            <div class="absolute top-[550px] left-28">
-                <BlurStar />
-            </div>
 
-            <div class="absolute top-48 right-64">
+            <!-- Blur Stars - Responsive positioning -->
+            <div class="absolute top-48 left-1/5 md:left-1/4 lg:left-80 animate-float">
                 <BlurStar />
             </div>
-            <div class="absolute top-72 -right-4">
+            <div class="absolute top-72 -left-4 animate-float" style="animation-delay: 1s;">
                 <BlurStar />
             </div>
-            <div class="absolute top-[550px] right-28">
+            <div class="absolute top-[550px] left-28 animate-float" style="animation-delay: 2s;">
                 <BlurStar />
             </div>
-            <div class="absolute top-[650px] right-[600px]">
+            <div class="absolute top-48 right-1/5 md:right-1/4 lg:right-64 animate-float"
+                style="animation-delay: 0.5s;">
+                <BlurStar />
+            </div>
+            <div class="absolute top-72 -right-4 animate-float" style="animation-delay: 1.5s;">
+                <BlurStar />
+            </div>
+            <div class="absolute top-[550px] right-28 animate-float" style="animation-delay: 2.5s;">
+                <BlurStar />
+            </div>
+            <div class="absolute top-[650px] left-1/2 -translate-x-1/2 animate-float" style="animation-delay: 3s;">
                 <BlurStar />
             </div>
 
             <!-- Navbar -->
             <Navbar />
+
             <!-- Hero Section -->
-            <div class="flex flex-col items-center mt-[100px] text-center">
-                <div class="flex items-baseline space-x-8">
-                    <h1 class="font-playfair font-bold text-[140px] arkac-text-gradient leading-tight">Arkaç</h1>
-                    <img class="w-[190x] h-[60px] inline-block" src="/imgs/arkac.png" alt="Arkaç">
+            <div class="flex flex-col items-center mt-[280px] md:mt-[200px] lg:mt-[150px] text-center px-4">
+                <div class="flex flex-col md:flex-row items-center md:items-baseline md:space-x-4 lg:space-x-8">
+                    <h1
+                        class="font-playfair font-bold text-6xl sm:text-8xl md:text-[120px] lg:text-[140px] arkac-text-gradient pb-2 leading-tight">
+                        Arkaç</h1>
+                    <img class="w-32 h-auto sm:w-40 md:w-[150px] lg:w-[190px] md:h-[60px] inline-block"
+                        src="/imgs/arkac.png" alt="Arkaç">
                 </div>
-                <p class="font-playfair font-medium text-[94px] !leading-none">söwda dynç alyş merkezi</p>
+                <p class="font-playfair font-medium text-3xl sm:text-5xl md:text-7xl lg:text-[94px] !leading-none mt-4">
+                    söwda dynç alyş merkezi</p>
             </div>
         </div>
+
         <!-- Marquee Section -->
-        <marquee direction="right" class="w-full py-4 mb-40 rotate-1 arkac-news-gradient flex items-center space-x-4">
-            <div class="flex items-center space-x-6">
-                <p class="font-inter font-semibold text-[22px] text-white uppercase">
-                    Täzelikler & Çäreler
-                </p>
-                <img src="/svgs/thunder.svg" alt="Thunder">
-                <p class="font-inter font-semibold text-[22px] text-white uppercase">
-                    Täzelikler & Çäreler
-                </p>
-                <img src="/svgs/thunder.svg" alt="Thunder">
-                <p class="font-inter font-semibold text-[22px] text-white uppercase">
-                    Täzelikler & Çäreler
-                </p>
-                <img src="/svgs/thunder.svg" alt="Thunder">
-                <p class="font-inter font-semibold text-[22px] text-white uppercase">
-                    Täzelikler & Çäreler
-                </p>
-                <img src="/svgs/thunder.svg" alt="Thunder">
-                <p class="font-inter font-semibold text-[22px] text-white uppercase">
-                    Täzelikler & Çäreler
-                </p>
-                <img src="/svgs/thunder.svg" alt="Thunder">
-            </div>
-        </marquee>
+        <div class="w-full py-2 md:py-4 mb-20 md:mb-40 rotate-1 arkac-news-gradient overflow-hidden">
+            <marquee direction="right" class="animate-marquee flex items-center space-x-6">
+                <div class="flex items-center space-x-6 whitespace-nowrap">
+                    <p class="font-inter font-semibold text-lg md:text-[22px] text-white uppercase">
+                        Täzelikler & Çäreler
+                    </p>
+                    <img src="/svgs/thunder.svg" alt="Thunder" class="w-6 h-6 md:w-auto md:h-auto">
+                    <p class="font-inter font-semibold text-lg md:text-[22px] text-white uppercase">
+                        Täzelikler & Çäreler
+                    </p>
+                    <img src="/svgs/thunder.svg" alt="Thunder" class="w-6 h-6 md:w-auto md:h-auto">
+                    <p class="font-inter font-semibold text-lg md:text-[22px] text-white uppercase">
+                        Täzelikler & Çäreler
+                    </p>
+                    <img src="/svgs/thunder.svg" alt="Thunder" class="w-6 h-6 md:w-auto md:h-auto">
+                    <p class="font-inter font-semibold text-lg md:text-[22px] text-white uppercase">
+                        Täzelikler & Çäreler
+                    </p>
+                    <img src="/svgs/thunder.svg" alt="Thunder" class="w-6 h-6 md:w-auto md:h-auto">
+                    <p class="font-inter font-semibold text-lg md:text-[22px] text-white uppercase">
+                        Täzelikler & Çäreler
+                    </p>
+                    <img src="/svgs/thunder.svg" alt="Thunder" class="w-6 h-6 md:w-auto md:h-auto">
+                </div>
+            </marquee>
+        </div>
+
         <!-- About Section -->
-        <div class="container relative pb-60">
-            <div class="flex items-start space-x-10">
+        <div class="container relative pb-20 md:pb-40 lg:pb-60 px-4 md:px-8">
+            <div class="flex flex-col lg:flex-row lg:items-start lg:space-x-10 space-y-8 lg:space-y-0">
                 <div class="flex-1">
                     <h4
-                        class="w-fit py-2 px-6 bg-arkac-blue-800 -rotate-1 text-white font-inter font-semibold text-lg inline-block">
-                        Arkac</h4>
-                    <span class="font-inter font-normal text-[22px]">
+                        class="w-fit py-2 px-6 bg-arkac-blue-800 -rotate-1 text-white font-inter font-semibold text-lg inline-block mb-4">
+                        Arkac
+                    </h4>
+                    <span class="font-inter font-normal text-lg md:text-xl lg:text-[22px] block">
                         söwda merkezi müşderilerimize ýokary hilli harytlary, döwrebap hyzmatlary hem-de ýakymly söwda
                         tejribesini hödürleýän häzirki zaman söwda meýdançasydyr.
                     </span>
                 </div>
-                <div class="flex-1 flex flex-col space-y-10">
-                    <p class="font-inter font-normal text-[22px]">
+                <div class="flex-1 flex flex-col space-y-6 md:space-y-8 lg:space-y-10">
+                    <p class="font-inter font-normal text-lg md:text-xl lg:text-[22px]">
                         Biz müşderilerimiziň wagtyny has amatly, söwdasyny bolsa has lezzetli we ýakymly etmek üçin
                         hemişe täze mümkinçilikleri döretmäge çalyşýarys.
                     </p>
-                    <p class="font-inter font-normal text-[22px]">
+                    <p class="font-inter font-normal text-lg md:text-xl lg:text-[22px]">
                         Arkaç — diňe bir söwda merkezi däl, eýsem, dostlukly atmosferasy bilen ýürekleriňizi özüne çeken
                         bir giňişlikdir.
                     </p>
-                    <p class="font-inter font-normal text-[22px]">
+                    <p class="font-inter font-normal text-lg md:text-xl lg:text-[22px]">
                         Siziň rahatlygyňyz we kanagatlanmagyňyz — biziň baş maksadymyz!
                     </p>
                 </div>
             </div>
-            <div class="absolute bottom-40 left-[400px]">
-                <Arrow />
+
+            <div class="hidden lg:block absolute bottom-20 md:bottom-[130px] left-1/4 lg:left-[400px]">
+                <Arrow class="animate-float" />
             </div>
-            <div class="absolute bottom-20 -left-16">
+
+            <div class="absolute -bottom-8 md:bottom-10 lg:bottom-20 -left-16 hidden md:block">
                 <div class="flex items-center justify-center !relative">
-                    <ArkacLoopIcon class="slow-rotate" />
-                    <StarIcon class="absolute left-1/2 -translate-x-1/2" />
+                    <ArkacLoopIcon class="slow-rotate w-24 h-24 md:w-32 md:h-32 lg:w-auto lg:h-auto" />
+                    <StarIcon class="absolute left-1/2 -translate-x-1/2 animate-pulse-soft" />
                 </div>
             </div>
         </div>
+
         <!-- Stats Display -->
         <StatsDisplay :isAbout="true" leftImage="/imgs/b4.png" rightImage="/imgs/b2.png"
             bottomCenterImage="/imgs/b3.png" bottomLeftImage="/imgs/b4.png" bottomRightImage="/imgs/b4.png" />
+
         <!-- Terms Card -->
-        <div class="container">
+        <div class="container px-4 md:px-8">
             <TermsCard />
         </div>
+
         <!-- Gallery Section -->
-        <GallerySection class="pb-40" />
+        <GallerySection />
+
         <!-- Footer Section -->
         <Footer />
     </div>

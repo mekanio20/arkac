@@ -1,6 +1,6 @@
 <template>
     <nav class="hidden md:block px-6 py-3 overflow-x-auto whitespace-nowrap" :class="{ 'border-b-[1px] border-arkac-gray-500': !isHomepage }">
-        <div class="flex justify-center space-x-3 md:space-x-6">
+        <div class="flex justify-center space-x-2 md:space-x-4">
             <router-link v-for="(category, index) in categories" :key="index" :to="category.url"
                 class="navbar-item font-avenir font-medium text-sm md:text-base">
                 {{ category.name  }}

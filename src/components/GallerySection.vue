@@ -1,16 +1,25 @@
 <template>
-    <div class="pl-10 text-center">
-        <h4 class="w-fit mt-10 py-2 px-16 bg-arkac-blue-800 -rotate-1 text-white font-inter font-medium text-[52px] inline-block uppercase">
+    <div class="container text-center md:pt-20 pb-20">
+        <h4 class="w-fit mt-6 md:mt-10 py-2 px-8 md:px-16 bg-arkac-blue-800 -rotate-1 text-white font-inter font-medium text-3xl md:text-4xl lg:text-[52px] inline-block uppercase">
             Gallereýa</h4>
         <Swiper 
-            class="py-20" 
             :modules="modules" 
-            :slidesPerView="1.5"
+            :slidesPerView="1.2"
             :spaceBetween="30"
+            :breakpoints="{
+                640: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 30
+                },
+                1024: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 30
+                }
+            }"
         >
             <SwiperSlide v-for="(slide, index) in slides" :key="index">
-                <div class="relative py-20 w-[862px]">
-                    <img :src="slide" class="w-full object-cover">
+                <div class="py-10 md:py-20 select-none">
+                    <img :src="slide" class="w-full h-full object-cover rounded-lg">
                 </div>
             </SwiperSlide>
         </Swiper>
