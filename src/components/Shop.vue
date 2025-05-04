@@ -1,17 +1,31 @@
 <template>
-    <div class="container pt-20 pb-20">
-        <Swiper :modules="modules" :slides-per-view="4.5" :space-between="100" class="mb-20">
+    <div class="container pt-10 sm:pt-16 md:pt-20 pb-20">
+        <Swiper :modules="modules" :slides-per-view="1.5" :space-between="20" :breakpoints="{
+            400: {
+                slidesPerView: 2,
+            },
+            640: {
+                slidesPerView: 3,
+            },
+            768: {
+                slidesPerView: 4,
+            },
+            1024: {
+                slidesPerView: 4.5,
+            }
+        }" class="mb-10 sm:mb-16 md:mb-20 select-none">
             <SwiperSlide v-for="item in categories" :key="item.id" :class="[
-                'font-inter font-medium text-4xl text-nowrap !w-fit cursor-pointer',
+                'font-inter font-medium text-xl sm:text-2xl md:text-4xl text-nowrap !w-fit cursor-pointer',
                 activeId === item.id ? 'text-black' : 'text-arkac-gray-300'
-                ]" @click="activeId = item.id">
+            ]" @click="activeId = item.id">
                 {{ item.name }}
             </SwiperSlide>
         </Swiper>
-        <div class="grid grid-cols-4 gap-10">
-            <ShopCard v-for="item in shops" :key="item.id" :id="item.id" :floor="item.floor" :image="item.image" :name="item.name" :category="item.category" />
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
+            <ShopCard v-for="item in shops" :key="item.id" :id="item.id" :floor="item.floor" :image="item.image"
+                :name="item.name" :category="item.category" />
         </div>
-        <div class="flex items-center justify-center py-20">
+        <div class="flex items-center justify-center py-10 sm:py-16 md:py-20">
             <Button text="Ählisini görmek" />
         </div>
     </div>

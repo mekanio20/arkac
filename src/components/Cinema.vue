@@ -1,30 +1,71 @@
 <template>
     <div class="container">
         <!-- Center -->
-        <h2 class="flex items-center justify-center font-inter font-medium text-5xl uppercase pt-10">Şu Gün kinoteatrda
-            🍿</h2>
-        <div class="w-full py-6 px-20 rounded-xl mb-10 my-14 relative overflow-hidden" style="background-image: url('/svgs/bg.svg'); background-size: cover; background-position: center;">
-            <Swiper :modules="modules" :slides-per-view="6" :space-between="10" :loop="true" :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }">
+        <h2 class="flex items-center justify-center font-inter font-medium text-[30px] sm:text-[40px] md:text-[46px] tracking-[1px] sm:tracking-[2px] uppercase pt-6 sm:pt-8 md:pt-10">Şu Gün kinoteatrda
+            <span class="ml-2">🍿</span>
+        </h2>
+        <div class="py-4 sm:py-6 px-10 md:px-20 rounded-xl mb-6 sm:mb-8 md:mb-10 my-8 sm:my-10 md:my-14 relative overflow-hidden" style="background-image: url('/svgs/bg.svg'); background-size: cover; background-position: center;">
+            <Swiper 
+                :modules="modules" 
+                :slides-per-view="1"
+                :space-between="20"
+                :breakpoints="{
+                    300: {
+                        slidesPerView: 1,
+                        spaceBetween: 20
+                    },
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 20
+                    },
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 20
+                    }
+                }"
+                :loop="true" 
+                :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }">
                 <SwiperSlide v-for="item in days" :key="item.id"
-                    class="border border-white rounded-xl p-4 flex text-center flex-col space-y-2 bg-transparent cursor-pointer hover:bg-white hover:text-black transition-all duration-300">
-                    <p class="font-inter font-medium text-lg">{{ item.date }}</p>
-                    <p class="font-inter font-bold text-lg">{{ item.day }}</p>
+                    class="border border-white rounded-xl p-3 sm:p-4 flex text-center flex-col space-y-1 sm:space-y-2 bg-transparent cursor-pointer hover:bg-white hover:text-black transition-all duration-300">
+                    <p class="font-inter font-medium text-base sm:text-lg">{{ item.date }}</p>
+                    <p class="font-inter font-bold text-base sm:text-lg">{{ item.day }}</p>
                 </SwiperSlide>
             </Swiper>
             <div class="custom-prev">
-                <Prev />
+                <Prev class="w-4 h-4 sm:w-6 sm:h-6" />
             </div>
             <div class="custom-next">
-                <Next />
+                <Next class="w-4 h-4 sm:w-6 sm:h-6" />
             </div>
         </div>
-        <div class="w-full py-6 rounded-xl my-10 relative overflow-hidden">
-            <Swiper :modules="modules" :slides-per-view="5" :space-between="40" :loop="true">
+        <div class="w-full py-4 sm:py-6 rounded-xl my-6 sm:my-8 md:my-10 relative overflow-hidden">
+            <Swiper 
+                :modules="modules" 
+                :space-between="20"
+                :breakpoints="{
+                    400: {
+                        slidesPerView: 2,
+                    },
+                    600: {
+                        slidesPerView: 3,
+                    },
+                    768: {
+                        slidesPerView: 4,
+                    },
+                    1024: {
+                        slidesPerView: 5,
+                    }
+                }"
+                :loop="true">
                 <SwiperSlide v-for="item in movies" :key="item.id">
                     <CinemaCard :img="item.img" :title="item.title" :category="item.category" />
                 </SwiperSlide>
             </Swiper>
-            <div class="flex items-center justify-center pt-20">
+            <div class="flex items-center justify-center pt-10 sm:pt-16 md:pt-20">
                 <Button text="Ählisini görmek" />
             </div>
         </div>
@@ -134,15 +175,14 @@ export default {
 </script>
 
 <style scoped>
-
 .custom-prev,
 .custom-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     color: white;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -152,11 +192,29 @@ export default {
     user-select: none;
 }
 
+@media (min-width: 640px) {
+    .custom-prev,
+    .custom-next {
+        width: 40px;
+        height: 40px;
+    }
+}
+
 .custom-prev {
-    left: 10px;
+    left: 5px;
 }
 
 .custom-next {
-    right: 10px;
+    right: 5px;
+}
+
+@media (min-width: 640px) {
+    .custom-prev {
+        left: 10px;
+    }
+    
+    .custom-next {
+        right: 10px;
+    }
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
-  <div class="w-full h-full">
-    <div class="min-h-screen relative bg-gradient-arkac">
+  <div class="w-full h-full overflow-hidden">
+    <div class="h-screen relative bg-gradient-arkac">
       <!-- Header -->
-      <header class="py-5 border-b-[1px] border-white">
+      <header class="py-3 md:py-5 border-b-[1px] border-white">
         <div class="container flex items-center justify-between">
           <!-- Left section with hamburger and location -->
           <div class="flex items-center">
@@ -16,7 +16,7 @@
             </button>
   
             <!-- Location selector -->
-            <div class="md:flex hidden items-center ml-2 cursor-pointer hover:text-arkac-blue-700 transition-colors">
+            <div class="hidden md:flex items-center ml-2 cursor-pointer hover:text-arkac-blue-700 transition-colors">
               <locationIcon />
               <span class="ml-3 font-inter font-medium text-base">Nirede yerleşyär?</span>
             </div>
@@ -24,20 +24,20 @@
   
           <!-- Center logo -->
           <router-link to="/" class="absolute left-1/2 transform -translate-x-1/2">
-            <h1 class="text-3xl font-playfair font-bold text-black">Arkaç</h1>
+            <h1 class="text-2xl md:text-3xl font-playfair font-bold text-black">Arkaç</h1>
           </router-link>
   
           <!-- Right section with language and search -->
           <div class="flex items-center space-x-2 cursor-pointer">
             <!-- Language selector -->
             <button class="rounded-full">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24"
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 text-gray-700" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
               </svg>
             </button>
-            <p class="font-inter font-medium text-base uppercase">TM</p>
+            <p class="font-inter font-medium text-sm md:text-base uppercase">TM</p>
           </div>
         </div>
       </header>
@@ -47,21 +47,21 @@
         <!-- Hero Section -->
         <HeroSection />
         <!-- Time Section -->
-        <div class="absolute bottom-8 right-4 sm:right-8">
-          <div class="inline-flex items-center py-2 px-4 bg-white rounded-full shadow-md">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-black mr-2" fill="none" viewBox="0 0 24 24"
+        <div class="absolute bottom-4 md:bottom-8 right-4 sm:right-8">
+          <div class="inline-flex items-center py-1.5 md:py-2 px-3 md:px-4 bg-white rounded-full shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 text-black mr-2" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span class="text-sm font-avenir font-medium">10:00 - 22:00</span>
+            <span class="text-xs md:text-sm font-avenir font-medium">10:00 - 22:00</span>
           </div>
         </div>
         <!-- Contact Button -->
-        <div class="absolute bottom-20 right-4 sm:right-8">
+        <div class="absolute bottom-16 md:bottom-20 right-4 sm:right-8">
           <button
-            class="h-14 w-14 bg-arkac-blue-200 hover:bg-arkac-blue-600 rounded-full shadow-lg flex items-center justify-center transition-all duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"
+            class="h-12 w-12 md:h-14 md:w-14 bg-arkac-blue-200 hover:bg-arkac-blue-600 rounded-full shadow-lg flex items-center justify-center transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-white" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -70,37 +70,38 @@
         </div>
         <!-- Bottom icon -->
         <div
-          class="absolute -bottom-[32px] w-[65px] h-[65px] flex items-center justify-center right-1/2 left-1/2 transform -translate-x-1/2 bg-white border-[1px] border-arkac-gray-100 border-opacity-70 rounded-full cursor-pointer">
-          <img src="/svgs/bottom.svg">
+          class="absolute -bottom-[32px] w-[50px] h-[50px] md:w-[65px] md:h-[65px] flex items-center justify-center right-1/2 left-1/2 transform -translate-x-1/2 bg-white border-[1px] border-arkac-gray-100 border-opacity-70 rounded-full cursor-pointer hover:bg-gray-50 transition-colors duration-300"
+          @click="scrollToContent">
+          <img src="/svgs/bottom.svg" class="w-4 h-4 md:w-6 md:h-6">
         </div>
       </div>
     </div>
-    <div class="bg-white">
-      <h2 class="container arkac-title pt-14">
+    <div class="bg-white" id="content-section">
+      <h2 class="container arkac-title pt-8 md:pt-14">
         Täzelikler we Çäreler
       </h2>
-      <marquee direction="right" class="w-full my-14 py-4 rotate-1 arkac-news-gradient flex items-center space-x-4">
-        <div class="flex items-center space-x-6">
-          <p class="font-inter font-semibold text-[22px] text-white uppercase">
+      <marquee direction="right" class="w-full my-8 md:my-14 py-3 md:py-4 rotate-1 arkac-news-gradient flex items-center space-x-4">
+        <div class="flex items-center space-x-4 md:space-x-6">
+          <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
             Täzelikler & Çäreler
           </p>
-          <img src="/svgs/thunder.svg" alt="Thunder">
-          <p class="font-inter font-semibold text-[22px] text-white uppercase">
+          <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
+          <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
             Täzelikler & Çäreler
           </p>
-          <img src="/svgs/thunder.svg" alt="Thunder">
-          <p class="font-inter font-semibold text-[22px] text-white uppercase">
+          <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
+          <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
             Täzelikler & Çäreler
           </p>
-          <img src="/svgs/thunder.svg" alt="Thunder">
-          <p class="font-inter font-semibold text-[22px] text-white uppercase">
+          <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
+          <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
             Täzelikler & Çäreler
           </p>
-          <img src="/svgs/thunder.svg" alt="Thunder">
-          <p class="font-inter font-semibold text-[22px] text-white uppercase">
+          <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
+          <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
             Täzelikler & Çäreler
           </p>
-          <img src="/svgs/thunder.svg" alt="Thunder">
+          <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
         </div>
       </marquee>
       <!-- News Section -->
@@ -152,6 +153,12 @@ export default {
   methods: {
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    },
+    scrollToContent() {
+      const element = document.getElementById('content-section');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   }
 }

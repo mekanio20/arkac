@@ -102,5 +102,5 @@
 }
 
 .arkac-title {
-  @apply font-inter font-medium text-[46px] tracking-[2px];
+  @apply font-inter font-medium text-[30px] sm:text-[40px] md:text-[46px] tracking-[1px] sm:tracking-[2px];
 }

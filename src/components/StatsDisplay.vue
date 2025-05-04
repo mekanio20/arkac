@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full pt-40 pb-72 overflow-hidden">
+    <div class="w-full pt-44 pb-64 overflow-hidden">
         <!--  -->
         <div class="relative flex items-center justify-center mb-8 pt-20">
             <!-- Center Social Icons -->
@@ -30,7 +30,7 @@
             </div>
             <!-- Left image -->
             <div class="absolute left-0 -top-40 transform -translate-y-1/2 animate-float-right">
-                <img :src="leftImage" class="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-lg shadow-md" />
+                <img :src="leftImage" class="w-32 h-32 object-cover md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-lg shadow-md" />
             </div>
 
             <!-- Right text -->
@@ -47,7 +47,7 @@
 
             <!-- Right image -->
             <div class="absolute right-0 -top-20 transform -translate-y-1/2 animate-float-left">
-                <img :src="rightImage" class="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-lg shadow-md" />
+                <img :src="rightImage" class="w-32 h-32 object-cover md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-lg shadow-md" />
             </div>
         </div>
 
@@ -56,7 +56,7 @@
             <!-- Left image -->
             <div class="absolute left-0 bottom-10 transform translate-y-1/2 animate-float-right"
                 style="animation-delay: 0.5s">
-                <img :src="bottomCenterImage" class="w-24 h-24 md:w-32 md:h-32 lg:w-[150px] rounded-lg shadow-md" />
+                <img :src="bottomCenterImage" class="w-24 h-24 object-cover md:w-32 md:h-32 lg:w-[150px] rounded-lg shadow-md" />
             </div>
 
             <!-- Center text -->
@@ -68,13 +68,13 @@
             <!-- Bottom center image -->
             <div class="absolute -bottom-[150px] left-1/4 transform translate-y-1/4 animate-float-left"
                 style="animation-delay: 1s">
-                <img :src="bottomLeftImage" class="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 shadow-md" />
+                <img :src="bottomLeftImage" class="w-24 h-24 object-cover md:w-32 md:h-32 lg:w-40 lg:h-40 shadow-md" />
             </div>
 
             <!-- Right image -->
             <div class="absolute right-0 bottom-0 transform translate-y-1/2 animate-float-right"
                 style="animation-delay: 1.5s">
-                <img :src="bottomRightImage" class="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-lg shadow-md" />
+                <img :src="bottomRightImage" class="w-24 h-24 object-cover md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-lg shadow-md" />
             </div>
         </div>
     </div>

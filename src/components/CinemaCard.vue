@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col space-y-4">
-        <div class="h-[250px] rounded-lg">
+        <div class="w-full h-[250px] rounded-lg">
             <img class="w-full h-full object-cover rounded-lg" :src="img">
         </div>
         <h4 class="font-inter font-semibold text-lg">{{ title }}</h4>
