@@ -5,31 +5,48 @@
         <!-- Navbar -->
         <Navbar />
         <!-- Main -->
-        <div class="container py-10">
+        <div class="container px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
             <!-- Title -->
-            <h2 class="flex items-center justify-center font-inter font-medium text-5xl uppercase pt-10">
+            <h2
+                class="flex items-center justify-center font-inter font-medium text-3xl sm:text-4xl lg:text-5xl uppercase pt-6 sm:pt-10">
                 KINOTEATR
                 🍿</h2>
             <!-- Main -->
-            <div class="w-full py-6 px-20 rounded-xl mb-10 my-14 relative overflow-hidden"
+            <div class="py-4 sm:py-6 px-10 md:px-20 rounded-xl mb-6 sm:mb-8 md:mb-10 my-8 sm:my-10 md:my-14 relative overflow-hidden"
                 style="background-image: url('/svgs/bg.svg'); background-size: cover; background-position: center;">
-                <Swiper :modules="modules" :slides-per-view="6" :space-between="10" :loop="true"
-                    :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }">
+                <Swiper :modules="modules" :slides-per-view="1" :space-between="20" :breakpoints="{
+                    300: {
+                        slidesPerView: 1,
+                        spaceBetween: 20
+                    },
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 20
+                    },
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 20
+                    }
+                }" :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }">
                     <SwiperSlide v-for="item in days" :key="item.id"
-                        class="border border-white rounded-xl p-4 flex text-center flex-col space-y-2 bg-transparent cursor-pointer hover:bg-white hover:text-black transition-all duration-300">
-                        <p class="font-inter font-medium text-lg">{{ item.date }}</p>
-                        <p class="font-inter font-bold text-lg">{{ item.day }}</p>
+                        class="border border-white rounded-xl p-3 sm:p-4 flex text-center flex-col space-y-1 sm:space-y-2 bg-transparent cursor-pointer hover:bg-white hover:text-black transition-all duration-300">
+                        <p class="font-inter font-medium text-base sm:text-lg">{{ item.date }}</p>
+                        <p class="font-inter font-bold text-base sm:text-lg">{{ item.day }}</p>
                     </SwiperSlide>
                 </Swiper>
                 <div class="custom-prev">
-                    <Prev />
+                    <Prev class="w-4 h-4 sm:w-6 sm:h-6" />
                 </div>
                 <div class="custom-next">
-                    <Next />
+                    <Next class="w-4 h-4 sm:w-6 sm:h-6" />
                 </div>
             </div>
             <!-- Movies -->
-            <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 pt-14">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pt-8 sm:pt-14">
                 <CinemaCard v-for="item in movies" :key="item.id" :img="item.img" :title="item.title"
                     :category="item.category" />
             </div>
@@ -144,8 +161,8 @@ export default {
     top: 50%;
     transform: translateY(-50%);
     color: white;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,11 +172,30 @@ export default {
     user-select: none;
 }
 
+@media (min-width: 640px) {
+
+    .custom-prev,
+    .custom-next {
+        width: 40px;
+        height: 40px;
+    }
+}
+
 .custom-prev {
-    left: 10px;
+    left: 5px;
 }
 
 .custom-next {
-    right: 10px;
+    right: 5px;
+}
+
+@media (min-width: 640px) {
+    .custom-prev {
+        left: 10px;
+    }
+
+    .custom-next {
+        right: 10px;
+    }
 }
 </style>

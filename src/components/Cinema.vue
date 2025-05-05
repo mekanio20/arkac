@@ -27,7 +27,6 @@
                         spaceBetween: 20
                     }
                 }"
-                :loop="true" 
                 :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }">
                 <SwiperSlide v-for="item in days" :key="item.id"
                     class="border border-white rounded-xl p-3 sm:p-4 flex text-center flex-col space-y-1 sm:space-y-2 bg-transparent cursor-pointer hover:bg-white hover:text-black transition-all duration-300">
