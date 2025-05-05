@@ -5,7 +5,7 @@
         <!-- Navbar -->
         <Navbar />
         <!-- Title Section -->
-        <TitleSection title="KAFE we restoranlar" isBorder />
+        <TitleSection title="KAFE we restoranlar" count="120" isBorder />
         <!-- Main -->
         <div class="container px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
             <!-- Search and Filters Section -->
@@ -22,7 +22,7 @@
             <!-- Shop Cards -->
             <div
                 class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pt-8 sm:pt-10 lg:pt-14 pb-12 sm:pb-16 lg:pb-20">
-                <ShopCard v-for="item in shops" :key="item.id" :floor="item.floor" :image="item.image" :name="item.name"
+                <CafesCard v-for="item in shops" :key="item.id" :id="item.id" :floor="item.floor" :image="item.image" :name="item.name"
                     :category="item.category" />
             </div>
         </div>
@@ -37,7 +37,7 @@ import Navbar from '@/components/Navbar.vue';
 import TitleSection from '@/components/TitleSection.vue';
 import Search from '@/components/Search.vue';
 import Selection from '@/components/Selection.vue';
-import ShopCard from '@/components/ShopCard.vue';
+import CafesCard from '@/components/CafesCard.vue';
 import Footer from '@/components/Footer.vue';
 export default {
     name: 'Cafes',
@@ -47,7 +47,7 @@ export default {
         TitleSection,
         Search,
         Selection,
-        ShopCard,
+        CafesCard,
         Footer
     },
     data() {

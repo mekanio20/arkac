@@ -9,7 +9,7 @@
             <div class="flex-1 flex flex-col space-y-4 px-4 sm:px-8 lg:pl-16 lg:pr-8 xl:pr-32">
                 <!-- Shop Detail -->
                 <div class="flex flex-col space-y-6 sm:space-y-10 border-b border-arkac-gray-500 pb-6 sm:pb-10">
-                    <RouterSection route="/shops" prevRoute="Dükanlar" nextRoute="LUSIO представляет Slow Life" />
+                    <RouterSection route="/cafes" prevRoute="Kafelar" nextRoute="LUSIO представляет Slow Life" />
                     <p
                         class="w-fit px-4 sm:px-5 py-2 bg-arkac-blue-300 text-arkac-blue-200 font-inter font-medium text-sm rounded-lg">
                         1-nji gat
@@ -83,7 +83,7 @@
                 Dükanymyza gelip görmegiňizi sabyrsyzlyk bilen garaşýarys!
             </p>
             <div class="">
-                <h2 class="font-inter font-medium text-2xl sm:text-3xl lg:text-4xl uppercase">Meňzeş dükanlar</h2>
+                <h2 class="font-inter font-medium text-2xl sm:text-3xl lg:text-4xl uppercase">Meňzeş kafelar</h2>
                 <div class="w-full py-4 sm:py-6 rounded-xl mt-6 sm:mt-10 relative overflow-hidden">
                     <Swiper 
                         :modules="modules" 
@@ -105,7 +105,7 @@
                         }"
                         :loop="true">
                         <SwiperSlide v-for="item in shops" :key="item.id">
-                            <ShopCard :img="item.img" :title="item.title" :id="item.id" :floor="item.floor"
+                            <CafesCard :img="item.img" :title="item.title" :id="item.id" :floor="item.floor"
                                 :image="item.image" :name="item.name" :category="item.category" />
                         </SwiperSlide>
                     </Swiper>
@@ -125,14 +125,14 @@ import Facebook from '@/components/icons/facebook.vue';
 import Tiktok from '@/components/icons/tiktok.vue';
 import Header from '@/components/Header.vue';
 import Navbar from '@/components/Navbar.vue';
-import ShopCard from '@/components/ShopCard.vue';
+import CafesCard from '@/components/CafesCard.vue';
 import RouterSection from '@/components/RouterSection.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 export default {
-    name: 'ShopDetail',
+    name: 'CafesDetail',
     components: {
         Swiper,
         SwiperSlide,
@@ -143,7 +143,7 @@ export default {
         Tiktok,
         X,
         Facebook,
-        ShopCard,
+        CafesCard,
         RouterSection
     },
     data() {
