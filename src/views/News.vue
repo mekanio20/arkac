@@ -9,7 +9,7 @@
         <!-- Main -->
         <div class="container py-10">
             <!-- Shop Cards -->
-            <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 pt-14 pb-20">
+            <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 pt-6 pb-20">
                 <NewsCard v-for="(item, index) in bottomNewsItems" :key="index" :id="item.id" :title="item.title" :date="item.date"
                     :image="item.image" :category="item.category" />
             </div>
