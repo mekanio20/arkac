@@ -30,22 +30,21 @@
                 </div>
             </div>
 
-            <h3 class="text-3xl sm:text-4xl md:text-6xl font-inter font-normal tracking-[1px] sm:tracking-[2px]">söwda dynç alyş merkezi</h3>
+            <h3 class="text-3xl sm:text-4xl md:text-6xl font-inter font-normal tracking-[1px] sm:tracking-[2px]">{{ $t('home.hero.subtitle2') }}</h3>
 
             <p class="my-8 sm:my-[70px] max-w-2xl mx-auto text-center text-base sm:text-lg text-arkac-gray-100 px-4">
-                Çäksiz söwda mümkinçilikleri, lezzetli naharlar we gyzykly dynç alyş bilen
-                ajaýyp tejribäni başdan geçiriň - hemmesi bir ýerde, size ýakyn!
+                {{ $t('home.hero.description') }}
             </p>
 
             <!-- Action buttons -->
             <div class="flex flex-col sm:flex-row justify-center mt-6 sm:mt-10 space-y-4 sm:space-y-0 sm:space-x-6">
                 <button class="btn arkac-button-gradient flex items-center justify-center text-white py-2 sm:py-3">
-                    <span class="font-avenir font-semibold text-sm sm:text-base">360° görmek</span>
+                    <span class="font-avenir font-semibold text-sm sm:text-base">{{ $t('common.view360') }}</span>
                 </button>
 
                 <button class="px-6 sm:px-8 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 bg-white flex items-center justify-center">
                     <schemaIcon class="w-4 h-4 sm:w-5 sm:h-5" />
-                    <span class="font-avenir text-sm sm:text-base">SDAM-yň shemasy</span>
+                    <span class="font-avenir text-sm sm:text-base">{{ $t('common.schema') }}</span>
                 </button>
             </div>
         </div>

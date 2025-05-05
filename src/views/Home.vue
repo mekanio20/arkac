@@ -14,32 +14,26 @@
                 <div class="w-[15px] h-[2px] bg-gray-700 rounded-full"></div>
               </div>
             </button>
-  
+
             <!-- Location selector -->
             <div class="hidden md:flex items-center ml-2 cursor-pointer hover:text-arkac-blue-700 transition-colors">
               <locationIcon />
-              <span class="ml-3 font-inter font-medium text-base">Nirede yerleşyär?</span>
+              <span class="ml-3 font-inter font-medium text-base">{{ $t('common.location') }}</span>
             </div>
           </div>
-  
+
           <!-- Center logo -->
           <router-link to="/" class="absolute left-1/2 transform -translate-x-1/2">
             <h1 class="text-2xl md:text-3xl font-playfair font-bold text-black">Arkaç</h1>
           </router-link>
-  
+
           <!-- Right section with language and search -->
           <div class="flex items-center space-x-2 cursor-pointer">
-            <!-- Language selector -->
-            <button class="rounded-full">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 text-gray-700" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-              </svg>
-            </button>
-            <p class="font-inter font-medium text-sm md:text-base uppercase">TM</p>
+            <LangSelector @language-changed="handleLanguageChange" />
           </div>
         </div>
+        <!-- Sidebar -->
+        <Sidebar :isOpen="isMobileMenuOpen" @close="toggleMobileMenu" />
       </header>
       <div class="container">
         <!-- Navbar -->
@@ -48,24 +42,16 @@
         <HeroSection />
         <!-- Time Section -->
         <div class="absolute bottom-4 md:bottom-8 right-4 sm:right-8">
-          <div class="inline-flex items-center py-1.5 md:py-2 px-3 md:px-4 bg-white rounded-full shadow-md">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 text-black mr-2" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span class="text-xs md:text-sm font-avenir font-medium">10:00 - 22:00</span>
+          <div class="flex items-center space-x-1 py-1.5 md:py-2 px-3 md:px-4 bg-white rounded-full shadow-md">
+            <ClockIcon class="mb-[3px]" />
+            <span class="text-xs md:text-sm font-avenir font-medium">Arkaç</span>
           </div>
         </div>
         <!-- Contact Button -->
         <div class="absolute bottom-16 md:bottom-20 right-4 sm:right-8">
           <button
             class="h-12 w-12 md:h-14 md:w-14 bg-arkac-blue-200 hover:bg-arkac-blue-600 rounded-full shadow-lg flex items-center justify-center transition-all duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-white" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-            </svg>
+            <PhoneIcon />
           </button>
         </div>
         <!-- Bottom icon -->
@@ -78,28 +64,29 @@
     </div>
     <div class="bg-white" id="content-section">
       <h2 class="container arkac-title pt-8 md:pt-14">
-        Täzelikler we Çäreler
+        {{ $t('home.sections.newsAndEvents') }}
       </h2>
-      <marquee direction="right" class="w-full my-8 md:my-14 py-3 md:py-4 rotate-1 arkac-news-gradient flex items-center space-x-4">
+      <marquee direction="right"
+        class="w-full my-8 md:my-14 py-3 md:py-4 rotate-1 arkac-news-gradient flex items-center space-x-4">
         <div class="flex items-center space-x-4 md:space-x-6">
           <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
-            Täzelikler & Çäreler
+            {{ $t('common.newsAndEvents') }}
           </p>
           <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
           <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
-            Täzelikler & Çäreler
+            {{ $t('common.newsAndEvents') }}
           </p>
           <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
           <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
-            Täzelikler & Çäreler
+            {{ $t('common.newsAndEvents') }}
           </p>
           <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
           <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
-            Täzelikler & Çäreler
+            {{ $t('common.newsAndEvents') }}
           </p>
           <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
           <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
-            Täzelikler & Çäreler
+            {{ $t('common.newsAndEvents') }}
           </p>
           <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
         </div>
@@ -107,7 +94,8 @@
       <!-- News Section -->
       <News />
       <!-- Stats Display  -->
-      <StatsDisplay leftImage="/imgs/a1.png" rightImage="/imgs/a2.png" bottomCenterImage="/imgs/a3.png" bottomLeftImage="/imgs/a4.png" bottomRightImage="/imgs/a1.png" />
+      <StatsDisplay leftImage="/imgs/a1.png" rightImage="/imgs/a2.png" bottomCenterImage="/imgs/a3.png"
+        bottomLeftImage="/imgs/a4.png" bottomRightImage="/imgs/a1.png" />
       <!-- Service Section -->
       <Service />
       <!-- Cinema Section -->
@@ -127,10 +115,15 @@ import HeroSection from '@/components/HeroSection.vue';
 import News from '@/components/News.vue';
 import Service from '@/components/Service.vue';
 import StatsDisplay from '@/components/StatsDisplay.vue';
+import Sidebar from '@/components/Sidebar.vue';
 import Cinema from '@/components/Cinema.vue';
 import Shop from '@/components/Shop.vue';
 import Footer from '@/components/Footer.vue';
 import locationIcon from '@/components/icons/location.vue';
+import LangSelector from '@/components/LangSelector.vue';
+import ClockIcon from '@/components/icons/clock.vue';
+import PhoneIcon from '@/components/icons/phone.vue'
+
 export default {
   name: 'Home',
   components: {
@@ -139,11 +132,15 @@ export default {
     HeroSection,
     News,
     Service,
+    Sidebar,
     StatsDisplay,
     Cinema,
     Shop,
     Footer,
-    locationIcon
+    locationIcon,
+    LangSelector,
+    ClockIcon,
+    PhoneIcon
   },
   data() {
     return {
@@ -151,14 +148,18 @@ export default {
     }
   },
   methods: {
-    toggleMobileMenu() {
-      this.isMobileMenuOpen = !this.isMobileMenuOpen;
-    },
     scrollToContent() {
       const element = document.getElementById('content-section');
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
+    },
+    toggleMobileMenu() {
+      this.isMobileMenuOpen = !this.isMobileMenuOpen;
+      document.body.style.overflow = this.isMobileMenuOpen ? 'hidden' : '';
+    },
+    handleLanguageChange(lang) {
+      console.log('Language changed to:', lang);
     }
   }
 }

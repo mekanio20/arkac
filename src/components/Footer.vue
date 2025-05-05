@@ -11,8 +11,7 @@
             <div class="flex flex-col lg:flex-row lg:space-y-0 space-y-10 justify-between md:pt-0 pt-20 pb-10">
                 <div class="flex-1 space-y-10">
                     <h2 class="font-inter font-medium text-xl md:text-2xl lg:text-3xl uppercase leading-normal md:leading-[42px] text-left">
-                        MAGTYMGULY ŞAÝOLY,<br>
-                        AŞGABAT, TÜRKMENISTAN
+                        {{ $t('footer.address') }}
                     </h2>
 
                     <div class="md:flex justify-start hidden">
@@ -20,7 +19,7 @@
                             class="inline-flex items-center space-x-3 px-4 md:px-6 py-2 md:py-3 arkac-button-gradient text-white rounded-full hover:bg-blue-500 transition-colors duration-300">
                             <Mail class="w-4 h-4 md:w-5 md:h-5" />
                             <span class="font-avenir font-medium text-sm md:text-base mt-1">
-                                Habarlaşmak
+                                {{ $t('common.contact') }}
                             </span>
                         </router-link>
                     </div>
@@ -56,7 +55,7 @@
                             class="w-full inline-flex items-center justify-center space-x-3 px-4 md:px-6 py-2 md:py-3 arkac-button-gradient text-white rounded-full hover:bg-blue-500 transition-colors duration-300">
                             <Mail class="w-4 h-4 md:w-5 md:h-5" />
                             <span class="font-avenir font-medium text-sm md:text-base mt-1">
-                                Habarlaşmak
+                                {{ $t('common.contact') }}
                             </span>
                         </router-link>
                     </div>
@@ -64,7 +63,7 @@
 
             <!-- Bottom section with copyright and back to top -->
             <div class="border-t border-white mt-8 md:mt-12 pt-4 md:pt-8 flex justify-between items-center space-y-4 md:space-y-0">
-                <p class="arkac-text-gradient font-inter font-medium text-base md:text-lg uppercase">© ARKAÇ, 2025</p>
+                <p class="arkac-text-gradient font-inter font-medium text-base md:text-lg uppercase">{{ $t('footer.copyright') }}</p>
                 <button @click="scrollToTop"
                     class="bg-blue-400 text-white p-2 md:p-3 rounded-full hover:bg-blue-500 transition-colors duration-300 focus:outline-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24"
@@ -95,57 +94,59 @@ export default {
         FacebookIcon,
         XIcon,
     },
-    data() {
-        return {
-            _1categories: [
+    computed: {
+        _1categories() {
+            return [
                 {
                     id: 1,
-                    name: 'Dükanlar',
+                    name: this.$t('categories.shops'),
                     url: '/shops'
                 },
                 {
                     id: 2,
-                    name: 'Kafe we restoranlar',
+                    name: this.$t('categories.cafes'),
                     url: '/cafes'
                 },
                 {
                     id: 3,
-                    name: 'Hyzmatlar',
+                    name: this.$t('categories.services'),
                     url: ''
                 },
                 {
                     id: 4,
-                    name: 'Kinoteatr',
+                    name: this.$t('categories.cinema'),
                     url: '/films'
                 },
                 {
                     id: 5,
-                    name: 'Täzelikler we Çäreler',
+                    name: this.$t('categories.news'),
                     url: '/news'
                 }
-            ],
-            _2categories: [
+            ];
+        },
+        _2categories() {
+            return [
                 {
                     id: 6,
-                    name: 'Biz barada',
+                    name: this.$t('categories.about'),
                     url: '/about'
                 },
                 {
                     id: 7,
-                    name: 'Habarlaşmak',
+                    name: this.$t('common.contact'),
                     url: '/contact'
                 },
                 {
                     id: 8,
-                    name: 'Shema',
+                    name: this.$t('common.schema'),
                     url: ''
                 },
                 {
                     id: 9,
-                    name: 'Nirede ýerleşýär?',
+                    name: this.$t('common.whereIsLocated'),
                     url: ''
                 }
-            ]
+            ];
         }
     },
     methods: {

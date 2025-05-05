@@ -24,45 +24,49 @@ export default {
     data() {
         return {
             isMobileMenuOpen: false,
-            isHomepage: true,
-            categories: [
+            isHomepage: true
+        };
+    },
+    computed: {
+        categories() {
+            return [
                 {
                     id: 1,
-                    name: 'Dükanlar',
+                    name: this.$t('categories.shops'),
                     url: '/shops'
                 },
                 {
                     id: 2,
-                    name: 'Kafe we restoranlar',
+                    name: this.$t('categories.cafes'),
                     url: '/cafes'
                 },
                 {
                     id: 3,
-                    name: 'Hyzmatlar',
+                    name: this.$t('categories.services'),
                     url: ''
                 },
                 {
                     id: 4,
-                    name: 'Kinoteatr',
+                    name: this.$t('categories.cinema'),
                     url: '/films'
                 },
                 {
                     id: 5,
-                    name: 'Täzelikler we Çäreler',
+                    name: this.$t('categories.news'),
                     url: '/news'
                 },
                 {
                     id: 6,
-                    name: 'Biz barada',
+                    name: this.$t('categories.about'),
                     url: '/about'
                 },
                 {
                     id: 7,
-                    name: 'Habarlaşmak',
+                    name: this.$t('categories.contact'),
                     url: '/contact'
                 }
-            ]
-        };
+            ];
+        }
     },
     created() {
         if (this.$route.name !== 'Home') {
