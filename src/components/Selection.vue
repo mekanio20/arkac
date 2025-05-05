@@ -1,7 +1,7 @@
 <template>
-    <div class="relative inline-block text-left">
+    <div class="md:w-fit w-full relative inline-block text-left">
         <button @click="toggle"
-            class="w-full font-inter font-medium bg-arkac-gray-800 text-arkac-gray-700 rounded-lg px-8 py-4 text-left flex justify-between items-center !cursor-pointer">
+            class="w-full font-inter font-medium md:text-base text-sm bg-arkac-gray-800 text-arkac-gray-700 rounded-lg px-8 py-4 text-left flex justify-between items-center !cursor-pointer">
             {{ selected.name || placeholder }}
             <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke="#444444">
@@ -12,7 +12,7 @@
         <div v-if="open" class="absolute mt-2 w-full rounded-lg bg-arkac-gray-800 z-10">
             <ul>
                 <li v-for="category in categories" :key="category.id" @click="select(category)" :class="[
-                    'text-nowrap overflow-hidden text-ellipsis cursor-pointer px-6 py-4 hover:bg-arkac-blue-300 hover:text-arkac-blue-200 font-inter font-semibold text-base',
+                    'text-nowrap overflow-hidden text-ellipsis cursor-pointer px-6 py-4 hover:bg-arkac-blue-300 hover:text-arkac-blue-200 font-inter font-semibold md:text-base sm:text-sm text-xs',
                     selected.id === category.id ? 'bg-arkac-blue-300 text-arkac-blue-200' : 'text-arkac-gray-700'
                 ]">
                     {{ category.name }}

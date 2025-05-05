@@ -1,7 +1,7 @@
 <template>
-    <div class="flex items-center bg-arkac-gray-600 rounded-xl px-8 py-4 w-[310px]">
+    <div class="flex items-center bg-arkac-gray-600 rounded-xl px-8 py-4 md:w-[310px] w-full">
         <input type="text" v-model="search" :placeholder="placeholder"
-            class="bg-transparent focus:outline-none w-full text-arkac-gray-700 placeholder-arkac-gray-700 pr-2 font-inter font-medium text-base" />
+            class="bg-transparent focus:outline-none w-full text-arkac-gray-700 placeholder-arkac-gray-700 pr-2 font-inter font-medium  md:text-base text-sm" />
         <SearchIcon />
     </div>
 </template>

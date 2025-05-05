@@ -7,17 +7,21 @@
         <!-- Title Section -->
         <TitleSection title="KAFE we restoranlar" isBorder />
         <!-- Main -->
-        <div class="container py-10">
-            <div class="flex items-center justify-start space-x-4">
+        <div class="container px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+            <!-- Search and Filters Section -->
+            <div class="flex flex-col md:flex-row items-start sm:items-center gap-4 sm:gap-6">
                 <!-- Search -->
                 <Search placeholder="Gözlemek" />
-                <!-- Selection -->
-                <Selection placeholder="Görnüşini saýlamak" :categories="categories" />
-                <!-- Selection floor -->
-                <Selection placeholder="Gat" :categories="floors" />
+                <div class="w-full flex flex-col sm:flex-row items-start gap-4">
+                    <!-- Selection -->
+                    <Selection placeholder="Görnüşini saýlamak" :categories="categories" />
+                    <!-- Selection floor -->
+                    <Selection placeholder="Gat" :categories="floors" />
+                </div>
             </div>
             <!-- Shop Cards -->
-            <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 pt-14 pb-20">
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pt-8 sm:pt-10 lg:pt-14 pb-12 sm:pb-16 lg:pb-20">
                 <ShopCard v-for="item in shops" :key="item.id" :floor="item.floor" :image="item.image" :name="item.name"
                     :category="item.category" />
             </div>
