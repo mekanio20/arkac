@@ -1,7 +1,8 @@
 <template>
     <footer class="relative bg-[url('/imgs/footer.png')] bg-cover bg-no-repeat">
         <div class="absolute -top-[90px] left-0 right-0 h-[200px] bg-white clip-path-wave"></div>
-        <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-4 md:space-x-6 lg:space-x-10 justify-center">
+        <div
+            class="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-4 md:space-x-6 lg:space-x-10 justify-center">
             <img src="/svgs/instagram.svg" alt="Instagram" class="w-4 h-4 md:w-6 md:h-6">
             <img src="/svgs/tiktok.svg" alt="Tiktok" class="w-4 h-4 md:w-6 md:h-6">
             <img src="/svgs/x.svg" alt="X" class="w-4 h-4 md:w-6 md:h-6">
@@ -10,8 +11,9 @@
         <div class="container mx-auto pt-20 md:pt-40 pb-8 px-4">
             <div class="flex flex-col lg:flex-row lg:space-y-0 space-y-10 justify-between md:pt-0 pt-20 pb-10">
                 <div class="flex-1 space-y-10">
-                    <h2 class="font-inter font-medium text-xl md:text-2xl lg:text-3xl uppercase leading-normal md:leading-[42px] text-left">
-                        {{ $t('footer.address') }}
+                    <h2
+                        class="font-inter font-medium text-xl md:text-2xl lg:text-3xl uppercase leading-normal md:leading-[42px] text-left">
+                        Magtymguly şaýoly, Aşgabat, Тürkmenistan
                     </h2>
 
                     <div class="md:flex justify-start hidden">
@@ -19,7 +21,7 @@
                             class="inline-flex items-center space-x-3 px-4 md:px-6 py-2 md:py-3 arkac-button-gradient text-white rounded-full hover:bg-blue-500 transition-colors duration-300">
                             <Mail class="w-4 h-4 md:w-5 md:h-5" />
                             <span class="font-avenir font-medium text-sm md:text-base mt-1">
-                                {{ $t('common.contact') }}
+                                Habarlaşmak
                             </span>
                         </router-link>
                     </div>
@@ -32,7 +34,7 @@
                                 <FooterStar class="w-3 h-3 md:w-4 md:h-4" />
                                 <router-link :to="item.url"
                                     class="font-inter text-sm md:text-base lg:text-[17px] hover:text-blue-500 transition-colors duration-300">
-                                    {{ item.name }}
+                                    {{ $t(`categories.${item.lang_name}`) }}
                                 </router-link>
                             </li>
                         </ul>
@@ -44,30 +46,47 @@
                                 <FooterStar class="w-3 h-3 md:w-4 md:h-4" />
                                 <router-link :to="item.url"
                                     class="font-inter text-sm md:text-base lg:text-[17px] hover:text-blue-500 transition-colors duration-300">
-                                    {{ item.name }}    
+                                    {{ $t(`categories.${item.lang_name}`) }}
                                 </router-link>
                             </li>
+                            <div class="flex items-center space-x-2">
+                                <FooterStar class="w-3 h-3 md:w-4 md:h-4" />
+                                <router-link to="#"
+                                    class="font-inter text-sm md:text-base lg:text-[17px] hover:text-blue-500 transition-colors duration-300">
+                                    {{ $t('common.schema') }}
+                                </router-link>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <FooterStar class="w-3 h-3 md:w-4 md:h-4" />
+                                <router-link to="#"
+                                    class="font-inter text-sm md:text-base lg:text-[17px] hover:text-blue-500 transition-colors duration-300">
+                                    {{ $t('common.location') }}
+                                </router-link>
+                            </div>
                         </ul>
                     </div>
                 </div>
                 <div class="w-full md:hidden block">
-                        <router-link to="/contact"
-                            class="w-full inline-flex items-center justify-center space-x-3 px-4 md:px-6 py-2 md:py-3 arkac-button-gradient text-white rounded-full hover:bg-blue-500 transition-colors duration-300">
-                            <Mail class="w-4 h-4 md:w-5 md:h-5" />
-                            <span class="font-avenir font-medium text-sm md:text-base mt-1">
-                                {{ $t('common.contact') }}
-                            </span>
-                        </router-link>
-                    </div>
+                    <router-link to="/contact"
+                        class="w-full inline-flex items-center justify-center space-x-3 px-4 md:px-6 py-2 md:py-3 arkac-button-gradient text-white rounded-full hover:bg-blue-500 transition-colors duration-300">
+                        <Mail class="w-4 h-4 md:w-5 md:h-5" />
+                        <span class="font-avenir font-medium text-sm md:text-base mt-1">
+                            Habarlaşmak
+                        </span>
+                    </router-link>
+                </div>
             </div>
 
             <!-- Bottom section with copyright and back to top -->
-            <div class="border-t border-white mt-8 md:mt-12 pt-4 md:pt-8 flex justify-between items-center space-y-4 md:space-y-0">
-                <p class="arkac-text-gradient font-inter font-medium text-base md:text-lg uppercase">{{ $t('footer.copyright') }}</p>
+            <div
+                class="border-t border-white mt-8 md:mt-12 pt-4 md:pt-8 flex justify-between items-center space-y-4 md:space-y-0">
+                <p class="arkac-text-gradient font-inter font-medium text-base md:text-lg uppercase">
+                    © Arkaç, 2025
+                </p>
                 <button @click="scrollToTop"
                     class="bg-blue-400 text-white p-2 md:p-3 rounded-full hover:bg-blue-500 transition-colors duration-300 focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
                     </svg>
                 </button>
@@ -94,59 +113,47 @@ export default {
         FacebookIcon,
         XIcon,
     },
-    computed: {
-        _1categories() {
-            return [
+    data() {
+        return {
+            _1categories: [
                 {
                     id: 1,
-                    name: this.$t('categories.shops'),
+                    lang_name: 'shops',
                     url: '/shops'
                 },
                 {
                     id: 2,
-                    name: this.$t('categories.cafes'),
+                    lang_name: 'cafes',
                     url: '/cafes'
                 },
                 {
                     id: 3,
-                    name: this.$t('categories.services'),
+                    lang_name: 'services',
                     url: ''
                 },
                 {
                     id: 4,
-                    name: this.$t('categories.cinema'),
+                    lang_name: 'cinema',
                     url: '/films'
                 },
                 {
                     id: 5,
-                    name: this.$t('categories.news'),
+                    lang_name: 'news',
                     url: '/news'
-                }
-            ];
-        },
-        _2categories() {
-            return [
+                },
+            ],
+            _2categories: [
                 {
                     id: 6,
-                    name: this.$t('categories.about'),
+                    lang_name: 'about',
                     url: '/about'
                 },
                 {
                     id: 7,
-                    name: this.$t('common.contact'),
+                    lang_name: 'contact',
                     url: '/contact'
                 },
-                {
-                    id: 8,
-                    name: this.$t('common.schema'),
-                    url: ''
-                },
-                {
-                    id: 9,
-                    name: this.$t('common.whereIsLocated'),
-                    url: ''
-                }
-            ];
+            ]
         }
     },
     methods: {

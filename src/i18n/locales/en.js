@@ -10,16 +10,19 @@ export default {
   },
   common: {
     location: 'Where are we located?',
-    workingHours: '10:00 - 22:00',
     view360: 'View 360°',
     schema: 'SDAM Schema',
     news: 'News',
-    events: 'Events'
+    events: 'Events',
+    schema: 'Shema'
   },
-  home: {
-    hero: {
-      title: 'Arkach',
-      subtitle: 'Your Living Space'
-    }
-  }
+  categories: {
+    shops: 'Shops',
+    cafes: 'Cafes and Restaurants',
+    services: 'Services',
+    cinema: 'Cinema',
+    news: 'News and Events',
+    about: 'About Us',
+    contact: 'Contact'
+  }  
 } 

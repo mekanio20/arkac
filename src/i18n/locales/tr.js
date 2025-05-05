@@ -10,16 +10,19 @@ export default {
   },
   common: {
     location: 'Neredeyiz?',
-    workingHours: '10:00 - 22:00',
     view360: '360° Görünüm',
     schema: 'SDAM Şeması',
     news: 'Haberler',
-    events: 'Etkinlikler'
+    events: 'Etkinlikler',
+    schema: 'Shema'
   },
-  home: {
-    hero: {
-      title: 'Arkaç',
-      subtitle: 'Yaşam Alanınız'
-    }
-  }
+  categories: {
+    shops: 'Mağazalar',
+    cafes: 'Kafe ve restoranlar',
+    services: 'Hizmetler',
+    cinema: 'Sinema',
+    news: 'Haberler ve Etkinlikler',
+    about: 'Hakkımızda',
+    contact: 'İletişim'
+  }  
 } 

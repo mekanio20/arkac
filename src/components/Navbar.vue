@@ -1,9 +1,10 @@
 <template>
-    <nav class="hidden md:block px-6 py-3 overflow-x-auto whitespace-nowrap" :class="{ 'border-b-[1px] border-arkac-gray-500': !isHomepage }">
-        <div class="flex justify-center space-x-2 md:space-x-4">
+    <nav class="hidden md:block px-6 py-3 overflow-x-auto whitespace-nowrap"
+        :class="{ 'border-b-[1px] border-arkac-gray-500': !isHomepage }">
+        <div class="flex justify-center space-x-2 lg:space-x-3">
             <router-link v-for="(category, index) in categories" :key="index" :to="category.url"
-                class="navbar-item font-avenir font-medium text-sm md:text-base">
-                {{ category.name  }}
+                class="navbar-item font-avenir font-medium lg:text-base text-sm">
+                {{ $t(`categories.${category.lang_name}`) }}
             </router-link>
         </div>
     </nav>
@@ -12,7 +13,7 @@
         <div class="flex flex-col space-y-2">
             <router-link v-for="(category, index) in categories" :key="index" :to="category.url"
                 class="px-3 py-2 font-avenir font-medium rounded-md hover:bg-arkac-blue-50 text-sm">
-                {{ category.name }}
+                {{ $t(`categories.${category.lang_name}`) }}
             </router-link>
         </div>
     </nav>
@@ -24,49 +25,45 @@ export default {
     data() {
         return {
             isMobileMenuOpen: false,
-            isHomepage: true
-        };
-    },
-    computed: {
-        categories() {
-            return [
+            isHomepage: true,
+            categories: [
                 {
                     id: 1,
-                    name: this.$t('categories.shops'),
+                    lang_name: 'shops',
                     url: '/shops'
                 },
                 {
                     id: 2,
-                    name: this.$t('categories.cafes'),
+                    lang_name: 'cafes',
                     url: '/cafes'
                 },
                 {
                     id: 3,
-                    name: this.$t('categories.services'),
+                    lang_name: 'services',
                     url: ''
                 },
                 {
                     id: 4,
-                    name: this.$t('categories.cinema'),
+                    lang_name: 'cinema',
                     url: '/films'
                 },
                 {
                     id: 5,
-                    name: this.$t('categories.news'),
+                    lang_name: 'news',
                     url: '/news'
                 },
                 {
                     id: 6,
-                    name: this.$t('categories.about'),
+                    lang_name: 'about',
                     url: '/about'
                 },
                 {
                     id: 7,
-                    name: this.$t('categories.contact'),
+                    lang_name: 'contact',
                     url: '/contact'
                 }
-            ];
-        }
+            ]
+        };
     },
     created() {
         if (this.$route.name !== 'Home') {
