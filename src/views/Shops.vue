@@ -8,13 +8,15 @@
         <TitleSection title="Dükanlar" count="350" isBorder />
         <!-- Main -->
         <div class="container py-10">
-            <div class="flex items-center justify-start space-x-4">
+            <div class="flex flex-col md:flex-row items-start sm:items-center gap-4 sm:gap-6">
                 <!-- Search -->
                 <Search placeholder="Dükany gözlemek" />
-                <!-- Selection -->
-                <Selection placeholder="Kategoriýa saýlamak" :categories="categories" />
-                <!-- Selection floor -->
-                <Selection placeholder="Gat" :categories="floors" />
+                <div class="w-full flex flex-col sm:flex-row items-start gap-4">
+                    <!-- Selection -->
+                    <Selection placeholder="Kategoriýa saýlamak" :categories="categories" />
+                    <!-- Selection floor -->
+                    <Selection placeholder="Gat" :categories="floors" />
+                </div>
             </div>
             <!-- Shop Cards -->
             <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 pt-14 pb-20">
