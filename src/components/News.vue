@@ -61,25 +61,25 @@ export default {
                     title: 'Все для твоего яркого макияжа по акции 1+1=3!',
                     category: 'Çäreler',
                     date: '23.03.2025',
-                    image: 'https://images.pexels.com/photos/3373736/pexels-photo-3373736.jpeg'
+                    image: '/imgs/news-1.webp'
                 },
                 {
                     title: 'В SUNLIGHT -50% на всё!',
                     category: 'Täzelikler',
                     date: '23.03.2025',
-                    image: 'https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg'
+                    image: '/imgs/news-2.webp'
                 },
                 {
                     title: 'Все для твоего яркого макияжа по акции 1+1=3!',
                     category: 'Çäreler',
                     date: '23.03.2025',
-                    image: 'https://images.pexels.com/photos/3738088/pexels-photo-3738088.jpeg'
+                    image: '/imgs/news-3.webp'
                 },
                 {
                     title: 'В SUNLIGHT -50% на всё!',
                     category: 'Täzelikler',
                     date: '23.03.2025',
-                    image: 'https://images.pexels.com/photos/1162983/pexels-photo-1162983.jpeg'
+                    image: '/imgs/news-4.webp'
                 }
             ]
         }
