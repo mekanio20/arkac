@@ -1,6 +1,6 @@
 <template>
     <div class="container pt-10 sm:pt-16 md:pt-20 pb-20">
-        <Swiper :modules="modules" :slides-per-view="1.5" :space-between="20" :breakpoints="{
+        <Swiper :modules="modules" :slides-per-view="1.5" :space-between="50" :breakpoints="{
             400: {
                 slidesPerView: 2,
             },
@@ -26,7 +26,7 @@
                 :name="item.name" :category="item.category" />
         </div>
         <div class="flex items-center justify-center py-10 sm:py-16 md:py-20">
-            <Button text="" />
+            <Button :text="$t('common.viewAll')" />
         </div>
     </div>
 </template>
