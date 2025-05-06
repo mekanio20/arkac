@@ -5,25 +5,25 @@
             <!-- Center Social Icons -->
             <div class="container absolute -top-[150px] sm:left-1/2 right-0 transform sm:-translate-x-1/2 flex justify-end space-x-4 md:space-x-6 z-50">
                 <!-- Instagram Icon -->
-                <a href="#" class="text-black transition-transform duration-300 hover:scale-110 animate-pulse-text"
+                <a href="#" class="text-black transition-all duration-300 hover:-translate-y-2 hover:scale-110 animate-pulse-text"
                     style="animation-delay: 0.1s" aria-label="Instagram">
                     <InstagramIcon class="w-4 h-4 md:w-6 md:h-6" />
                 </a>
 
                 <!-- TikTok Icon -->
-                <a href="#" class="text-black transition-transform duration-300 hover:scale-110 animate-pulse-text"
+                <a href="#" class="text-black transition-all duration-300 hover:-translate-y-2 hover:scale-110 animate-pulse-text"
                     style="animation-delay: 0.2s" aria-label="TikTok">
                     <TikTokIcon class="w-4 h-4 md:w-6 md:h-6" />
                 </a>
 
                 <!-- X Icon -->
-                <a href="#" class="text-black transition-transform duration-300 hover:scale-110 animate-pulse-text"
+                <a href="#" class="text-black transition-all duration-300 hover:-translate-y-2 hover:scale-110 animate-pulse-text"
                     style="animation-delay: 0.3s" aria-label="Twitter/X">
                     <XIcon class="w-4 h-4 md:w-6 md:h-6" />
                 </a>
 
                 <!-- Facebook Icon -->
-                <a href="#" class="text-black transition-transform duration-300 hover:scale-110 animate-pulse-text"
+                <a href="#" class="text-black transition-all duration-300 hover:-translate-y-2 hover:scale-110 animate-pulse-text"
                     style="animation-delay: 0.4s" aria-label="Facebook">
                     <FacebookIcon class="w-4 h-4 md:w-6 md:h-6" />
                 </a>

@@ -3,10 +3,10 @@
         <div class="absolute -top-[90px] left-0 right-0 h-[200px] bg-white clip-path-wave"></div>
         <div
             class="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-4 md:space-x-6 lg:space-x-10 justify-center">
-            <img src="/svgs/instagram.svg" alt="Instagram" class="w-4 h-4 md:w-6 md:h-6">
-            <img src="/svgs/tiktok.svg" alt="Tiktok" class="w-4 h-4 md:w-6 md:h-6">
-            <img src="/svgs/x.svg" alt="X" class="w-4 h-4 md:w-6 md:h-6">
-            <img src="/svgs/facebook.svg" alt="Facebook" class="w-4 h-4 md:w-6 md:h-6">
+            <img src="/svgs/instagram.svg" alt="Instagram" class="w-4 h-4 md:w-6 md:h-6 cursor-pointer">
+            <img src="/svgs/tiktok.svg" alt="Tiktok" class="w-4 h-4 md:w-6 md:h-6 cursor-pointer">
+            <img src="/svgs/x.svg" alt="X" class="w-4 h-4 md:w-6 md:h-6 cursor-pointer">
+            <img src="/svgs/facebook.svg" alt="Facebook" class="w-4 h-4 md:w-6 md:h-6 cursor-pointer">
         </div>
         <div class="container mx-auto pt-20 md:pt-40 pb-8 px-4">
             <div class="flex flex-col lg:flex-row lg:space-y-0 space-y-10 justify-between md:pt-0 pt-20 pb-10">
@@ -18,7 +18,7 @@
 
                     <div class="md:flex justify-start hidden">
                         <router-link to="/contact"
-                            class="inline-flex items-center space-x-3 px-4 md:px-6 py-2 md:py-3 arkac-button-gradient text-white rounded-full hover:bg-blue-500 transition-colors duration-300">
+                            class="inline-flex items-center space-x-3 px-4 md:px-6 py-2 md:py-3 arkac-button-gradient text-white rounded-full hover:bg-blue-500 transition-colors duration-500">
                             <Mail class="w-4 h-4 md:w-5 md:h-5" />
                             <span class="font-avenir font-medium text-sm md:text-base mt-1">
                                 {{ $t('nav.contact') }}

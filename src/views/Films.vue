@@ -46,7 +46,7 @@
                 </div>
             </div>
             <!-- Movies -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pt-8 sm:pt-14">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pt-8 sm:pt-14 pb-32">
                 <CinemaCard v-for="item in movies" :key="item.id" :img="item.img" :title="item.title"
                     :category="item.category" />
             </div>

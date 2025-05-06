@@ -3,11 +3,11 @@
         <!-- Top Row -->
         <div class="grid lg:grid-cols-2 grid-cols-1 items-start gap-4 sm:gap-6 mb-8 sm:mb-14">
             <!-- First News -->
-            <div class="relative flex items-center justify-center group cursor-pointer">
-                <img src="/imgs/news-1.webp" class="w-full h-[300px] sm:h-[400px] md:h-[475px] object-cover rounded-[10px]" />
+            <div class="relative flex items-center justify-center group cursor-pointer overflow-hidden rounded-[10px]">
+                <img src="/imgs/news-1.webp" class="w-full h-[300px] sm:h-[400px] md:h-[475px] object-cover rounded-[10px] transition-all duration-300 group-hover:scale-110 group-hover:brightness-90" />
                 <!-- Arrow icon -->
                 <div class="absolute top-4 sm:top-5 right-4 sm:right-5">
-                    <div class="bg-white opacity-75 rounded-full w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] flex items-center justify-center">
+                    <div class="bg-white opacity-75 rounded-full w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                         <ArrowLeft class="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
                 </div>

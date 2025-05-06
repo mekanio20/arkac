@@ -66,7 +66,7 @@
       <h2 class="container arkac-title pt-8 md:pt-14">
         {{ $t('nav.news') }}
       </h2>
-      <marquee direction="right"
+      <marquee ref="newsMarquee" direction="right"
         class="w-full my-8 md:my-14 py-3 md:py-4 rotate-1 arkac-news-gradient flex items-center space-x-4">
         <div class="flex items-center space-x-4 md:space-x-6">
           <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
@@ -145,7 +145,15 @@ export default {
   data() {
     return {
       isMobileMenuOpen: false,
+      isScrolling: false,
+      scrollTimeout: null
     }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
     scrollToContent() {
@@ -160,6 +168,23 @@ export default {
     },
     handleLanguageChange(lang) {
       console.log('Language changed to:', lang);
+    },
+    handleScroll() {
+      if (!this.isScrolling) {
+        this.isScrolling = true;
+        this.$refs.newsMarquee.stop();
+      }
+
+      // Clear the previous timeout
+      if (this.scrollTimeout) {
+        clearTimeout(this.scrollTimeout);
+      }
+
+      // Set a new timeout
+      this.scrollTimeout = setTimeout(() => {
+        this.isScrolling = false;
+        this.$refs.newsMarquee.start();
+      }, 150); // Resume scrolling after 150ms of no scroll activity
     }
   }
 }

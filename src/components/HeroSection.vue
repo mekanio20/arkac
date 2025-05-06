@@ -41,12 +41,12 @@
 
             <!-- Action buttons -->
             <div class="flex flex-col sm:flex-row justify-center mt-6 sm:mt-10 space-y-4 sm:space-y-0 sm:space-x-6">
-                <button class="btn arkac-button-gradient flex items-center justify-center text-white py-2 sm:py-3">
+                <button class="btn arkac-button-gradient flex items-center justify-center text-white py-2 sm:py-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-arkac-primary/30">
                     <span class="font-avenir font-semibold text-sm sm:text-base">{{ $t('common.view360') }}</span>
                 </button>
 
                 <button
-                    class="px-6 sm:px-8 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 bg-white flex items-center justify-center">
+                    class="px-6 sm:px-8 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 bg-white flex items-center justify-center hover:scale-105 hover:shadow-lg hover:bg-gray-50">
                     <schemaIcon class="w-4 h-4 sm:w-5 sm:h-5" />
                     <span class="font-avenir text-sm sm:text-base">{{ $t('common.schema') }}</span>
                 </button>

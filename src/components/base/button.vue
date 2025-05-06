@@ -1,9 +1,9 @@
 <template>
     <button
-        class="w-fit inline-flex items-center justify-center px-12 py-4 border-[1px] rounded-full transition-colors"
+        class="w-fit inline-flex items-center justify-center px-12 py-4 border-[1px] rounded-full transition-all duration-300 hover:scale-105 hover:shadow-md"
         :class="[borderColor, bgColor, textColor]">
         <span class="font-inter text-xs md:text-sm lg:text-base mr-2 md:mr-3 lg:mr-4 uppercase">{{ text }}</span>
-        <ArrowRight :color="iconColor" class="w-3 h-3 md:w-4 md:h-4" />
+        <ArrowRight :color="iconColor" class="w-3 h-3 md:w-4 md:h-4 transition-transform duration-300 group-hover:translate-x-1" />
     </button>
 </template>
 
@@ -37,3 +37,10 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+button:hover .w-3,
+button:hover .w-4 {
+    transform: translateX(4px);
+}
+</style>
