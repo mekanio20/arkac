@@ -19,7 +19,8 @@ export default {
     selection: 'Görnüşini saýlamak',
     floor: 'Gat',
     categorySelection: 'Kategoriýa saýlamak',
-    shopSearch: 'Dükany gözlemek'
+    shopSearch: 'Dükany gözlemek',
+    viewAll: 'Ählisini görmek'
   },
   titles: {
     cinema: 'Şu gün kinoteatrda',

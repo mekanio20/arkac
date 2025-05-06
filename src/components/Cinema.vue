@@ -66,7 +66,7 @@
                 </SwiperSlide>
             </Swiper>
             <div class="flex items-center justify-center pt-10 sm:pt-16 md:pt-20">
-                <Button text="Ählisini görmek" />
+                <Button :text="$t('common.viewAll')" />
             </div>
         </div>
     </div>

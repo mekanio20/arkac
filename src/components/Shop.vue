@@ -26,7 +26,7 @@
                 :name="item.name" :category="item.category" />
         </div>
         <div class="flex items-center justify-center py-10 sm:py-16 md:py-20">
-            <Button text="Ählisini görmek" />
+            <Button text="" />
         </div>
     </div>
 </template>

@@ -37,7 +37,7 @@
 
         <!-- View All Button -->
         <div class="text-center mt-10 sm:mt-14 md:mt-16">
-            <Button text="Ählisini görmek" />
+            <Button :text="$t('common.viewAll')" />
         </div>
     </div>
 </template>
