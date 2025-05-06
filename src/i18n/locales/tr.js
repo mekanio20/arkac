@@ -19,6 +19,7 @@ export default {
     floor: "Kat",
     categorySelection: "Kategori seç",
     shopSearch: "Mağaza ara",
+    viewAll: 'Tümünü Gör'
   },
   titles: {
     cinema: "Bugün sinemada",

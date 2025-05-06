@@ -19,6 +19,7 @@ export default {
     floor: "Этаж",
     categorySelection: "Выбрать категорию",
     shopSearch: "Поиск магазина",
+    viewAll: 'Посмотреть все'
   },
   titles: {
     cinema: "Сегодня в кинотеатре",

@@ -19,6 +19,7 @@ export default {
     floor: "Floor",
     categorySelection: "Choose category",
     shopSearch: "Search shop",
+    viewAll: 'View All'
   },
   titles: {
     cinema: "Today in cinema",
