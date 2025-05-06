@@ -20,7 +20,10 @@ export default {
     floor: 'Gat',
     categorySelection: 'Kategoriýa saýlamak',
     shopSearch: 'Dükany gözlemek',
-    viewAll: 'Ählisini görmek'
+    viewAll: 'Ählisini görmek',
+    sendContact: 'Habar ugradyldy!',
+    error: 'Ýalňyşlyk ýüze çykdy!',
+    networkError: 'Tor ýalňyşlygy'
   },
   titles: {
     cinema: 'Şu gün kinoteatrda',
@@ -57,6 +60,9 @@ export default {
     phones: 'Telefon belgilerimiz',
     workTimes: 'Iş wagtlarymyz',
     time: 'пн-чт',
-    location: 'Ýerleşýän ýerimiz'
+    location: 'Ýerleşýän ýerimiz',
+    fillAllFields: 'Ähli girişler doldurylmaly!',
+    invalidEmail: 'Nädogry email!',
+    invalidPhone: 'Nädogry telefon belgisi!'
   }
 } 

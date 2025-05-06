@@ -11,19 +11,19 @@
             <!-- Contact Section -->
             <div class="flex flex-col lg:flex-row items-start py-10 sm:py-20">
                 <!-- Form Section -->
-                <form class="w-full lg:w-3/5 space-y-10 sm:space-y-20">
+                <div class="w-full lg:w-3/5 space-y-10 sm:space-y-20">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-20 gap-y-10 sm:gap-y-[120px]">
-                        <input type="text" :placeholder="$t('contact.fullname')"
-                            class="w-full pb-3 placeholder:text-black border-b border-black focus:outline-none" />
-                        <input type="text" :placeholder="$t('contact.yourPhone')"
-                            class="w-full pb-3 placeholder:text-black border-b border-black focus:outline-none" />
-                        <input type="email" :placeholder="$t('contact.yourEmail')"
-                            class="w-full pb-3 placeholder:text-black border-b border-black focus:outline-none" />
-                        <input type="text" :placeholder="$t('nav.contact')"
-                            class="w-full pb-3 placeholder:text-black border-b border-black focus:outline-none" />
+                        <input type="text" v-model="postData.name" :placeholder="$t('contact.fullname')"
+                            class="w-full pb-3 placeholder:text-arkac-gray-100 border-b border-black focus:outline-none" />
+                        <input type="text" v-model="postData.phone" :placeholder="$t('contact.yourPhone')"
+                            class="w-full pb-3 placeholder:text-arkac-gray-100 border-b border-black focus:outline-none" />
+                        <input type="email" v-model="postData.email" :placeholder="$t('contact.yourEmail')"
+                            class="w-full pb-3 placeholder:text-arkac-gray-100 border-b border-black focus:outline-none" />
+                        <input type="text" v-model="postData.message" :placeholder="$t('nav.contact')"
+                            class="w-full pb-3 placeholder:text-arkac-gray-100 border-b border-black focus:outline-none" />
                     </div>
-                    <Button :text="$t('contact.send')" bgColor="bg-arkac-blue-200" borderColor="border-arkac-blue-200" textColor="text-white" iconColor="white" />
-                </form>
+                    <Button @click="submintContact" :text="$t('contact.send')" bgColor="bg-arkac-blue-200" borderColor="border-arkac-blue-200" textColor="text-white" iconColor="white" />
+                </div>
 
                 <!-- Contact Section -->
                 <div class="w-full lg:w-2/5 mt-10 lg:mt-0 lg:pl-10 xl:pl-40 space-y-8 sm:space-y-16 text-sm text-gray-800">
@@ -81,6 +81,7 @@
 </template>
 
 <script>
+import api from '@/api/index'
 import Header from '@/components/Header.vue';
 import Navbar from '@/components/Navbar.vue';
 import TitleSection from '@/components/TitleSection.vue';
@@ -94,6 +95,72 @@ export default {
         TitleSection,
         Footer,
         Button
+    },
+    data() {
+        return {
+            isLoading: false,
+            postData: {
+                name: '',
+                phone: '',
+                email: '',
+                message: ''
+            }
+        }
+    },
+    methods: {
+        validatePhone(phone) {
+            const cleanPhone = phone.replace(/[\s\-\(\)]/g, '');
+            return /^\+993\d{8}$/.test(cleanPhone);
+        },
+        validateForm() {
+            if (!this.postData.name || !this.postData.phone || !this.postData.email || !this.postData.message) {
+                alert(this.$t('contact.fillAllFields'))
+                return false
+            }
+            if (!this.postData.email.includes('@')) {
+                alert(this.$t('contact.invalidEmail'))
+                return false
+            }
+            if (!this.validatePhone(this.postData.phone)) {
+                alert(this.$t('contact.invalidPhone'))
+                return false
+            }
+            return true
+        },
+        resetForm() {
+            this.postData = {
+                name: '',
+                phone: '',
+                email: '',
+                message: ''
+            }
+        },
+        async submintContact() {
+            if (!this.validateForm()) return
+            
+            this.isLoading = true
+            try {
+                const result = await api.post('/contact/', this.postData)
+                
+                if (result.status === 201) {
+                    alert(this.$t('common.sendContact'))
+                    this.resetForm()
+                } else {
+                    alert(this.$t('common.error'))
+                }
+            } catch (error) {
+                console.error('Contact form error:', error)
+                if (error.response) {
+                    alert(error.response.data.message || this.$t('common.error'))
+                } else if (error.request) {
+                    alert(this.$t('common.networkError'))
+                } else {
+                    alert(this.$t('common.error'))
+                }
+            } finally {
+                this.isLoading = false
+            }
+        }
     }
 }
 </script>
