@@ -10,7 +10,7 @@
                 <RouterSection route="/news" prevRoute="Dükanlar" nextRoute="LUSIO представляет Slow Life" />
                 <div class="py-10 flex items-center space-x-6 justify-center">
                     <div class="border border-arkac-gray-200 rounded-full px-10 py-3 font-inter text-sm uppercase">
-                        Täzelikler
+                        {{ $t('common.news') }}
                     </div>
                     <div class="border border-arkac-gray-200 rounded-full px-10 py-3 font-inter text-sm uppercase">
                         15 Aprel, 2025
@@ -33,7 +33,7 @@
                     </p>
                 </div>
                 <div class="pt-20">
-                    <h2 class="font-inter font-medium text-4xl uppercase">Meňzeş dükanlar</h2>
+                    <h2 class="font-inter font-medium text-4xl uppercase">{{ $t('titles.shops') }}</h2>
                     <div class="w-full py-6 rounded-xl mt-10 relative overflow-hidden">
                         <Swiper :modules="modules" :slides-per-view="4" :space-between="40" :loop="true">
                             <SwiperSlide v-for="item in news" :key="item.id">

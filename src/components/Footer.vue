@@ -21,7 +21,7 @@
                             class="inline-flex items-center space-x-3 px-4 md:px-6 py-2 md:py-3 arkac-button-gradient text-white rounded-full hover:bg-blue-500 transition-colors duration-300">
                             <Mail class="w-4 h-4 md:w-5 md:h-5" />
                             <span class="font-avenir font-medium text-sm md:text-base mt-1">
-                                Habarlaşmak
+                                {{ $t('nav.contact') }}
                             </span>
                         </router-link>
                     </div>
@@ -34,7 +34,7 @@
                                 <FooterStar class="w-3 h-3 md:w-4 md:h-4" />
                                 <router-link :to="item.url"
                                     class="font-inter text-sm md:text-base lg:text-[17px] hover:text-blue-500 transition-colors duration-300">
-                                    {{ $t(`categories.${item.lang_name}`) }}
+                                    {{ $t(`nav.${item.lang_name}`) }}
                                 </router-link>
                             </li>
                         </ul>
@@ -46,7 +46,7 @@
                                 <FooterStar class="w-3 h-3 md:w-4 md:h-4" />
                                 <router-link :to="item.url"
                                     class="font-inter text-sm md:text-base lg:text-[17px] hover:text-blue-500 transition-colors duration-300">
-                                    {{ $t(`categories.${item.lang_name}`) }}
+                                    {{ $t(`nav.${item.lang_name}`) }}
                                 </router-link>
                             </li>
                             <div class="flex items-center space-x-2">
@@ -71,7 +71,7 @@
                         class="w-full inline-flex items-center justify-center space-x-3 px-4 md:px-6 py-2 md:py-3 arkac-button-gradient text-white rounded-full hover:bg-blue-500 transition-colors duration-300">
                         <Mail class="w-4 h-4 md:w-5 md:h-5" />
                         <span class="font-avenir font-medium text-sm md:text-base mt-1">
-                            Habarlaşmak
+                            {{ $t('nav.contact') }}
                         </span>
                     </router-link>
                 </div>

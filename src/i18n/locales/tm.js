@@ -14,15 +14,48 @@ export default {
     schema: 'SDAM-yň shemasy',
     news: 'Täzelikler',
     events: 'Çäreler',
-    schema: 'Shema'
+    schema: 'Shema',
+    search: 'Gözlemek',
+    selection: 'Görnüşini saýlamak',
+    floor: 'Gat',
+    categorySelection: 'Kategoriýa saýlamak',
+    shopSearch: 'Dükany gözlemek'
   },
-  categories: {
-    shops: 'Dükanlar',
-    cafes: 'Kafe we restoranlar',
-    services: 'Hyzmatlar',
-    cinema: 'Kinoteatr',
-    news: 'Täzelikler we Çäreler',
-    about: 'Biz barada',
-    contact: 'Habarlaşmak'
+  titles: {
+    cinema: 'Şu gün kinoteatrda',
+    gallery: 'Gallereýa',
+    allService: 'Ähli hyzmatlar',
+    shopTitle: 'bir söwda merkezinde',
+    terms: 'Söwda merkeziniň düzgünleri',
+    cafes: 'Meňzeş kafelar',
+    shops: 'Meňzeş dükanlar'
+  },
+  subtitles: {
+    heroSubtitle: 'söwda dynç alyş merkezi',
+    subtitle2: 'Çäksiz söwda mümkinçilikleri, lezzetli naharlar we gyzykly dynç alyş bilen ajaýyp tejribäni başdan geçiriň – hemmesi bir ýerde, size ýakyn!',
+    subtitle3: 'söwda merkezi müşderilerimize ýokary hilli harytlary, döwrebap hyzmatlary hem-de ýakymly söwda tejribesini hödürleýän häzirki zaman söwda meýdançasydyr.',
+    subtitle4: 'Biz müşderilerimiziň wagtyny has amatly, söwdasyny bolsa has lezzetli we ýakymly etmek üçin hemişe täze mümkinçilikleri döretmäge çalyşýarys.',
+    subtitle5: 'Arkaç — diňe bir söwda merkezi däl, eýsem, dostlukly atmosferasy bilen ýürekleriňizi özüne çeken bir giňişlikdir.',
+    subtitle6: 'Siziň rahatlygyňyz we kanagatlanmagyňyz — biziň baş maksadymyz!',
+    square: 'Meýdany',
+    shop: 'Dükan',
+    cafe: 'Kafe we Restoran'
+  },
+  contact: {
+    phone: 'Telefon belgisi:',
+    work: 'Iş wagty:',
+    social: 'Sosial media:',
+    clock: 'Вс-Чт: 10:00-22:00,Пт-Сб: 10:00-23:00',
+    send: 'Ugratmak',
+    yourEmail: 'Elektron salgyňyz',
+    yourPhone: 'Telefon belgiňiz',
+    fullname: 'Doly adyňyz',
+    email: 'Elektron salgymyz',
+    marketing: 'Marketing',
+    help: 'Kömek',
+    phones: 'Telefon belgilerimiz',
+    workTimes: 'Iş wagtlarymyz',
+    time: 'пн-чт',
+    location: 'Ýerleşýän ýerimiz'
   }
 } 

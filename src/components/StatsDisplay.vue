@@ -36,13 +36,13 @@
             <!-- Right text -->
             <div v-if="isAbout" class="flex items-baseline text-start absolute right-0 -top-[80px] transform -translate-y-1/2 animate-float-left z-40">
                 <h1 class="font-inter text-7xl font-bold md:text-8xl tracking-wider">283700m<sup>2</sup></h1>
-                <p class="font-inter font-semibold text-4xl md:text-5xl tracking-wider">MEÝDANY</p>
+                <p class="font-inter font-semibold text-4xl md:text-5xl tracking-wider uppercase">{{ $t('subtitles.square') }}</p>
             </div>
 
             <!-- Center text -->
             <div class="flex items-baseline space-x-10 text-start animate-float-right z-40">
                 <h1 class="font-inter text-8xl font-bold md:text-9xl tracking-wider">350</h1>
-                <p class="font-inter font-semibold text-4xl md:text-5xl tracking-wider">DÜKAN</p>
+                <p class="font-inter font-semibold text-4xl md:text-5xl tracking-wider uppercase">{{ $t('subtitles.shop') }}</p>
             </div>
 
             <!-- Right image -->
@@ -62,7 +62,7 @@
             <!-- Center text -->
             <div class="flex items-baseline space-x-10 text-start animate-float-left  z-40">
                 <h1 class="font-inter text-8xl font-bold md:text-9xl tracking-wider">120</h1>
-                <p class="font-inter text-4xl md:text-5xl tracking-wider">KAFE & RESTORAN</p>
+                <p class="font-inter text-4xl md:text-5xl tracking-wider uppercase">{{ $t('subtitles.cafe') }}</p>
             </div>
 
             <!-- Bottom center image -->

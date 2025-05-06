@@ -10,12 +10,12 @@
         <div class="container py-10">
             <div class="flex flex-col md:flex-row items-start sm:items-center gap-4 sm:gap-6">
                 <!-- Search -->
-                <Search placeholder="Dükany gözlemek" />
+                <Search :placeholder="$t('common.shopSearch')" />
                 <div class="w-full flex flex-col sm:flex-row items-start gap-4">
                     <!-- Selection -->
-                    <Selection placeholder="Kategoriýa saýlamak" :categories="categories" />
+                    <Selection :placeholder="$t('common.categorySelection')" :categories="categories" />
                     <!-- Selection floor -->
-                    <Selection placeholder="Gat" :categories="floors" />
+                    <Selection :placeholder="$t('common.floor')" :categories="floors" />
                 </div>
             </div>
             <!-- Shop Cards -->

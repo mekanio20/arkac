@@ -41,7 +41,7 @@
                         src="/imgs/arkac.png" alt="Arkaç">
                 </div>
                 <p class="font-playfair font-medium text-3xl sm:text-5xl md:text-7xl lg:text-[94px] !leading-none mt-4">
-                    söwda dynç alyş merkezi</p>
+                    {{ $t('subtitles.heroSubtitle') }}</p>
             </div>
         </div>
 
@@ -50,23 +50,23 @@
             <marquee direction="right" class="animate-marquee flex items-center space-x-6">
                 <div class="flex items-center space-x-6 whitespace-nowrap">
                     <p class="font-inter font-semibold text-lg md:text-[22px] text-white uppercase">
-                        Täzelikler & Çäreler
+                        {{ $t('nav.news') }}
                     </p>
                     <img src="/svgs/thunder.svg" alt="Thunder" class="w-6 h-6 md:w-auto md:h-auto">
                     <p class="font-inter font-semibold text-lg md:text-[22px] text-white uppercase">
-                        Täzelikler & Çäreler
+                        {{ $t('nav.news') }}
                     </p>
                     <img src="/svgs/thunder.svg" alt="Thunder" class="w-6 h-6 md:w-auto md:h-auto">
                     <p class="font-inter font-semibold text-lg md:text-[22px] text-white uppercase">
-                        Täzelikler & Çäreler
+                        {{ $t('nav.news') }}
                     </p>
                     <img src="/svgs/thunder.svg" alt="Thunder" class="w-6 h-6 md:w-auto md:h-auto">
                     <p class="font-inter font-semibold text-lg md:text-[22px] text-white uppercase">
-                        Täzelikler & Çäreler
+                        {{ $t('nav.news') }}
                     </p>
                     <img src="/svgs/thunder.svg" alt="Thunder" class="w-6 h-6 md:w-auto md:h-auto">
                     <p class="font-inter font-semibold text-lg md:text-[22px] text-white uppercase">
-                        Täzelikler & Çäreler
+                        {{ $t('nav.news') }}
                     </p>
                     <img src="/svgs/thunder.svg" alt="Thunder" class="w-6 h-6 md:w-auto md:h-auto">
                 </div>
@@ -82,21 +82,18 @@
                         Arkac
                     </h4>
                     <span class="font-inter font-normal text-lg md:text-xl lg:text-[22px] block">
-                        söwda merkezi müşderilerimize ýokary hilli harytlary, döwrebap hyzmatlary hem-de ýakymly söwda
-                        tejribesini hödürleýän häzirki zaman söwda meýdançasydyr.
+                        {{ $t('subtitles.subtitle3') }}
                     </span>
                 </div>
                 <div class="flex-1 flex flex-col space-y-6 md:space-y-8 lg:space-y-10">
                     <p class="font-inter font-normal text-lg md:text-xl lg:text-[22px]">
-                        Biz müşderilerimiziň wagtyny has amatly, söwdasyny bolsa has lezzetli we ýakymly etmek üçin
-                        hemişe täze mümkinçilikleri döretmäge çalyşýarys.
+                        {{ $t('subtitles.subtitle4') }}
                     </p>
                     <p class="font-inter font-normal text-lg md:text-xl lg:text-[22px]">
-                        Arkaç — diňe bir söwda merkezi däl, eýsem, dostlukly atmosferasy bilen ýürekleriňizi özüne çeken
-                        bir giňişlikdir.
+                        {{ $t('subtitles.subtitle5') }}
                     </p>
                     <p class="font-inter font-normal text-lg md:text-xl lg:text-[22px]">
-                        Siziň rahatlygyňyz we kanagatlanmagyňyz — biziň baş maksadymyz!
+                        {{ $t('subtitles.subtitle6') }}
                     </p>
                 </div>
             </div>

@@ -32,13 +32,13 @@
                 <div class="flex flex-col space-y-6 sm:space-y-10 border-b border-arkac-gray-500 pb-6 sm:pb-10">
                     <div class="flex flex-col sm:flex-row sm:space-x-10 pt-4 sm:pt-6">
                         <div class="flex flex-col space-y-4 sm:space-y-6">
-                            <h3 class="font-inter font-medium text-base sm:text-lg text-arkac-gray-1100">Telefon belgisi:</h3>
-                            <h3 class="font-inter font-medium text-base sm:text-lg text-arkac-gray-1100">Iş wagty:</h3>
-                            <h3 class="font-inter font-medium text-base sm:text-lg text-arkac-gray-1100">Sosial media:</h3>
+                            <h3 class="font-inter font-medium text-base sm:text-lg text-arkac-gray-1100">{{ $t('contact.phone') }}</h3>
+                            <h3 class="font-inter font-medium text-base sm:text-lg text-arkac-gray-1100">{{ $t('contact.work') }}</h3>
+                            <h3 class="font-inter font-medium text-base sm:text-lg text-arkac-gray-1100">{{ $t('contact.social') }}</h3>
                         </div>
                         <div class="flex flex-col space-y-4 sm:space-y-6 mt-4 sm:mt-0">
                             <p class="font-inter font-medium text-base sm:text-lg">+99361 616161</p>
-                            <p class="font-inter font-medium text-base sm:text-lg">Вс-Чт: 10:00-22:00,Пт-Сб: 10:00-23:00</p>
+                            <p class="font-inter font-medium text-base sm:text-lg">{{ $t('contact.clock') }}</p>
                             <div class="flex items-center space-x-3 sm:space-x-4">
                                 <div class="rounded-full p-2 bg-arkac-blue-900">
                                     <Instagram width="14px" height="14px" :fill="'white'" />
@@ -83,7 +83,7 @@
                 Dükanymyza gelip görmegiňizi sabyrsyzlyk bilen garaşýarys!
             </p>
             <div class="">
-                <h2 class="font-inter font-medium text-2xl sm:text-3xl lg:text-4xl uppercase">Meňzeş kafelar</h2>
+                <h2 class="font-inter font-medium text-2xl sm:text-3xl lg:text-4xl uppercase">{{ $t('titles.cafes') }}</h2>
                 <div class="w-full py-4 sm:py-6 rounded-xl mt-6 sm:mt-10 relative overflow-hidden">
                     <Swiper 
                         :modules="modules" 

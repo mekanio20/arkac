@@ -64,29 +64,29 @@
     </div>
     <div class="bg-white" id="content-section">
       <h2 class="container arkac-title pt-8 md:pt-14">
-        Täzelikler we Çäreler
+        {{ $t('nav.news') }}
       </h2>
       <marquee direction="right"
         class="w-full my-8 md:my-14 py-3 md:py-4 rotate-1 arkac-news-gradient flex items-center space-x-4">
         <div class="flex items-center space-x-4 md:space-x-6">
           <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
-            Täzelikler & Çäreler
+            {{ $t('nav.news') }}
           </p>
           <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
           <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
-            Täzelikler & Çäreler
+            {{ $t('nav.news') }}
           </p>
           <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
           <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
-            Täzelikler & Çäreler
+            {{ $t('nav.news') }}
           </p>
           <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
           <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
-            Täzelikler & Çäreler
+            {{ $t('nav.news') }}
           </p>
           <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
           <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
-            Täzelikler & Çäreler
+            {{ $t('nav.news') }}
           </p>
           <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
         </div>

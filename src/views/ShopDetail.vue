@@ -83,7 +83,7 @@
                 Dükanymyza gelip görmegiňizi sabyrsyzlyk bilen garaşýarys!
             </p>
             <div class="">
-                <h2 class="font-inter font-medium text-2xl sm:text-3xl lg:text-4xl uppercase">Meňzeş dükanlar</h2>
+                <h2 class="font-inter font-medium text-2xl sm:text-3xl lg:text-4xl uppercase">{{ $t('titles.shops') }}</h2>
                 <div class="w-full py-4 sm:py-6 rounded-xl mt-6 sm:mt-10 relative overflow-hidden">
                     <Swiper 
                         :modules="modules" 

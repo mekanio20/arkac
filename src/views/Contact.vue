@@ -5,7 +5,7 @@
         <!-- Navbar -->
         <Navbar />
         <!-- Title Section -->
-        <TitleSection title="Habarlaşmak" isBorder />
+        <TitleSection :title="$t('nav.contact')" isBorder />
         <!-- Main -->
         <div class="container px-4 sm:px-6 lg:px-8 py-6 sm:py-10 pb-16 sm:pb-28">
             <!-- Contact Section -->
@@ -13,32 +13,32 @@
                 <!-- Form Section -->
                 <form class="w-full lg:w-3/5 space-y-10 sm:space-y-20">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-20 gap-y-10 sm:gap-y-[120px]">
-                        <input type="text" placeholder="Doly adyňyz"
+                        <input type="text" :placeholder="$t('contact.fullname')"
                             class="w-full pb-3 placeholder:text-black border-b border-black focus:outline-none" />
-                        <input type="text" placeholder="Telefon belgiňiz"
+                        <input type="text" :placeholder="$t('contact.yourPhone')"
                             class="w-full pb-3 placeholder:text-black border-b border-black focus:outline-none" />
-                        <input type="email" placeholder="Elektron salgyňyz"
+                        <input type="email" :placeholder="$t('contact.yourEmail')"
                             class="w-full pb-3 placeholder:text-black border-b border-black focus:outline-none" />
-                        <input type="text" placeholder="Habarlaşmak"
+                        <input type="text" :placeholder="$t('nav.contact')"
                             class="w-full pb-3 placeholder:text-black border-b border-black focus:outline-none" />
                     </div>
-                    <Button text="Ugratmak" bgColor="bg-arkac-blue-200" borderColor="border-arkac-blue-200" textColor="text-white" iconColor="white" />
+                    <Button :text="$t('contact.send')" bgColor="bg-arkac-blue-200" borderColor="border-arkac-blue-200" textColor="text-white" iconColor="white" />
                 </form>
 
                 <!-- Contact Section -->
                 <div class="w-full lg:w-2/5 mt-10 lg:mt-0 lg:pl-10 xl:pl-40 space-y-8 sm:space-y-16 text-sm text-gray-800">
                     <div class="flex flex-col space-y-2 sm:space-y-3">
-                        <p class="font-inter font-medium text-base">Elektron salgymyz</p>
+                        <p class="font-inter font-medium text-base">{{ $t('contact.email') }}</p>
                         <a href="mailto:arkach@gmail.com"
                             class="text-arkac-blue-200 font-inter font-semibold text-base hover:underline">arkach@gmail.com</a>
                     </div>
                     <div class="flex flex-col space-y-2 sm:space-y-3">
-                        <p class="font-inter font-medium text-base">Marketing</p>
+                        <p class="font-inter font-medium text-base">{{ $t('contact.marketing') }}</p>
                         <a href="mailto:marketing.arkac@gmail.com"
                             class="text-arkac-blue-200 font-inter font-semibold text-base hover:underline">marketing.arkac@gmail.com</a>
                     </div>
                     <div class="flex flex-col space-y-2 sm:space-y-3">
-                        <p class="font-inter font-medium text-base">Kömek</p>
+                        <p class="font-inter font-medium text-base">{{ $t('contact.help') }}</p>
                         <a href="mailto:arkach.support@gmail.com"
                             class="text-arkac-blue-200 font-inter font-semibold text-base hover:underline">arkach.support@gmail.com</a>
                     </div>
@@ -47,22 +47,22 @@
             <!-- Info Section -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-4 sm:gap-6 pt-6 sm:pt-10">
                 <div class="p-6 sm:p-10 border border-arkac-gray-500 flex flex-col items-center justify-center space-y-3 sm:space-y-4">
-                    <h4 class="font-inter font-semibold text-base sm:text-lg pb-3 sm:pb-5">Telefon belgilerimiz</h4>
+                    <h4 class="font-inter font-semibold text-base sm:text-lg pb-3 sm:pb-5">{{ $t('contact.phones') }}</h4>
                     <p class="font-inter font-normal text-base sm:text-lg">+993 61 61 61 61</p>
                     <p class="font-inter font-normal text-base sm:text-lg">+993 61 61 61 61</p>
                     <p class="font-inter font-normal text-base sm:text-lg">+993 61 61 61 61</p>
                 </div>
                 <div class="p-6 sm:p-10 border border-arkac-gray-500 flex flex-col items-center justify-center space-y-3 sm:space-y-4">
-                    <h4 class="font-inter font-semibold text-base sm:text-lg pb-3 sm:pb-5">Iş wagtlarymyz</h4>
-                    <p class="font-inter font-normal text-base sm:text-lg"><span class="text-arkac-gray-900 mr-3 sm:mr-5">пн-чт:</span>10:00
+                    <h4 class="font-inter font-semibold text-base sm:text-lg pb-3 sm:pb-5">{{ $t('contact.workTimes') }}</h4>
+                    <p class="font-inter font-normal text-base sm:text-lg"><span class="text-arkac-gray-900 mr-3 sm:mr-5">{{ $t('contact.time') }}:</span>10:00
                         - 22:00</p>
-                    <p class="font-inter font-normal text-base sm:text-lg"><span class="text-arkac-gray-900 mr-3 sm:mr-5">пн-чт:</span>10:00
+                    <p class="font-inter font-normal text-base sm:text-lg"><span class="text-arkac-gray-900 mr-3 sm:mr-5">{{ $t('contact.time') }}:</span>10:00
                         - 22:00</p>
-                    <p class="font-inter font-normal text-base sm:text-lg"><span class="text-arkac-gray-900 mr-3 sm:mr-5">пн-чт:</span>10:00
+                    <p class="font-inter font-normal text-base sm:text-lg"><span class="text-arkac-gray-900 mr-3 sm:mr-5">{{ $t('contact.time') }}:</span>10:00
                         - 22:00</p>
                 </div>
                 <div class="p-6 sm:p-10 border border-arkac-gray-500 flex flex-col space-y-3 sm:space-y-4 h-full items-center md:col-span-2 lg:col-span-1">
-                    <h4 class="font-inter font-semibold text-base sm:text-lg pb-3 sm:pb-5">Ýerleşýän ýerimiz</h4>
+                    <h4 class="font-inter font-semibold text-base sm:text-lg pb-3 sm:pb-5">{{ $t('contact.location') }}</h4>
                     <p class="font-inter font-normal text-base sm:text-lg text-center">Magtymguly şaýoly, Aşgabat, Тürkmenistan</p>
                 </div>
             </div>

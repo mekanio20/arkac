@@ -5,18 +5,18 @@
         <!-- Navbar -->
         <Navbar />
         <!-- Title Section -->
-        <TitleSection title="KAFE we restoranlar" count="120" isBorder />
+        <TitleSection :title="$t('nav.cafes')" count="120" isBorder />
         <!-- Main -->
         <div class="container px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
             <!-- Search and Filters Section -->
             <div class="flex flex-col md:flex-row items-start sm:items-center gap-4 sm:gap-6">
                 <!-- Search -->
-                <Search placeholder="Gözlemek" />
+                <Search :placeholder="$t('common.search')" />
                 <div class="w-full flex flex-col sm:flex-row items-start gap-4">
                     <!-- Selection -->
-                    <Selection placeholder="Görnüşini saýlamak" :categories="categories" />
+                    <Selection :placeholder="$t('common.selection')" :categories="categories" />
                     <!-- Selection floor -->
-                    <Selection placeholder="Gat" :categories="floors" />
+                    <Selection :placeholder="$t('common.floor')" :categories="floors" />
                 </div>
             </div>
             <!-- Shop Cards -->

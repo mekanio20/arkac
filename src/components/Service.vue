@@ -2,8 +2,8 @@
     <div class="container">
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
             <h2 class="arkac-title sm:max-w-[600px] sm:w-auto text-center sm:text-left">
-                Ähli hyzmatlar <img class="w-[100px] sm:w-[125px] h-[35px] sm:h-[46px] object-cover inline-block" src="/imgs/arkac-2.png">
-                bir söwda merkezinde
+                {{ $t('titles.allService') }} <img class="w-[100px] sm:w-[125px] h-[35px] sm:h-[46px] object-cover inline-block" src="/imgs/arkac-2.png">
+                {{ $t('titles.shopTitle') }}
             </h2>
             <div class="sm:flex hidden items-center justify-center relative w-16 h-16 sm:w-auto sm:h-auto">
                 <ArkacLoopIcon class="slow-rotate w-12 h-12 sm:w-auto sm:h-auto" />

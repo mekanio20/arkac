@@ -9,7 +9,7 @@
             <!-- Title -->
             <h2
                 class="flex items-center justify-center font-inter font-medium text-3xl sm:text-4xl lg:text-5xl uppercase pt-6 sm:pt-10">
-                KINOTEATR
+                {{ $t('nav.cinema') }}
                 🍿</h2>
             <!-- Main -->
             <div class="py-4 sm:py-6 px-10 md:px-20 rounded-xl mb-6 sm:mb-8 md:mb-10 my-8 sm:my-10 md:my-14 relative overflow-hidden"

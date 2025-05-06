@@ -1,7 +1,8 @@
 <template>
     <div class="container">
         <!-- Center -->
-        <h2 class="flex items-center justify-center font-inter font-medium text-[30px] sm:text-[40px] md:text-[46px] tracking-[1px] sm:tracking-[2px] uppercase pt-6 sm:pt-8 md:pt-10">Şu Gün kinoteatrda
+        <h2 class="flex items-center justify-center font-inter font-medium text-[30px] sm:text-[40px] md:text-[46px] tracking-[1px] sm:tracking-[2px] uppercase pt-6 sm:pt-8 md:pt-10">
+            {{ $t('titles.cinema') }}
             <span class="ml-2">🍿</span>
         </h2>
         <div class="py-4 sm:py-6 px-10 md:px-20 rounded-xl mb-6 sm:mb-8 md:mb-10 my-8 sm:my-10 md:my-14 relative overflow-hidden" style="background-image: url('/svgs/bg.svg'); background-size: cover; background-position: center;">

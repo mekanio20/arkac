@@ -5,7 +5,7 @@
         <!-- Navbar -->
         <Navbar />
         <!-- Title Section -->
-        <TitleSection title="Täzelikler" isBorder />
+        <TitleSection :title="$t('common.news')" isBorder />
         <!-- Main -->
         <div class="container py-10">
             <!-- Shop Cards -->

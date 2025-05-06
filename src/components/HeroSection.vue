@@ -32,12 +32,11 @@
             </div>
 
             <h3 class="text-3xl sm:text-4xl md:text-6xl font-inter font-normal tracking-[1px] sm:tracking-[2px]">
-                söwda dynç alyş merkezi
+                {{ $t('subtitles.heroSubtitle') }}
             </h3>
 
             <p class="my-8 sm:my-[70px] max-w-2xl mx-auto text-center text-base sm:text-lg text-arkac-gray-100 px-4">
-                Çäksiz söwda mümkinçilikleri, lezzetli naharlar we gyzykly dynç alyş bilen ajaýyp tejribäni başdan
-                geçiriň – hemmesi bir ýerde, size ýakyn!
+                {{ $t('subtitles.subtitle2') }}
             </p>
 
             <!-- Action buttons -->

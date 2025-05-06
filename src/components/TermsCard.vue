@@ -1,7 +1,9 @@
 <template>
     <div class="container relative bg-arkac-blue-400 rounded-xl px-6 md:px-12 lg:px-28 flex flex-col md:flex-row items-center justify-between mb-20">
         <div class="flex flex-col space-y-10 w-full sm:w-1/2 md:w-3/4 py-20 md:py-32 z-40">
-            <h2 class="font-avenir font-black text-3xl md:text-4xl lg:text-[54px] text-center md:text-left md:!leading-[58px] !leading-[40px]">Söwda merkeziniň düzgünleri</h2>
+            <h2 class="font-avenir font-black text-3xl md:text-4xl lg:text-[54px] text-center md:text-left md:!leading-[58px] !leading-[40px]">
+                {{ $t('titles.terms') }}
+            </h2>
             <div class="flex justify-center md:justify-start">
                 <Button text="Görmek" bgColor="bg-arkac-blue-200" borderColor="border-arkac-blue-200" textColor="text-white" iconColor="white" />
             </div>

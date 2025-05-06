@@ -1,7 +1,8 @@
 <template>
     <div class="container text-center md:pt-20 pb-20">
         <h4 class="w-fit mt-6 md:mt-10 py-2 px-8 md:px-16 bg-arkac-blue-800 -rotate-1 text-white font-inter font-medium text-3xl md:text-4xl lg:text-[52px] inline-block uppercase">
-            Gallereýa</h4>
+            {{ $t('titles.gallery') }}
+        </h4>
         <Swiper 
             :modules="modules" 
             :slidesPerView="1.2"
