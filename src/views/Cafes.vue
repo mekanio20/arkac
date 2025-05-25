@@ -5,25 +5,37 @@
         <!-- Navbar -->
         <Navbar />
         <!-- Title Section -->
-        <TitleSection :title="$t('nav.cafes')" count="120" isBorder />
+        <TitleSection :title="$t('nav.cafes')" :count="cafesCount" isBorder />
         <!-- Main -->
         <div class="container px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
             <!-- Search and Filters Section -->
             <div class="flex flex-col md:flex-row items-start sm:items-center gap-4 sm:gap-6">
                 <!-- Search -->
-                <Search :placeholder="$t('common.search')" />
+                <Search :placeholder="$t('common.search')" @search-results="handleSearchResults" />
                 <div class="w-full flex flex-col sm:flex-row items-start gap-4">
                     <!-- Selection -->
-                    <Selection :placeholder="$t('common.selection')" :categories="categories" />
+                    <Selection :placeholder="$t('common.selection')" :categories="categories" @select="handleCategorySelect" />
                     <!-- Selection floor -->
-                    <Selection :placeholder="$t('common.floor')" :categories="floors" />
+                    <Selection :placeholder="$t('common.floor')" :categories="floors" @select="handleFloorSelect" />
                 </div>
             </div>
+            <!-- Loading State -->
+            <div v-if="isLoading" class="flex justify-center items-center py-20">
+                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-arkac-blue-200"></div>
+            </div>
+            <!-- Error State -->
+            <div v-else-if="error" class="text-center py-20">
+                <p class="text-red-500 font-inter text-lg">{{ error }}</p>
+            </div>
+            <!-- No Results -->
+            <div v-else-if="cafesCount === 0" class="text-center py-20">
+                <p class="text-arkac-gray-300 font-inter text-lg">{{ $t('common.noResults') }}</p>
+            </div>
             <!-- Shop Cards -->
-            <div
+            <div v-else
                 class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pt-8 sm:pt-10 lg:pt-14 pb-12 sm:pb-16 lg:pb-20">
-                <CafesCard v-for="item in shops" :key="item.id" :id="item.id" :floor="item.floor" :image="item.image" :name="item.name"
-                    :category="item.category" />
+                <CafesCard v-for="item in shops" :key="item.id" :id="item.id" :floor="item.floor" :image="item.logo" :name="item.name"
+                    :category="item.category?.name" />
             </div>
         </div>
         <!-- Footer -->
@@ -32,6 +44,7 @@
 </template>
 
 <script>
+import api from '@/api/index';
 import Header from '@/components/Header.vue';
 import Navbar from '@/components/Navbar.vue';
 import TitleSection from '@/components/TitleSection.vue';
@@ -52,32 +65,14 @@ export default {
     },
     data() {
         return {
-            categories: [
-                {
-                    id: 1,
-                    name: 'Aýal egin-eşik',
-                },
-                {
-                    id: 2,
-                    name: 'Kosmetika we parfumeriýa',
-                },
-                {
-                    id: 3,
-                    name: 'Çağa egin-eşik',
-                },
-                {
-                    id: 4,
-                    name: 'Elektronika we öý enjamlary',
-                },
-                {
-                    id: 5,
-                    name: 'Gurlyşyk harytlary',
-                },
-                {
-                    id: 6,
-                    name: 'Öý haýwanlar üçin',
-                },
-            ],
+            cafesCount: 0,
+            categories: [],
+            shops: [],
+            isLoading: false,
+            error: null,
+            selectedCategory: null,
+            selectedFloor: null,
+            searchQuery: '',
             floors: [
                 {
                     id: 1,
@@ -92,65 +87,48 @@ export default {
                     name: '3-ji gat',
                 },
             ],
-            shops: [
-                {
-                    id: 1,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 2,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 3,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 4,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 5,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 6,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 7,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 8,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-            ]
         }
+    },
+    created() {
+        this.getCategories()
+        this.getCafes(this.selectedCategory, this.selectedFloor, this.searchQuery)
+    },
+    methods: {
+        async getCategories() {
+            const response = await api.get('/places/categories/')
+            this.categories = await response.data.results
+        },
+        async getCafes(category, floor, searchQuery) {
+            this.isLoading = true
+            this.error = null
+            try {
+                let queryParams = 'type_fk=3'
+                if (category) queryParams += `&category_fk=${category}`
+                if (floor) queryParams += `&floor=${floor}`
+                if (searchQuery) queryParams += `&search=${searchQuery}`
+                
+                const response = await api.get(`/places/?${queryParams}`)
+                this.cafesCount = await response.data.count
+                this.shops = await response.data.results
+            } catch (error) {
+                console.error('Error fetching cafes:', error)
+                this.error = this.$t('common.error')
+            } finally {
+                this.isLoading = false
+            }
+        },
+        async handleCategorySelect(category) {
+            this.selectedCategory = category
+            await this.getCafes(this.selectedCategory, this.selectedFloor, this.searchQuery)
+        },
+        async handleFloorSelect(floor) {
+            this.selectedFloor = floor
+            await this.getCafes(this.selectedCategory, this.selectedFloor, this.searchQuery)
+        },
+        async handleSearchResults(query) {
+            this.searchQuery = query
+            await this.getCafes(this.selectedCategory, this.selectedFloor, this.searchQuery)
+        },
     }
 }
 </script>

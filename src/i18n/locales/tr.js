@@ -19,7 +19,8 @@ export default {
     floor: "Kat",
     categorySelection: "Kategori seç",
     shopSearch: "Mağaza ara",
-    viewAll: 'Tümünü Gör'
+    viewAll: 'Tümünü Gör',
+    noResults: 'Sonuç bulunamadı',
   },
   titles: {
     cinema: "Bugün sinemada",

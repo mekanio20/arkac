@@ -46,6 +46,7 @@ export default {
         },
         select(category) {
             this.selected = category;
+            this.$emit('select', category.id);
             this.open = false;
         }
     }

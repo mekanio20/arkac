@@ -19,7 +19,8 @@ export default {
     floor: "Floor",
     categorySelection: "Choose category",
     shopSearch: "Search shop",
-    viewAll: 'View All'
+    viewAll: 'View All',
+    noResults: 'No results found',
   },
   titles: {
     cinema: "Today in cinema",

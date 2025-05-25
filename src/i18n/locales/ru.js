@@ -19,7 +19,8 @@ export default {
     floor: "Этаж",
     categorySelection: "Выбрать категорию",
     shopSearch: "Поиск магазина",
-    viewAll: 'Посмотреть все'
+    viewAll: 'Посмотреть все',
+    noResults: 'Нет результатов',
   },
   titles: {
     cinema: "Сегодня в кинотеатре",

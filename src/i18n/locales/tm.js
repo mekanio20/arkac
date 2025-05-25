@@ -23,7 +23,8 @@ export default {
     viewAll: 'Ählisini görmek',
     sendContact: 'Habar ugradyldy!',
     error: 'Ýalňyşlyk ýüze çykdy!',
-    networkError: 'Tor ýalňyşlygy'
+    networkError: 'Tor ýalňyşlygy',
+    noResults: 'Netijeler tapylmady',
   },
   titles: {
     cinema: 'Şu gün kinoteatrda',
