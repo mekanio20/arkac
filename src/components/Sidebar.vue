@@ -65,9 +65,9 @@
                         AŞGABAT, TÜRKMENISTAN
                     </p>
                     <!-- 360 -->
-                    <button class="w-full btn arkac-button-gradient flex items-center justify-center text-white py-2 sm:py-3 transition-all duration-300 hover:opacity-90">
+                    <a href="https://yakyn.biz/360/arkac-sowda-dync-alys-merkezi-916/index.htm" class="w-full btn arkac-button-gradient flex items-center justify-center text-white py-2 sm:py-3 transition-all duration-300 hover:opacity-90">
                         <span class="font-avenir font-semibold text-sm sm:text-base">{{ $t('common.view360') }}</span>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>

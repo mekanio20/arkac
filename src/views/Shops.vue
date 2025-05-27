@@ -5,7 +5,7 @@
         <!-- Navbar -->
         <Navbar />
         <!-- Title Section -->
-        <TitleSection title="Dükanlar" :count="shopCount" isBorder />
+        <TitleSection :title="$t('nav.shops')" :count="shopCount" isBorder />
         <!-- Main -->
         <div class="container py-10">
             <div class="flex flex-col md:flex-row items-start sm:items-center gap-4 sm:gap-6">
@@ -101,7 +101,7 @@ export default {
             this.isLoading = true
             this.error = null
             try {
-                let queryParams = 'type_fk=2'
+                let queryParams = 'type_fk=1'
                 if (category) queryParams += `&category_fk=${category}`
                 if (floor) queryParams += `&floor=${floor}`
                 if (searchQuery) queryParams += `&search=${searchQuery}`

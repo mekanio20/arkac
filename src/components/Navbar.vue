@@ -38,11 +38,6 @@ export default {
                     url: '/cafes'
                 },
                 {
-                    id: 3,
-                    lang_name: 'services',
-                    url: ''
-                },
-                {
                     id: 4,
                     lang_name: 'cinema',
                     url: '/films'

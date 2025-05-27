@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://216.250.14.57:8000/api",
+  baseURL: "https://arkach.com.tm/api",
 });
 
 export default api;
