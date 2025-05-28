@@ -5,53 +5,49 @@
         <!-- Navbar -->
         <Navbar />
         <!-- Main -->
-        <div class="flex flex-col-reverse lg:flex-row justify-between pt-8 sm:pt-14 pb-10 sm:pb-20">
+        <div v-if="place" class="flex flex-col-reverse lg:flex-row justify-between pt-8 sm:pt-14 sm:pb-10">
             <div class="flex-1 flex flex-col space-y-4 px-4 sm:px-8 lg:pl-16 lg:pr-8 xl:pr-32">
                 <!-- Shop Detail -->
                 <div class="flex flex-col space-y-6 sm:space-y-10 border-b border-arkac-gray-500 pb-6 sm:pb-10">
-                    <RouterSection route="/shops" prevRoute="Dükanlar" nextRoute="LUSIO представляет Slow Life" />
+                    <RouterSection route="/shops" :prevRoute="$t('nav.shops')" :nextRoute="place.name" />
                     <p
                         class="w-fit px-4 sm:px-5 py-2 bg-arkac-blue-300 text-arkac-blue-200 font-inter font-medium text-sm rounded-lg">
-                        1-nji gat
+                        {{ place.floor }}-nji gat
                     </p>
                     <h1 class="font-inter font-medium text-3xl sm:text-4xl lg:text-[60px] uppercase leading-tight sm:leading-[64px]">
-                        Bath & Body Works
+                        {{ place.name }}
                     </h1>
                     <div class="flex flex-wrap items-center gap-4 sm:gap-6">
                         <router-link to="#"
                             class="bg-arkac-blue-200 rounded-full px-6 sm:px-10 py-2 sm:py-3 font-inter font-medium text-sm text-white">
                             360<sup>0</sup>görmek
                         </router-link>
-                        <router-link to="#"
-                            class="border border-arkac-gray-200 rounded-full px-6 sm:px-10 py-2 sm:py-3 font-inter font-medium text-sm text-arkac-gray-1000">
-                            Shemada görmek
-                        </router-link>
                     </div>
                 </div>
                 <!-- Contact -->
                 <div class="flex flex-col space-y-6 sm:space-y-10 border-b border-arkac-gray-500 pb-6 sm:pb-10">
                     <div class="flex flex-col sm:flex-row sm:space-x-10 pt-4 sm:pt-6">
-                        <div class="flex flex-col space-y-4 sm:space-y-6">
+                        <div class="flex flex-col justify-between">
                             <h3 class="font-inter font-medium text-base sm:text-lg text-arkac-gray-1100">Telefon belgisi:</h3>
                             <h3 class="font-inter font-medium text-base sm:text-lg text-arkac-gray-1100">Iş wagty:</h3>
                             <h3 class="font-inter font-medium text-base sm:text-lg text-arkac-gray-1100">Sosial media:</h3>
                         </div>
                         <div class="flex flex-col space-y-4 sm:space-y-6 mt-4 sm:mt-0">
-                            <p class="font-inter font-medium text-base sm:text-lg">+99361 616161</p>
-                            <p class="font-inter font-medium text-base sm:text-lg">Вс-Чт: 10:00-22:00,Пт-Сб: 10:00-23:00</p>
+                            <div class="flex items-center space-x-2">
+                                <p v-for="item in place.phone_numbers" :key="item.id" class="font-inter font-medium text-base sm:text-lg">{{ item.phone_number }}</p>
+                            </div>
+                            <div class="flex flex-col">
+                                <p v-for="item in place.working_hours" :key="item.id" class="font-inter font-medium text-base sm:text-lg">
+                                    {{ item.day_of_week }}: {{ item.open_time }} - {{ item.close_time }}
+                                </p>
+                            </div>
                             <div class="flex items-center space-x-3 sm:space-x-4">
-                                <div class="rounded-full p-2 bg-arkac-blue-900">
+                                <a v-if="place.social_instagram" :href="place.social_instagram" target="_blank" class="rounded-full p-2 bg-arkac-blue-900">
                                     <Instagram width="14px" height="14px" :fill="'white'" />
-                                </div>
-                                <div class="rounded-full p-2 bg-arkac-blue-900">
+                                </a>
+                                <a v-if="place.social_tiktok" :href="place.social_tiktok" target="_blank" class="rounded-full p-2 bg-arkac-blue-900">
                                     <Tiktok width="14px" height="14px" :fill="'white'" />
-                                </div>
-                                <div class="rounded-full p-2 bg-arkac-blue-900">
-                                    <X width="14px" height="14px" :fill="'white'" />
-                                </div>
-                                <div class="rounded-full p-2 bg-arkac-blue-900">
-                                    <Facebook width="14px" height="14px" :fill="'white'" />
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -60,27 +56,30 @@
                 <div class="flex flex-wrap items-center gap-4 sm:gap-10 py-6 sm:py-8">
                     <div
                         class="rounded-full px-6 sm:px-10 py-2 sm:py-3 bg-arkac-gray-1200 text-arkac-gray-100 font-inter font-normal text-sm">
-                        Öý hojalyk harytlary
-                    </div>
-                    <div
-                        class="rounded-full px-6 sm:px-10 py-2 sm:py-3 bg-arkac-gray-1200 text-arkac-gray-100 font-inter font-normal text-sm">
-                        Kosmetika we parfumeriýa
+                        {{ place.category.name }}
                     </div>
                 </div>
             </div>
-            <div class="flex-1 lg:w-full container mb-6 lg:mb-0">
-                <img src="/imgs/shop-detail-1.png" class="w-full h-[300px] sm:h-[400px] rounded-lg lg:h-full object-cover">
+            <div class="max-w-2xl lg:w-full container mb-6 lg:mb-0">
+                <Swiper
+                    :modules="modules"
+                    :slides-per-view="1"
+                    :space-between="0"
+                    :loop="true"
+                    :autoplay="{
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    }"
+                    class="w-full h-full rounded-lg">
+                    <SwiperSlide v-for="(item, index) in place.images" :key="index">
+                        <img :src="item.image" class="w-full h-full object-contain rounded-lg">
+                    </SwiperSlide>
+                </Swiper>
             </div>
         </div>
-        <div class="w-full container px-4 sm:px-6 lg:px-8 pb-20 sm:pb-40">
+        <div v-if="place" class="w-full container px-4 sm:px-6 lg:px-8 pb-20 sm:pb-40">
             <p class="font-inter text-base sm:text-lg pb-16 sm:pb-32">
-                Dükanymyz müşderilere ýokary hilli harytlary hödürlemek maksady bilen döredildi. Biziň maksadymyz –
-                adamlaryň gündelik durmuşyny ýeňilleşdirmek we olara gerekli zatlaryny amatly bahadan üpjün etmekdir.
-                <br> <br>
-                Müşderilerimiziň ynamy biziň üçin örän möhümdir. Şonuň üçin hem biz hil, hyzmat we amatlylyk babatda iň
-                gowusyny hödürlemäge çalyşýarys.
-                <br> <br>
-                Dükanymyza gelip görmegiňizi sabyrsyzlyk bilen garaşýarys!
+                {{ place.description }}
             </p>
             <div class="">
                 <h2 class="font-inter font-medium text-2xl sm:text-3xl lg:text-4xl uppercase">{{ $t('titles.shops') }}</h2>
@@ -104,9 +103,9 @@
                             }
                         }"
                         :loop="true">
-                        <SwiperSlide v-for="item in shops" :key="item.id">
+                        <SwiperSlide v-for="item in places" :key="item.id">
                             <ShopCard :img="item.img" :title="item.title" :id="item.id" :floor="item.floor"
-                                :image="item.image" :name="item.name" :category="item.category" />
+                                :image="item.logo" :name="item.name" :category="item.category.name" />
                         </SwiperSlide>
                     </Swiper>
                 </div>
@@ -118,6 +117,7 @@
 </template>
 
 <script>
+import api from '@/api/index';
 import X from '@/components/icons/x.vue';
 import Footer from '@/components/Footer.vue';
 import Instagram from '@/components/icons/instagram.vue';
@@ -128,9 +128,11 @@ import Navbar from '@/components/Navbar.vue';
 import ShopCard from '@/components/ShopCard.vue';
 import RouterSection from '@/components/RouterSection.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
 export default {
     name: 'ShopDetail',
     components: {
@@ -148,65 +150,32 @@ export default {
     },
     data() {
         return {
-            shops: [
-                {
-                    id: 1,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 2,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 3,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 4,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 5,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 6,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 7,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 8,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-            ]
+            places: [],
+            place: null,
+            modules: [Autoplay],
         }
     },
+    methods: {
+        async getShops() {
+            try {
+                const response = await api.get('/places/');
+                this.places = response.data.results;
+            } catch (error) {
+                console.error('Error fetching place details:', error);
+            }
+        },
+        async fetchPlaceDetails() {
+            try {
+                const response = await api.get(`/places/${this.$route.params.id}`);
+                this.place = response.data;
+            } catch (error) {
+                console.error('Error fetching place details:', error);
+            }
+        },
+    },
+    created() {
+        this.fetchPlaceDetails();
+        this.getShops()
+    }
 }
 </script>

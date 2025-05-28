@@ -8,9 +8,9 @@
         <div class="container px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
             <!-- Title -->
             <h2
-                class="flex items-center justify-center font-inter font-medium text-3xl sm:text-4xl lg:text-5xl uppercase pt-6 sm:pt-10">
-                {{ $t('nav.cinema') }}
-                🍿</h2>
+                class="flex items-center justify-center font-inter font-medium text-3xl sm:text-4xl lg:text-5xl uppercase">
+                {{ $t('nav.cinema') }}🍿
+            </h2>
             <!-- Main -->
             <div class="py-4 sm:py-6 px-10 md:px-20 rounded-xl mb-6 sm:mb-8 md:mb-10 my-8 sm:my-10 md:my-14 relative overflow-hidden"
                 style="background-image: url('/svgs/bg.svg'); background-size: cover; background-position: center;">
@@ -32,10 +32,11 @@
                         spaceBetween: 20
                     }
                 }" :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }">
-                    <SwiperSlide v-for="item in days" :key="item.id"
+                    <SwiperSlide v-for="item in days" :key="item.id" @click="changeActiveId(item.id)"
+                        :class="[item.id === activeId ? 'bg-white text-black' : 'bg-transparent']"
                         class="border border-white rounded-xl p-3 sm:p-4 flex text-center flex-col space-y-1 sm:space-y-2 bg-transparent cursor-pointer hover:bg-white hover:text-black transition-all duration-300">
-                        <p class="font-inter font-medium text-base sm:text-lg">{{ item.date }}</p>
-                        <p class="font-inter font-bold text-base sm:text-lg">{{ item.day }}</p>
+                        <p class="font-inter font-medium text-base sm:text-lg">{{ formatDate(item.date) }}</p>
+                        <p class="font-inter font-bold text-base sm:text-lg">{{ getRelativeDay(item.date) }}</p>
                     </SwiperSlide>
                 </Swiper>
                 <div class="custom-prev">
@@ -46,9 +47,10 @@
                 </div>
             </div>
             <!-- Movies -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pt-8 sm:pt-14 pb-32">
-                <CinemaCard v-for="item in movies" :key="item.id" :img="item.img" :title="item.title"
-                    :category="item.category" />
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pt-8 sm:pt-14 pb-32">
+                <CinemaCard v-for="item in movies" :key="item.movie_fk.id" :img="item.movie_fk.image"
+                    :title="item.movie_fk.title" :category="item.movie_fk.subtitle" :time="item.time" />
             </div>
         </div>
         <!-- Footer -->
@@ -57,6 +59,7 @@
 </template>
 
 <script>
+import api from '@/api/index'
 import Header from '@/components/Header.vue';
 import Navbar from '@/components/Navbar.vue';
 import TitleSection from '@/components/TitleSection.vue';
@@ -74,81 +77,69 @@ export default {
     components: { Header, Navbar, TitleSection, Footer, CinemaCard, Swiper, SwiperSlide, Prev, Next },
     data() {
         return {
+            days: [],
+            films: [],
+            movies: [],
+            activeId: null,
             modules: [Navigation, Pagination],
-            movies: [
-                {
-                    id: 1,
-                    img: '/imgs/sinema1.png',
-                    title: 'Пальма-2',
-                    category: 'Фильмы, Драма, Семейный, 6+'
-                },
-                {
-                    id: 2,
-                    img: '/imgs/sinema2.png',
-                    title: 'Пальма-2',
-                    category: 'Фильмы, Драма, Семейный, 6+'
-                },
-                {
-                    id: 3,
-                    img: '/imgs/sinema1.png',
-                    title: 'Пальма-2',
-                    category: 'Фильмы, Драма, Семейный, 6+'
-                },
-                {
-                    id: 4,
-                    img: '/imgs/sinema2.png',
-                    title: 'Пальма-2',
-                    category: 'Фильмы, Драма, Семейный, 6+'
-                },
-                {
-                    id: 5,
-                    img: '/imgs/sinema1.png',
-                    title: 'Пальма-2',
-                    category: 'Фильмы, Драма, Семейный, 6+'
-                },
-                {
-                    id: 6,
-                    img: '/imgs/sinema2.png',
-                    title: 'Пальма-2',
-                    category: 'Фильмы, Драма, Семейный, 6+'
-                },
-                {
-                    id: 7,
-                    img: '/imgs/sinema1.png',
-                    title: 'Пальма-2',
-                    category: 'Фильмы, Драма, Семейный, 6+'
-                },
-                {
-                    id: 8,
-                    img: '/imgs/sinema2.png',
-                    title: 'Пальма-2',
-                    category: 'Фильмы, Драма, Семейный, 6+'
-                },
-                {
-                    id: 9,
-                    img: '/imgs/sinema1.png',
-                    title: 'Пальма-2',
-                    category: 'Фильмы, Драма, Семейный, 6+'
-                },
-                {
-                    id: 10,
-                    img: '/imgs/sinema2.png',
-                    title: 'Пальма-2',
-                    category: 'Фильмы, Драма, Семейный, 6+'
-                },
-            ],
-            days: [
-                { id: 1, date: '21 mart', day: 'Şu gün' },
-                { id: 2, date: '22 mart', day: 'Ertir' },
-                { id: 3, date: '23 mart', day: 'Sişenbe' },
-                { id: 4, date: '24 mart', day: 'Ertir' },
-                { id: 5, date: '25 mart', day: 'Sişenbe' },
-                { id: 6, date: '21 mart', day: 'Şu gün' },
-                { id: 7, date: '22 mart', day: 'Ertir' },
-                { id: 8, date: '23 mart', day: 'Sişenbe' },
-                { id: 9, date: '24 mart', day: 'Ertir' },
-                { id: 10, date: '25 mart', day: 'Sişenbe' },
-            ],
+        }
+    },
+    created() {
+        this.getFilms()
+    },
+    methods: {
+        formatDate(dateString) {
+            const turkmenMonths = [
+                'ýanwar', 'fewral', 'mart', 'aprel', 'maý', 'iýun',
+                'iýul', 'awgust', 'sentýabr', 'oktýabr', 'noýabr', 'dekabr'
+            ];
+
+            const date = new Date(dateString);
+            const day = date.getDate();
+            const month = turkmenMonths[date.getMonth()];
+
+            return `${day} ${month}`;
+        },
+        getRelativeDay(dateString) {
+            const turkmenDays = [
+                'Ýekşenbe', 'Duşenbe', 'Sişenbe', 'Çarşenbe', 'Penşenbe', 'Anna', 'Şenbe'
+            ];
+
+            const inputDate = new Date(dateString);
+            const today = new Date();
+
+            const normalizeDate = (d) => new Date(d.getFullYear(), d.getMonth(), d.getDate());
+
+            const normalizedInput = normalizeDate(inputDate);
+            const normalizedToday = normalizeDate(today);
+
+            const oneDayInMs = 24 * 60 * 60 * 1000;
+            const diffInMs = normalizedInput - normalizedToday;
+
+            if (diffInMs === -oneDayInMs) {
+                return 'Düýn';
+            } else if (diffInMs === 0) {
+                return 'Şu gün';
+            } else if (diffInMs === oneDayInMs) {
+                return 'Ertir';
+            } else {
+                return turkmenDays[inputDate.getDay()];
+            }
+        },
+        changeActiveId(id) {
+            this.activeId = id
+            this.movies = this.films.find(item => item.id === this.activeId).movie_sessions
+        },
+        async getFilms() {
+            try {
+                const response = await api.get('/cinema/cinema-sessions/')
+                this.films = await response.data.results
+                this.days = await response.data.results
+                this.activeId = this.films[0].id
+                this.changeActiveId(this.activeId)
+            } catch (error) {
+                console.error('Error fetching films:', error);
+            }
         }
     }
 }

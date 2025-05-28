@@ -67,7 +67,7 @@
                 </div>
             </div>
             <!-- Map Section -->
-            <div class="w-full h-[300px] sm:h-[500px] lg:h-[700px] py-10 sm:py-20">
+            <div class="w-full h-[400px] sm:h-[600px] lg:h-[900px] py-10 sm:py-20">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3021.466246254859!2d58.40204854289826!3d37.93393806473572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1str!2s!4v1714608000083!5m2!1str!2s&markers=icon:https://maps.google.com/mapfiles/ms/icons/red-dot.png%7C37.93393806473572,58.40204854289826"
                     width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
@@ -141,7 +141,6 @@ export default {
             this.isLoading = true
             try {
                 const result = await api.post('/contact/', this.postData)
-                
                 if (result.status === 201) {
                     alert(this.$t('common.sendContact'))
                     this.resetForm()

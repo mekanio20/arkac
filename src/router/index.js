@@ -57,7 +57,12 @@ const router = createRouter({
       path: "/360",
       name: "View360",
       component: () => import("@/views/View360.vue")
-    }
+    },
+    {
+      path: "/schema/:id",
+      name: "Schema",
+      component: () => import("@/views/Schema.vue"),
+    },
   ],
   scrollBehavior() {
     document.getElementById("app").scrollIntoView();

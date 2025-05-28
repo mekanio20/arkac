@@ -14,10 +14,10 @@
 
                 <!-- Location selector -->
                 <div class="ml-2 md:flex hidden items-center space-x-4 lg:space-x-10">
-                    <div class="cursor-pointer flex items-center hover:text-arkac-blue-700 transition-colors">
+                    <router-link to="/contact/" class="cursor-pointer flex items-center hover:text-arkac-blue-700 transition-colors">
                         <locationIcon />
                         <span class="ml-2 lg:ml-3 font-inter font-medium text-sm lg:text-base">{{ $t('common.location') }}</span>
-                    </div>
+                    </router-link>
                     <div class="flex items-start space-x-2">
                         <ClockIcon />
                         <span class="mt-[1px] text-xs lg:text-sm font-inter font-medium">10:00 - 22:00</span>
@@ -35,10 +35,10 @@
                 <a href="https://yakyn.biz/360/arkac-sowda-dync-alys-merkezi-916/index.htm" class="hidden md:block font-inter font-medium text-sm lg:text-base">
                     {{ $t('common.view360') }}
                 </a>
-                <div class="hidden md:flex items-center space-x-1 cursor-pointer">
+                <router-link to="/schema/-1" class="hidden md:flex items-center space-x-1 cursor-pointer">
                     <schemaIcon />
                     <p class="font-inter font-medium text-sm lg:text-base">{{ $t('common.schema') }}</p>
-                </div>
+                </router-link>
                 <LangSelector @language-changed="handleLanguageChange" />
             </div>
         </div>

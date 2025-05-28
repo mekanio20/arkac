@@ -117,26 +117,21 @@ export default {
                 },
                 {
                     id: 3,
-                    key: 'services',
-                    url: ''
-                },
-                {
-                    id: 4,
                     key: 'cinema',
                     url: '/films'
                 },
                 {
-                    id: 5,
+                    id: 4,
                     key: 'news',
                     url: '/news'
                 },
                 {
-                    id: 6,
+                    id: 5,
                     key: 'about',
                     url: '/about'
                 },
                 {
-                    id: 7,
+                    id: 6,
                     key: 'contact',
                     url: '/contact'
                 }
