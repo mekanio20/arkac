@@ -44,13 +44,13 @@
         <div class="absolute bottom-4 md:bottom-8 right-4 sm:right-8">
           <div class="flex items-center space-x-1 py-1.5 md:py-2 px-3 md:px-4 bg-white rounded-full shadow-md">
             <ClockIcon class="mb-[3px]" />
-            <span class="text-xs md:text-sm font-avenir font-medium">10:00 - 22:00</span>
+            <span class="text-xs md:text-sm font-avenir font-medium mt-[1px]">10:00 - 22:00</span>
           </div>
         </div>
         <!-- Contact Button -->
         <div class="absolute bottom-16 md:bottom-20 right-4 sm:right-8">
           <button
-            class="h-12 w-12 md:h-14 md:w-14 bg-arkac-blue-200 hover:bg-arkac-blue-600 rounded-full shadow-lg flex items-center justify-center transition-all duration-300">
+            class="h-10 w-10 md:h-12 md:w-12 bg-arkac-blue-200 hover:bg-arkac-blue-600 rounded-full shadow-lg flex items-center justify-center transition-all duration-300">
             <PhoneIcon />
           </button>
         </div>
@@ -69,23 +69,23 @@
       <marquee ref="newsMarquee" direction="right"
         class="w-full my-8 md:my-14 py-3 md:py-4 rotate-1 arkac-news-gradient flex items-center space-x-4">
         <div class="flex items-center space-x-4 md:space-x-6">
-          <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
+          <p class="font-inter font-medium text-base md:text-[22px] text-white uppercase">
             {{ $t('nav.news') }}
           </p>
           <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
-          <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
+          <p class="font-inter font-medium text-base md:text-[22px] text-white uppercase">
             {{ $t('nav.news') }}
           </p>
           <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
-          <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
+          <p class="font-inter font-medium text-base md:text-[22px] text-white uppercase">
             {{ $t('nav.news') }}
           </p>
           <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
-          <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
+          <p class="font-inter font-medium text-base md:text-[22px] text-white uppercase">
             {{ $t('nav.news') }}
           </p>
           <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
-          <p class="font-inter font-semibold text-base md:text-[22px] text-white uppercase">
+          <p class="font-inter font-medium text-base md:text-[22px] text-white uppercase">
             {{ $t('nav.news') }}
           </p>
           <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
@@ -146,7 +146,12 @@ export default {
     return {
       isMobileMenuOpen: false,
       isScrolling: false,
-      scrollTimeout: null
+      scrollTimeout: null,
+      news: [],
+      movies: [],
+      films: [],
+      days: [],
+      activeId: null,
     }
   },
   mounted() {
@@ -185,7 +190,7 @@ export default {
         this.isScrolling = false;
         this.$refs.newsMarquee.start();
       }, 150); // Resume scrolling after 150ms of no scroll activity
-    }
+    },
   }
 }
 </script>

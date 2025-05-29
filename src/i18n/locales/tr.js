@@ -60,7 +60,9 @@ export default {
     help: "Yardım",
     phones: "Telefon numaralarımız",
     workTimes: "Çalışma saatlerimiz",
-    time: "Pzt-Per",
+    time: 'пн-чт',
+    time2: 'пт-сб',
+    time3: 'вс',
     location: "Konumumuz",
   },
 };

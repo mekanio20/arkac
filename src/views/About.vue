@@ -50,23 +50,23 @@
             <marquee direction="right" class="animate-marquee flex items-center space-x-6">
                 <div class="flex items-center space-x-6 whitespace-nowrap">
                     <p class="font-inter font-semibold text-lg md:text-[22px] text-white uppercase">
-                        {{ $t('nav.news') }}
+                        {{ $t('nav.about') }}
                     </p>
                     <img src="/svgs/thunder.svg" alt="Thunder" class="w-6 h-6 md:w-auto md:h-auto">
                     <p class="font-inter font-semibold text-lg md:text-[22px] text-white uppercase">
-                        {{ $t('nav.news') }}
+                        {{ $t('nav.about') }}
                     </p>
                     <img src="/svgs/thunder.svg" alt="Thunder" class="w-6 h-6 md:w-auto md:h-auto">
                     <p class="font-inter font-semibold text-lg md:text-[22px] text-white uppercase">
-                        {{ $t('nav.news') }}
+                        {{ $t('nav.about') }}
                     </p>
                     <img src="/svgs/thunder.svg" alt="Thunder" class="w-6 h-6 md:w-auto md:h-auto">
                     <p class="font-inter font-semibold text-lg md:text-[22px] text-white uppercase">
-                        {{ $t('nav.news') }}
+                        {{ $t('nav.about') }}
                     </p>
                     <img src="/svgs/thunder.svg" alt="Thunder" class="w-6 h-6 md:w-auto md:h-auto">
                     <p class="font-inter font-semibold text-lg md:text-[22px] text-white uppercase">
-                        {{ $t('nav.news') }}
+                        {{ $t('nav.about') }}
                     </p>
                     <img src="/svgs/thunder.svg" alt="Thunder" class="w-6 h-6 md:w-auto md:h-auto">
                 </div>

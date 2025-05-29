@@ -24,11 +24,11 @@
                         spaceBetween: 20
                     },
                     768: {
-                        slidesPerView: 3,
+                        slidesPerView: 4,
                         spaceBetween: 20
                     },
                     1024: {
-                        slidesPerView: 4,
+                        slidesPerView: 6,
                         spaceBetween: 20
                     }
                 }" :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }">
@@ -48,7 +48,7 @@
             </div>
             <!-- Movies -->
             <div
-                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pt-8 sm:pt-14 pb-32">
+                class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 pt-8 sm:pt-10 pb-20">
                 <CinemaCard v-for="item in movies" :key="item.movie_fk.id" :img="item.movie_fk.image"
                     :title="item.movie_fk.title" :category="item.movie_fk.subtitle" :time="item.time" />
             </div>

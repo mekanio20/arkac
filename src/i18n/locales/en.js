@@ -60,7 +60,9 @@ export default {
     help: "Help",
     phones: "Our phone numbers",
     workTimes: "Our working hours",
-    time: "Mon-Thu",
+    time: 'пн-чт',
+    time2: 'пт-сб',
+    time3: 'вс',
     location: "Our location",
   },
 };

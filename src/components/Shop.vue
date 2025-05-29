@@ -1,8 +1,5 @@
 <template>
     <div class="container pt-10 sm:pt-16 md:pt-20 pb-20">
-        <div class="flex justify-end mb-6">
-            <Search @search-results="handleSearchResults" :placeholder="$t('common.searchShop')" />
-        </div>
         <Swiper :modules="modules" :slides-per-view="1.5" :space-between="50" :breakpoints="{
             400: {
                 slidesPerView: 2,
@@ -18,26 +15,24 @@
             }
         }" class="mb-10 sm:mb-16 md:mb-20 select-none">
             <SwiperSlide v-for="item in categories" :key="item.id" :class="[
-                'font-inter font-medium text-xl sm:text-2xl md:text-4xl text-nowrap !w-fit cursor-pointer',
-                activeId === item.id ? 'text-black' : 'text-arkac-gray-300'
-            ]" @click="activeId = item.id">
+            'font-inter font-medium text-xl sm:text-2xl md:text-4xl text-nowrap !w-fit cursor-pointer',
+            activeId === item.id ? 'text-black' : 'text-arkac-gray-300'
+        ]" @click="activeId = item.id">
                 {{ item.name }}
             </SwiperSlide>
         </Swiper>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
-            <ShopCard v-for="item in displayedShops" :key="item.id" :id="item.id" :floor="item.floor" :image="item.image"
-                :name="item.name" :category="item.category" />
+            <ShopCard v-for="item in shops" :key="item.id" :id="item.id" :floor="item.floor" :image="item.logo"
+                :name="item.name" :category="item.category?.name" />
         </div>
-        <div v-if="!isSearching && displayedShops.length === 0" class="text-center py-10">
-            <p class="text-arkac-gray-300 font-inter text-lg">{{ $t('common.noResults') }}</p>
-        </div>
-        <div class="flex items-center justify-center py-10 sm:py-16 md:py-20" v-if="!isSearching">
-            <Button :text="$t('common.viewAll')" />
+        <div class="flex items-center justify-center py-10 sm:py-16 md:py-20">
+            <Button link="/shops" :text="$t('common.viewAll')" />
         </div>
     </div>
 </template>
 
 <script>
+import api from '@/api/index'
 import ShopCard from './ShopCard.vue';
 import Button from './base/button.vue'
 import Search from './Search.vue';
@@ -58,96 +53,38 @@ export default {
     data() {
         return {
             modules: [Navigation, Pagination],
-            activeId: 1,
-            isSearching: false,
-            searchResults: [],
-            categories: [
-                {
-                    id: 1,
-                    name: 'Ählisi',
-                },
-                {
-                    id: 2,
-                    name: 'Doňdurma & Süýjülik',
-                },
-                {
-                    id: 3,
-                    name: 'Restoran',
-                },
-                {
-                    id: 4,
-                    name: 'Kafe',
-                }
-            ],
-            shops: [
-                {
-                    id: 1,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 2,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 3,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 4,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 5,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 6,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 7,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-                {
-                    id: 8,
-                    name: 'French Bakery SeDelice',
-                    category: 'Restoran & Doňdurma',
-                    floor: '1-nji gat',
-                    image: '/imgs/shop1.png'
-                },
-            ]
+            activeId: null,
+            shopCount: 0,
+            categories: [],
+            shops: [],
         }
     },
-    computed: {
-        displayedShops() {
-            return this.isSearching ? this.searchResults : this.shops;
-        }
+    async created() {
+        this.getCategories()
     },
     methods: {
-        handleSearchResults(results) {
-            this.isSearching = results.length > 0;
-            this.searchResults = results;
+        async getShops() {
+            try {
+                const response = await api.get(`/places/?category_fk=${this.activeId}`)
+                this.shopCount = await response.data.count
+                this.shops = await response.data.results
+            } catch (error) {
+                console.error('Error fetching shops:', error)
+            }
+        },
+        async getCategories() {
+            try {
+                const categories = await api.get('/places/categories')
+                this.categories = await categories.data.results
+                this.activeId = await this.categories[0].id
+            } catch (error) {
+                console.error('Error fetching shops:', error)
+            }
+        }
+    },
+    watch: {
+        activeId() {
+            this.getShops()
         }
     }
 }

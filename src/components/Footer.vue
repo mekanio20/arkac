@@ -9,7 +9,7 @@
             <img src="/svgs/facebook.svg" alt="Facebook" class="w-4 h-4 md:w-6 md:h-6 cursor-pointer">
         </div>
         <div class="container mx-auto pt-20 md:pt-40 pb-8 px-4">
-            <div class="flex flex-col lg:flex-row lg:space-y-0 space-y-10 justify-between md:pt-0 pt-20 pb-10">
+            <div class="flex flex-col lg:flex-row lg:space-y-0 space-y-10 justify-between md:pt-6 pt-20 pb-10">
                 <div class="flex-1 space-y-10">
                     <h2
                         class="font-inter font-medium text-xl md:text-2xl lg:text-3xl uppercase leading-normal md:leading-[42px] text-left">
@@ -51,14 +51,14 @@
                             </li>
                             <div class="flex items-center space-x-2">
                                 <FooterStar class="w-3 h-3 md:w-4 md:h-4" />
-                                <router-link to="#"
+                                <router-link to="/schema/-1"
                                     class="font-inter text-sm md:text-base lg:text-[17px] hover:text-blue-500 transition-colors duration-300">
                                     {{ $t('common.schema') }}
                                 </router-link>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <FooterStar class="w-3 h-3 md:w-4 md:h-4" />
-                                <router-link to="#"
+                                <router-link to="/contact"
                                     class="font-inter text-sm md:text-base lg:text-[17px] hover:text-blue-500 transition-colors duration-300">
                                     {{ $t('common.location') }}
                                 </router-link>
@@ -85,9 +85,11 @@
                 </p>
                 <button @click="scrollToTop"
                     class="bg-blue-400 text-white p-2 md:p-3 rounded-full hover:bg-blue-500 transition-colors duration-300 focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                    <svg class="h-5 w-5 md:h-6 md:w-6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 15.8335V4.16683" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M15.8334 10L10.0001 4.16667L4.16675 10" stroke="white" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </button>
             </div>
@@ -102,7 +104,6 @@ import TiktokIcon from './icons/tiktok.vue';
 import FacebookIcon from './icons/facebook.vue';
 import XIcon from './icons/x.vue';
 import Mail from './icons/mail.vue';
-import { routerKey } from 'vue-router';
 export default {
     name: 'Footer',
     components: {
@@ -125,11 +126,6 @@ export default {
                     id: 2,
                     lang_name: 'cafes',
                     url: '/cafes'
-                },
-                {
-                    id: 3,
-                    lang_name: 'services',
-                    url: ''
                 },
                 {
                     id: 4,

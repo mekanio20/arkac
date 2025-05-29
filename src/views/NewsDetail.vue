@@ -18,7 +18,7 @@
                 </div>
                 <h1 class="font-inter font-medium text-2xl sm:text-4xl md:text-[52px] text-center uppercase px-4 sm:!leading-[70px]">{{ item.title }}</h1>
                 <div class="w-full my-8 sm:my-14 h-[300px] sm:h-[460px]">
-                    <img class="w-full h-full object-cover rounded-lg" :src="item.thumbnail">
+                    <img class="w-full h-full object-contain rounded-lg" :src="item.thumbnail">
                 </div>
                 <div class="pt-4 px-4 sm:px-0">
                     <p class="font-inter font-medium text-base sm:text-lg pb-6 sm:pb-10">

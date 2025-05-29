@@ -15,15 +15,17 @@
                     </button>
                     <router-link to="/" class="font-playfair font-bold text-2xl arkac-text-gradient">Arkaç</router-link>
                 </div>
-                <SchemaIcon class="cursor-pointer" />
+                <router-link to="/schema/-1">
+                    <SchemaIcon class="cursor-pointer" />
+                </router-link>
             </div>
 
             <!-- Header Links -->
             <div class="flex items-center justify-between p-4 border-b border-arkac-gray-500">
-                <div class="cursor-pointer flex items-center hover:text-arkac-blue-700 transition-colors">
+                <router-link to="/contact" class="cursor-pointer flex items-center hover:text-arkac-blue-700 transition-colors">
                     <locationIcon />
                     <span class="ml-2 lg:ml-3 font-inter font-medium text-sm lg:text-base">{{ $t('common.location') }}</span>
-                </div>
+                </router-link>
                 <div class="flex items-start space-x-2">
                     <ClockIcon />
                     <span class="mt-[1px] text-xs lg:text-sm font-inter font-medium">10:00 - 22:00</span>

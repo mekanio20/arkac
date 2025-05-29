@@ -12,7 +12,7 @@
         <div v-if="open" class="absolute mt-2 w-full rounded-lg bg-arkac-gray-800 z-10">
             <ul>
                 <li v-for="category in categories" :key="category.id" @click="select(category)" :class="[
-                    'text-nowrap overflow-hidden text-ellipsis cursor-pointer px-6 py-4 hover:bg-arkac-blue-300 hover:text-arkac-blue-200 font-inter font-semibold md:text-base sm:text-sm text-xs',
+                    'text-nowrap overflow-hidden text-ellipsis cursor-pointer px-6 py-4 hover:bg-arkac-blue-300 hover:text-arkac-blue-200 font-inter font-medium md:text-base sm:text-sm text-xs',
                     selected.id === category.id ? 'bg-arkac-blue-300 text-arkac-blue-200' : 'text-arkac-gray-700'
                 ]">
                     {{ category.name }}

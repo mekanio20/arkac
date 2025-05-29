@@ -61,6 +61,8 @@ export default {
     phones: 'Telefon belgilerimiz',
     workTimes: 'Iş wagtlarymyz',
     time: 'пн-чт',
+    time2: 'пт-сб',
+    time3: 'вс',
     location: 'Ýerleşýän ýerimiz',
     fillAllFields: 'Ähli girişler doldurylmaly!',
     invalidEmail: 'Nädogry email!',
