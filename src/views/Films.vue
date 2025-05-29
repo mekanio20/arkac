@@ -3,7 +3,7 @@
         <!-- Header -->
         <Header />
         <!-- Navbar -->
-        <Navbar />
+        <Navbar activePage="cinema" />
         <!-- Main -->
         <div class="container px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
             <!-- Title -->

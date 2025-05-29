@@ -3,7 +3,7 @@
         <!-- Header -->
         <Header />
         <!-- Navbar -->
-        <Navbar />
+        <Navbar activePage="contact" />
         <!-- Title Section -->
         <TitleSection :title="$t('nav.contact')" isBorder />
         <!-- Main -->

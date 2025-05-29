@@ -3,7 +3,7 @@
         <!-- Header -->
         <Header />
         <!-- Navbar -->
-        <Navbar />
+        <Navbar activePage="cafes" />
         <!-- Title Section -->
         <TitleSection :title="$t('nav.cafes')" :count="cafesCount" isBorder />
         <!-- Main -->

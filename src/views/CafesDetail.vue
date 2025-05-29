@@ -3,7 +3,7 @@
         <!-- Header -->
         <Header />
         <!-- Navbar -->
-        <Navbar />
+        <Navbar activePage="cafes" />
         <!-- Main -->
         <div v-if="place" class="flex flex-col-reverse lg:flex-row justify-between pt-8 sm:pt-14 sm:pb-10">
             <div class="flex-1 flex flex-col space-y-4 px-4 sm:px-8 lg:pl-16 lg:pr-8 xl:pr-32">
@@ -23,6 +23,10 @@
                             class="bg-arkac-blue-200 rounded-full px-6 sm:px-10 py-2 sm:py-3 font-inter font-medium text-sm text-white">
                             360<sup>0</sup>görmek
                         </router-link>
+                        <a v-if="place.website" :href="place.website" target="_blank"
+                            class="border border-arkac-gray-200 rounded-full px-6 sm:px-10 py-2 sm:py-3 font-inter font-medium text-sm text-arkac-gray-1000">
+                            Website
+                        </a>
                     </div>
                 </div>
                 <!-- Contact -->
@@ -164,6 +168,7 @@ export default {
         async fetchPlaceDetails() {
             try {
                 const response = await api.get(`/places/${this.$route.params.id}/?type_fk=3`);
+                console.log(response);
                 this.place = response.data;
             } catch (error) {
                 console.error('Error fetching place details:', error);

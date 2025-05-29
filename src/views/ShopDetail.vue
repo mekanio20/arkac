@@ -3,7 +3,7 @@
         <!-- Header -->
         <Header />
         <!-- Navbar -->
-        <Navbar />
+        <Navbar activePage="shops" />
         <!-- Main -->
         <div v-if="place" class="flex flex-col-reverse lg:flex-row justify-between pt-8 sm:pt-14 sm:pb-10">
             <div class="flex-1 flex flex-col space-y-4 px-4 sm:px-8 lg:pl-16 lg:pr-8 xl:pr-32">

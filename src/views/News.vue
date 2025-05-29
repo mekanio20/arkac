@@ -3,7 +3,7 @@
         <!-- Header -->
         <Header />
         <!-- Navbar -->
-        <Navbar />
+        <Navbar activePage="news" />
         <!-- Title Section -->
         <TitleSection :title="$t('common.news')" isBorder />
         <!-- Main -->

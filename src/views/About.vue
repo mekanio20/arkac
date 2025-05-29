@@ -29,7 +29,7 @@
             </div>
 
             <!-- Navbar -->
-            <Navbar />
+            <Navbar activePage="about" />
 
             <!-- Hero Section -->
             <div class="flex flex-col items-center mt-[280px] md:mt-[200px] lg:mt-[150px] text-center px-4">
