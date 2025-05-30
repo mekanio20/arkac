@@ -12,7 +12,7 @@
                     class="py-10 flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 justify-center">
                     <div
                         class="border border-arkac-gray-200 rounded-full px-6 sm:px-10 py-2 sm:py-3 font-inter text-xs sm:text-sm uppercase">
-                        {{ item.type }}
+                        {{ item.type === 'event' ? $t('titles.event') : $t('common.news') }}
                     </div>
                     <div
                         class="border border-arkac-gray-200 rounded-full px-6 sm:px-10 py-2 sm:py-3 font-inter text-xs sm:text-sm uppercase">
@@ -102,9 +102,33 @@ export default {
                 'iýul', 'awgust', 'sentýabr', 'oktýabr', 'noýabr', 'dekabr'
             ];
 
+            const russianMonths = [
+                'январь', 'февраль', 'март', 'апрель', 'май', 'июнь',
+                'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'
+            ];
+
+            const englishMonths = [
+                'january', 'february', 'march', 'april', 'may', 'june',
+                'july', 'jugust', 'september', 'october', 'november', 'december'
+            ];
+
+            const getMonthsArray = () => {
+                const currentLang = this.$i18n.locale;
+                switch (currentLang) {
+                    case 'RU':
+                        return russianMonths;
+                    case 'EN':
+                        return englishMonths;
+                    default:
+                        return turkmenMonths;
+                }
+            };
+
+            const months = getMonthsArray();
+
             const date = new Date(dateString);
             const day = date.getDate();
-            const month = turkmenMonths[date.getMonth()];
+            const month = months[date.getMonth()];
 
             return `${day} ${month}`;
         },

@@ -30,6 +30,7 @@ export default {
     terms: "Правила торгового центра",
     cafes: "Похожие кафе",
     shops: "Похожие магазины",
+    event: "Событие"
   },
   subtitles: {
     heroSubtitle: "торгово-развлекательный центр",

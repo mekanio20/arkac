@@ -30,6 +30,7 @@ export default {
     terms: "Shopping center rules",
     cafes: "Similar cafes",
     shops: "Similar shops",
+    event: "Events",
   },
   subtitles: {
     heroSubtitle: "shopping and entertainment center",

@@ -34,7 +34,7 @@
                 }" :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }">
                     <SwiperSlide v-for="item in days" :key="item.id" @click="changeActiveId(item.id)"
                         :class="[item.id === activeId ? 'bg-white text-black' : 'bg-transparent']"
-                        class="border border-white rounded-xl p-3 sm:p-4 flex text-center flex-col space-y-1 sm:space-y-2 bg-transparent cursor-pointer hover:bg-white hover:text-black transition-all duration-300">
+                        class="border border-white rounded-xl px-10 py-6 sm:px-6 flex text-start flex-col space-y-1 sm:space-y-2 bg-transparent cursor-pointer hover:bg-white hover:text-black transition-all duration-300">
                         <p class="font-inter font-medium text-base sm:text-lg">{{ formatDate(item.date) }}</p>
                         <p class="font-inter font-bold text-base sm:text-lg">{{ getRelativeDay(item.date) }}</p>
                     </SwiperSlide>
@@ -94,9 +94,33 @@ export default {
                 'iýul', 'awgust', 'sentýabr', 'oktýabr', 'noýabr', 'dekabr'
             ];
 
+            const russianMonths = [
+                'январь', 'февраль', 'март', 'апрель', 'май', 'июнь',
+                'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'
+            ];
+
+            const englishMonths = [
+                'january', 'february', 'march', 'april', 'may', 'june',
+                'july', 'jugust', 'september', 'october', 'november', 'december'
+            ];
+
+            const getMonthsArray = () => {
+                const currentLang = this.$i18n.locale;
+                switch (currentLang) {
+                    case 'RU':
+                        return russianMonths;
+                    case 'EN':
+                        return englishMonths;
+                    default:
+                        return turkmenMonths;
+                }
+            };
+
+            const months = getMonthsArray();
+
             const date = new Date(dateString);
             const day = date.getDate();
-            const month = turkmenMonths[date.getMonth()];
+            const month = months[date.getMonth()];
 
             return `${day} ${month}`;
         },
@@ -105,25 +129,67 @@ export default {
                 'Ýekşenbe', 'Duşenbe', 'Sişenbe', 'Çarşenbe', 'Penşenbe', 'Anna', 'Şenbe'
             ];
 
+            const russianDays = [
+                'Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'
+            ];
+
+            const englishDays = [
+                'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
+            ];
+
+            const getDaysArray = () => {
+                const currentLang = this.$i18n.locale;
+                switch (currentLang) {
+                    case 'RU':
+                        return russianDays;
+                    case 'EN':
+                        return englishDays;
+                    default:
+                        return turkmenDays;
+                }
+            };
+
+            const days = getDaysArray();
+
             const inputDate = new Date(dateString);
-            const today = new Date();
+            const currentDate = new Date();
 
             const normalizeDate = (d) => new Date(d.getFullYear(), d.getMonth(), d.getDate());
 
             const normalizedInput = normalizeDate(inputDate);
-            const normalizedToday = normalizeDate(today);
+            const normalizedToday = normalizeDate(currentDate);
 
             const oneDayInMs = 24 * 60 * 60 * 1000;
             const diffInMs = normalizedInput - normalizedToday;
 
+            const currentLang = this.$i18n.locale;
+            let yesterday, todayText, tomorrow;
+
+            switch (currentLang) {
+                case 'RU':
+                    yesterday = 'Вчера';
+                    todayText = 'Сегодня';
+                    tomorrow = 'Завтра';
+                    break;
+                case 'EN':
+                    yesterday = 'Yesterday';
+                    todayText = 'Today';
+                    tomorrow = 'Tomorrow';
+                    break;
+                default:
+                    yesterday = 'Düýn';
+                    todayText = 'Şu gün';
+                    tomorrow = 'Ertir';
+            }
+
             if (diffInMs === -oneDayInMs) {
-                return 'Düýn';
+                return yesterday;
             } else if (diffInMs === 0) {
-                return 'Şu gün';
+                return todayText;
             } else if (diffInMs === oneDayInMs) {
-                return 'Ertir';
+                return tomorrow;
             } else {
-                return turkmenDays[inputDate.getDay()];
+                return days[inputDate.getDay()];
             }
         },
         changeActiveId(id) {

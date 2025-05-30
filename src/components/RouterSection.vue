@@ -13,11 +13,11 @@
                 </clipPath>
             </defs>
         </svg>
-        <router-link :to="route" class="font-inter font-light text-xs sm:text-sm uppercase hover:text-arkac-blue-200 transition-colors duration-300">
+        <router-link :to="route" class="font-inter font-light text-[10px] sm:text-sm uppercase hover:text-arkac-blue-200 transition-colors duration-300">
             {{ prevRoute }}
         </router-link>
-        <span class="font-inter font-light text-xs sm:text-sm uppercase">/</span>
-        <p class="font-inter font-light text-xs sm:text-sm uppercase">
+        <span class="font-inter font-light text-[10px] sm:text-sm uppercase">/</span>
+        <p class="font-inter font-light text-[10px] sm:text-sm uppercase">
             {{ nextRoute }}
         </p>
     </div>

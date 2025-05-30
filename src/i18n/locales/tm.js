@@ -34,6 +34,7 @@ export default {
     terms: "Söwda merkeziniň düzgünleri",
     cafes: "Meňzeş kafelar",
     shops: "Meňzeş dükanlar",
+    event: "Çäreler"
   },
   subtitles: {
     heroSubtitle: "söwda dynç alyş merkezi",
