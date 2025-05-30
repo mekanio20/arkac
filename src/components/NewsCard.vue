@@ -13,7 +13,7 @@
             {{ title }}
         </h3>
         <div class="flex items-center font-inter font-medium text-sm sm:text-base">
-            <span class="text-arkac-blue-200 uppercase">{{ category }}</span>
+            <span class="text-arkac-blue-200 uppercase">{{ category === 'event' ? $t('titles.event') : $t('common.news') }}</span>
             <span class="mx-2"> - </span>
             <span class="text-arkac-gray-100">{{ date }}</span>
         </div>

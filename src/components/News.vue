@@ -14,7 +14,7 @@
                 <div class="absolute bottom-4 bg-white w-[90%] mx-auto opacity-75 px-4 sm:px-6 md:px-10 py-4 sm:py-5 md:py-[25px] rounded-lg">
                     <h3 class="font-inter font-semibold text-base sm:text-lg mb-2 sm:mb-3">{{ firstNew.title }}</h3>
                     <div class="flex items-center font-inter font-medium text-sm sm:text-base">
-                        <span class="text-arkac-blue-200 uppercase">{{ firstNew.type }}</span>
+                        <span class="text-arkac-blue-200 uppercase">{{ firstNew.type === 'event' ? $t('titles.event') : $t('common.news') }}</span>
                         <span class="mx-2"> - </span>
                         <span class="text-arkac-gray-100">{{ firstNew.date }}</span>
                     </div>
