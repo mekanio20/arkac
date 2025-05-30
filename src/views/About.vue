@@ -79,7 +79,7 @@
                 <div class="flex-1">
                     <h4
                         class="w-fit py-2 px-6 bg-arkac-blue-800 -rotate-1 text-white font-inter font-semibold text-lg inline-block mb-4">
-                        Arkac
+                        Arkaç
                     </h4>
                     <span class="font-inter font-normal text-lg md:text-xl lg:text-[22px] block">
                         {{ $t('subtitles.subtitle3') }}

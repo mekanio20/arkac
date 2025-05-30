@@ -5,10 +5,10 @@ import ru from './locales/ru'
 import tr from './locales/tr'
 
 const i18n = createI18n({
-  locale: localStorage.getItem('selectedLanguage') || 'TM',
-  fallbackLocale: 'TM',
+  locale: localStorage.getItem('selectedLanguage') || 'TK',
+  fallbackLocale: 'TK',
   messages: {
-    TM: tm,
+    TK: tm,
     EN: en,
     RU: ru,
     TR: tr

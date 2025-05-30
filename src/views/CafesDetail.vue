@@ -33,11 +33,12 @@
                 <div class="flex flex-col space-y-6 sm:space-y-10 border-b border-arkac-gray-500 pb-6 sm:pb-10">
                     <div class="flex flex-col sm:flex-row sm:space-x-10 pt-4 sm:pt-6">
                         <div class="flex flex-col justify-between">
-                            <h3 class="font-inter font-medium text-base sm:text-lg text-arkac-gray-1100">Telefon
-                                belgisi:</h3>
-                            <h3 class="font-inter font-medium text-base sm:text-lg text-arkac-gray-1100">Iş wagty:</h3>
-                            <h3 class="font-inter font-medium text-base sm:text-lg text-arkac-gray-1100">Sosial media:
-                            </h3>
+                            <h3 class="font-inter font-medium text-base sm:text-lg text-arkac-gray-1100">{{
+                                $t('contact.phone') }}</h3>
+                            <h3 class="font-inter font-medium text-base sm:text-lg text-arkac-gray-1100">{{
+                                $t('contact.work') }}</h3>
+                            <h3 class="font-inter font-medium text-base sm:text-lg text-arkac-gray-1100">{{
+                                $t('contact.social') }}</h3>
                         </div>
                         <div class="flex flex-col space-y-4 sm:space-y-6 mt-4 sm:mt-0">
                             <div class="flex items-center space-x-2">
@@ -73,9 +74,9 @@
             </div>
             <div class="max-w-2xl lg:w-full container mb-6 lg:mb-0">
                 <Swiper :modules="modules" :slides-per-view="1" :space-between="0" :loop="true" :autoplay="{
-            delay: 3000,
-            disableOnInteraction: false,
-        }" class="w-full h-full rounded-lg">
+                    delay: 3000,
+                    disableOnInteraction: false,
+                }" class="w-full h-full rounded-lg">
                     <SwiperSlide v-for="(item, index) in place.images" :key="index">
                         <img :src="item.image" class="w-full h-full object-contain rounded-lg">
                     </SwiperSlide>
@@ -91,19 +92,19 @@
                 </h2>
                 <div class="w-full py-4 sm:py-6 rounded-xl mt-6 sm:mt-10 relative overflow-hidden">
                     <Swiper :modules="modules" :slides-per-view="1" :space-between="20" :breakpoints="{
-            '640': {
-                slidesPerView: 2,
-                spaceBetween: 20
-            },
-            '768': {
-                slidesPerView: 3,
-                spaceBetween: 30
-            },
-            '1024': {
-                slidesPerView: 4,
-                spaceBetween: 40
-            }
-        }" :loop="true">
+                        '640': {
+                            slidesPerView: 2,
+                            spaceBetween: 20
+                        },
+                        '768': {
+                            slidesPerView: 3,
+                            spaceBetween: 30
+                        },
+                        '1024': {
+                            slidesPerView: 4,
+                            spaceBetween: 40
+                        }
+                    }" :loop="true">
                         <SwiperSlide v-for="item in places" :key="item.id">
                             <ShopCard :img="item.img" :title="item.title" :id="item.id" :floor="item.floor"
                                 :image="item.logo" :name="item.name" :category="item.category.name" />
@@ -178,6 +179,12 @@ export default {
     created() {
         this.fetchPlaceDetails();
         this.getCafes()
+    },
+    watch: {
+        '$i18n.locale'() {
+            this.fetchPlaceDetails();
+            this.getCafes()
+        }
     }
 }
 </script>

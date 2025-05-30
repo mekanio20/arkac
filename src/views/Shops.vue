@@ -33,8 +33,8 @@
             </div>
             <!-- Shop Cards -->
             <div v-else class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 pt-14 pb-20">
-                <ShopCard v-for="item in shops" :key="item.id" :id="item.id" :floor="item.floor"
-                    :image="item.logo" :name="item.name" :category="item.category?.name" />
+                <ShopCard v-for="item in shops" :key="item.id" :id="item.id" :floor="item.floor" :image="item.logo"
+                    :name="item.name" :category="item.category?.name" />
             </div>
         </div>
         <!-- Footer -->
@@ -105,7 +105,7 @@ export default {
                 if (category) queryParams += `&category_fk=${category}`
                 if (floor) queryParams += `&floor=${floor}`
                 if (searchQuery) queryParams += `&search=${searchQuery}`
-                
+
                 const response = await api.get(`/places/?${queryParams}`)
                 this.shopCount = await response.data.count
                 this.shops = await response.data.results
@@ -129,5 +129,11 @@ export default {
             await this.getShops(this.selectedCategory, this.selectedFloor, this.searchQuery)
         },
     },
+    watch: {
+        '$i18n.locale'() {
+            this.getCategories()
+            this.getShops(this.selectedCategory, this.selectedFloor, this.searchQuery)
+        }
+    }
 }
 </script>

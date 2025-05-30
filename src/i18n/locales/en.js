@@ -19,8 +19,8 @@ export default {
     floor: "Floor",
     categorySelection: "Choose category",
     shopSearch: "Search shop",
-    viewAll: 'View All',
-    noResults: 'No results found',
+    viewAll: "View All",
+    noResults: "No results found",
   },
   titles: {
     cinema: "Today in cinema",
@@ -60,9 +60,9 @@ export default {
     help: "Help",
     phones: "Our phone numbers",
     workTimes: "Our working hours",
-    time: 'пн-чт',
-    time2: 'пт-сб',
-    time3: 'вс',
+    time: "Mon - Thu",
+    time2: "Fri - Sat",
+    time3: "Sun",
     location: "Our location",
   },
 };

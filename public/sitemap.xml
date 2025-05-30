@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Anasayfa -->
+  <url>
+    <loc>https://arkach.com.tm/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://arkach.com.tm/shops</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://arkach.com.tm/cafes</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://arkach.com.tm/films</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://arkach.com.tm/news</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://arkach.com.tm/schema/-1</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://arkach.com.tm/schema/1</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://arkach.com.tm/schema/2</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://arkach.com.tm/schema/3</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+</urlset>

@@ -14,7 +14,8 @@
                 <Search :placeholder="$t('common.search')" @search-results="handleSearchResults" />
                 <div class="w-full flex flex-col sm:flex-row items-start gap-4">
                     <!-- Selection -->
-                    <Selection :placeholder="$t('common.selection')" :categories="categories" @select="handleCategorySelect" />
+                    <Selection :placeholder="$t('common.selection')" :categories="categories"
+                        @select="handleCategorySelect" />
                     <!-- Selection floor -->
                     <Selection :placeholder="$t('common.floor')" :categories="floors" @select="handleFloorSelect" />
                 </div>
@@ -34,8 +35,8 @@
             <!-- Shop Cards -->
             <div v-else
                 class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pt-8 sm:pt-10 lg:pt-14 pb-12 sm:pb-16 lg:pb-20">
-                <CafesCard v-for="item in shops" :key="item.id" :id="item.id" :floor="item.floor" :image="item.logo" :name="item.name"
-                    :category="item.category?.name" />
+                <CafesCard v-for="item in shops" :key="item.id" :id="item.id" :floor="item.floor" :image="item.logo"
+                    :name="item.name" :category="item.category?.name" />
             </div>
         </div>
         <!-- Footer -->
@@ -106,7 +107,7 @@ export default {
                 if (category) queryParams += `&category_fk=${category}`
                 if (floor) queryParams += `&floor=${floor}`
                 if (searchQuery) queryParams += `&search=${searchQuery}`
-                
+
                 const response = await api.get(`/places/?${queryParams}`)
                 this.cafesCount = await response.data.count
                 this.shops = await response.data.results
@@ -129,6 +130,12 @@ export default {
             this.searchQuery = query
             await this.getCafes(this.selectedCategory, this.selectedFloor, this.searchQuery)
         },
+    },
+    watch: {
+        '$i18n.locale'() {
+            this.getCategories()
+            this.getCafes(this.selectedCategory, this.selectedFloor, this.searchQuery)
+        }
     }
 }
 </script>

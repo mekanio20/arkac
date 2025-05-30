@@ -49,6 +49,11 @@ export default {
             console.log(response);
             this.news = await response.data.results
         }
+    },
+    watch: {
+        '$i18n.locale'() {
+            this.getNews()
+        }
     }
 }
 </script>

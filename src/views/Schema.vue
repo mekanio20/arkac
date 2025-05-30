@@ -10,8 +10,8 @@
         </div>
         <!-- Main -->
         <div class="container py-10">
-            <div class="flex items-center justify-center space-x-6">
-                <div v-for="item in floors" :key="item" @click="activeFloor = item" :class="[activeFloor === item ? 'text-white bg-arkac-blue-200 font-bold' : 'text-black bg-arkac-gray-800 font-medium']" class="px-10 py-3 rounded-full font-inter lg:text-lg sm:text-base text-sm cursor-pointer">
+            <div class="w-full flex items-center justify-center space-x-4">
+                <div v-for="item in floors" :key="item" @click="activeFloor = item" :class="[activeFloor === item ? 'text-white bg-arkac-blue-200 font-bold' : 'text-black bg-arkac-gray-800 font-medium']" class="sm:px-10 px-8 py-3 rounded-full font-inter lg:text-lg sm:text-base text-sm cursor-pointer">
                     {{ item }}
                 </div>
             </div>

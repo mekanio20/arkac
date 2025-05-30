@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://arkach.com.tm/sitemap.xml

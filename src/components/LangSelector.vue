@@ -32,12 +32,12 @@ export default {
   data() {
     return {
       isOpen: false,
-      currentLang: 'TM',
+      currentLang: 'TK',
       languages: [
-        { code: 'TM', name: 'Türkmen' },
+        { code: 'TK', name: 'Türkmen' },
         { code: 'EN', name: 'English' },
         { code: 'RU', name: 'Русский' },
-        { code: 'TR', name: 'Türkçe' }
+        // { code: 'TR', name: 'Türkçe' }
       ]
     }
   },

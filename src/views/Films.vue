@@ -141,6 +141,11 @@ export default {
                 console.error('Error fetching films:', error);
             }
         }
+    },
+    watch: {
+        '$i18n.locale'() {
+            this.getFilms()
+        }
     }
 }
 </script>

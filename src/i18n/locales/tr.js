@@ -19,8 +19,8 @@ export default {
     floor: "Kat",
     categorySelection: "Kategori seç",
     shopSearch: "Mağaza ara",
-    viewAll: 'Tümünü Gör',
-    noResults: 'Sonuç bulunamadı',
+    viewAll: "Tümünü Gör",
+    noResults: "Sonuç bulunamadı",
   },
   titles: {
     cinema: "Bugün sinemada",
@@ -60,9 +60,9 @@ export default {
     help: "Yardım",
     phones: "Telefon numaralarımız",
     workTimes: "Çalışma saatlerimiz",
-    time: 'пн-чт',
-    time2: 'пт-сб',
-    time3: 'вс',
+    time: "Pazartesi - Perşembe",
+    time2: "Cuma - Cumartesi",
+    time3: "Pazar",
     location: "Konumumuz",
   },
 };
