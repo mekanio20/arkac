@@ -2,34 +2,34 @@
   <div class="w-full h-full overflow-hidden">
     <div class="h-screen relative bg-gradient-arkac">
       <!-- Header -->
-      <header class="py-3 md:py-5 border-b-[1px] border-white">
+      <header class="py-3 md:py-5 border-b-[1px] border-white text-white">
         <div class="container flex items-center justify-between">
           <!-- Left section with hamburger and location -->
           <div class="flex items-center">
             <!-- Mobile menu button -->
             <button class="md:hidden p-2 focus:outline-none" @click="toggleMobileMenu">
               <div class="flex flex-col space-y-1">
-                <div class="w-[25px] h-[2px] bg-black rounded-full"></div>
-                <div class="w-[25px] h-[2px] bg-black rounded-full"></div>
-                <div class="w-[15px] h-[2px] bg-gray-700 rounded-full"></div>
+                <div class="w-[25px] h-[2px] bg-white rounded-full"></div>
+                <div class="w-[25px] h-[2px] bg-white rounded-full"></div>
+                <div class="w-[15px] h-[2px] bg-white rounded-full"></div>
               </div>
             </button>
 
-            <!-- Location selector -->
-            <div class="hidden md:flex items-center ml-2 cursor-pointer hover:text-arkac-blue-700 transition-colors">
-              <locationIcon />
+            <!-- Location -->
+            <div class="hidden z-10 md:flex items-center ml-2 cursor-pointer hover:text-arkac-gray-200 transition-colors">
+              <locationIcon color="white" />
               <span class="ml-3 font-inter font-medium text-base">{{ $t('common.location') }}</span>
             </div>
           </div>
 
           <!-- Center logo -->
           <router-link to="/" class="absolute left-1/2 transform -translate-x-1/2">
-            <h1 class="text-2xl md:text-3xl font-playfair font-bold text-black">Arkaç</h1>
+            <h1 class="text-2xl md:text-3xl font-playfair font-bold text-white">Arkaç</h1>
           </router-link>
 
           <!-- Right section with language and search -->
           <div class="flex items-center space-x-2 cursor-pointer">
-            <LangSelector @language-changed="handleLanguageChange" />
+            <LangSelector color="white" @language-changed="handleLanguageChange" />
           </div>
         </div>
         <!-- Sidebar -->
@@ -37,7 +37,7 @@
       </header>
       <div class="container">
         <!-- Navbar -->
-        <Navbar />
+        <Navbar color="white" />
         <!-- Hero Section -->
         <HeroSection />
         <!-- Time Section -->

@@ -3,7 +3,7 @@
         :class="{ 'border-b-[1px] border-arkac-gray-500': !isHomepage }">
         <div class="flex justify-center space-x-2 lg:space-x-3">
             <router-link v-for="(category, index) in categories" :key="index" :to="category.url"
-                :class="{ 'text-arkac-blue-700': activePage === category.lang_name }"
+                :class="{ 'text-arkac-blue-700': activePage === category.lang_name, 'text-white': color === 'white' }"
                 class="navbar-item font-avenir font-medium lg:text-base text-sm">
                 {{ $t(`nav.${category.lang_name}`) }}
             </router-link>
@@ -25,6 +25,10 @@
 export default {
     name: 'Navbar',
     props: {
+        color: {
+            type: String,
+            default: '#000'
+        },
         activePage: {
             type: String
         }

@@ -33,7 +33,7 @@
 }
 
 .bg-gradient-arkac {
-  background-image: url("/imgs/bg.png");
+  background-image: url("/imgs/bg.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -43,11 +43,9 @@
 .bg-gradient-arkac::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2); /* Opaklık 0.4 = %40 karanlık */
+  /* z-index: 1; */
 }
 .circle-icon {
   transition: all 0.3s ease;

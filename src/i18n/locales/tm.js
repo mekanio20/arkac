@@ -14,7 +14,6 @@ export default {
     schema: "SDAM-yň shemasy",
     news: "Täzelikler",
     events: "Çäreler",
-    schema: "Shema",
     search: "Gözlemek",
     selection: "Görnüşini saýlamak",
     floor: "Gat",
