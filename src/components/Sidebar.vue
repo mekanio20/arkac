@@ -4,7 +4,7 @@
         <div class="absolute inset-0 bg-black bg-opacity-50" @click="close"></div>
 
         <!-- Sidebar -->
-        <div class="absolute right-0 top-0 h-full w-full bg-white shadow-lg transform transition-transform duration-300"
+        <div class="absolute right-0 top-0 h-full w-full bg-white text-black shadow-lg transform transition-transform duration-300"
             :class="{ 'translate-x-0': isOpen, 'translate-x-full': !isOpen }">
 
             <!-- Header -->

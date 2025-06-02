@@ -7,7 +7,7 @@
           <!-- Left section with hamburger and location -->
           <div class="flex items-center">
             <!-- Mobile menu button -->
-            <button class="md:hidden p-2 focus:outline-none" @click="toggleMobileMenu">
+            <button class="z-10 md:hidden p-2 focus:outline-none" @click="toggleMobileMenu">
               <div class="flex flex-col space-y-1">
                 <div class="w-[25px] h-[2px] bg-white rounded-full"></div>
                 <div class="w-[25px] h-[2px] bg-white rounded-full"></div>
