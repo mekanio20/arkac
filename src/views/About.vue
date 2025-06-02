@@ -1,6 +1,6 @@
 <template>
     <div class="w-full overflow-hidden">
-        <div class="min-h-screen relative bg-gradient-arkac overflow-hidden">
+        <div class="min-h-screen relative bg-gradient-about-arkac overflow-hidden">
             <!-- Header -->
             <Header />
 
