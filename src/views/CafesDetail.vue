@@ -12,7 +12,7 @@
                     <RouterSection route="/cafes" :prevRoute="$t('nav.cafes')" :nextRoute="place.name" />
                     <p
                         class="w-fit px-4 sm:px-5 py-2 bg-arkac-blue-300 text-arkac-blue-200 font-inter font-medium text-sm rounded-lg">
-                        {{ place.floor }}-nji gat
+                        {{ $t(`common.floor${place.floor}`) }}
                     </p>
                     <h1
                         class="font-inter font-medium text-3xl sm:text-4xl lg:text-[60px] uppercase leading-tight sm:leading-[64px]">
@@ -21,7 +21,7 @@
                     <div class="flex flex-wrap items-center gap-4 sm:gap-6">
                         <router-link to="#"
                             class="bg-arkac-blue-200 rounded-full px-6 sm:px-10 py-2 sm:py-3 font-inter font-medium text-sm text-white">
-                            360<sup>0</sup>görmek
+                            {{ $t('common.view360') }}
                         </router-link>
                         <a v-if="place.website" :href="place.website" target="_blank"
                             class="border border-arkac-gray-200 rounded-full px-6 sm:px-10 py-2 sm:py-3 font-inter font-medium text-sm text-arkac-gray-1000">

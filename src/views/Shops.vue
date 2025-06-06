@@ -74,16 +74,20 @@ export default {
             searchQuery: '',
             floors: [
                 {
+                    id: 0,
+                    name: this.$t('common.floor0'),
+                },
+                {
                     id: 1,
-                    name: '1-ji gat',
+                    name: this.$t('common.floor1'),
                 },
                 {
                     id: 2,
-                    name: '2-ji gat',
+                    name: this.$t('common.floor2'),
                 },
                 {
                     id: 3,
-                    name: '3-ji gat',
+                    name: this.$t('common.floor3'),
                 },
             ],
         }
@@ -131,8 +135,7 @@ export default {
     },
     watch: {
         '$i18n.locale'() {
-            this.getCategories()
-            this.getShops(this.selectedCategory, this.selectedFloor, this.searchQuery)
+            window.location.reload()
         }
     }
 }
