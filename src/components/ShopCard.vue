@@ -12,7 +12,7 @@
             </span>
         </div>
         <div class="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24">
-            <img :src="image" alt="Logo" class="w-full h-full rounded-full object-contain" />
+            <img :src="image" alt="Logo" class="w-full h-full rounded-full" />
         </div>
 
         <div class="sm:text-start text-center">
