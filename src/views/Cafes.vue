@@ -32,11 +32,31 @@
             <div v-else-if="cafesCount === 0" class="text-center py-20">
                 <p class="text-arkac-gray-300 font-inter text-lg">{{ $t('common.noResults') }}</p>
             </div>
-            <!-- Shop Cards -->
+            <!-- Cafes Cards -->
             <div v-else
                 class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pt-8 sm:pt-10 lg:pt-14 pb-12 sm:pb-16 lg:pb-20">
                 <CafesCard v-for="item in shops" :key="item.id" :id="item.id" :floor="item.floor" :image="item.logo"
                     :name="item.name" :category="item.category?.name" />
+            </div>
+            <!-- Pagination -->
+            <div v-if="cafesCount > 0" class="flex justify-center items-center gap-4 pb-20">
+                <button @click="handlePageChange(currentPage - 1)" :disabled="currentPage === 1"
+                    class="px-4 py-2 rounded-lg border border-arkac-blue-200 disabled:opacity-50 disabled:cursor-not-allowed">
+                    <svg class="w-6 h-6 text-arkac-blue-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 12h14M5 12l4-4m-4 4 4 4" />
+                    </svg>
+                </button>
+                <span class="text-arkac-gray-300">{{ currentPage }} / {{ totalPages }}</span>
+                <button @click="handlePageChange(currentPage + 1)" :disabled="currentPage === totalPages"
+                    class="px-4 py-2 rounded-lg border border-arkac-blue-200 disabled:opacity-50 disabled:cursor-not-allowed">
+                    <svg class="w-6 h-6 text-arkac-blue-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 12H5m14 0-4 4m4-4-4-4" />
+                    </svg>
+                </button>
             </div>
         </div>
         <!-- Footer -->
@@ -67,6 +87,7 @@ export default {
     data() {
         return {
             cafesCount: 0,
+            currentPage: 1,
             categories: [],
             shops: [],
             isLoading: false,
@@ -107,7 +128,7 @@ export default {
             this.isLoading = true
             this.error = null
             try {
-                let queryParams = 'type_fk=3'
+                let queryParams = `type_fk=3&page=${this.currentPage}`
                 if (category) queryParams += `&category_fk=${category}`
                 if (floor) queryParams += `&floor=${floor}`
                 if (searchQuery) queryParams += `&search=${searchQuery}`
@@ -134,6 +155,16 @@ export default {
             this.searchQuery = query
             await this.getCafes(this.selectedCategory, this.selectedFloor, this.searchQuery)
         },
+        async handlePageChange(page) {
+            if (page < 1 || page > this.totalPages) return
+            this.currentPage = page
+            await this.getCafes(this.selectedCategory, this.selectedFloor, this.searchQuery)
+        },
+    },
+    computed: {
+        totalPages() {
+            return Math.ceil(this.cafesCount / 8)
+        }
     },
     watch: {
         '$i18n.locale'() {

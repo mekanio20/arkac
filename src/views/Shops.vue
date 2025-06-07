@@ -36,6 +36,26 @@
                 <ShopCard v-for="item in shops" :key="item.id" :id="item.id" :floor="item.floor" :image="item.logo"
                     :name="item.name" :category="item.category?.name" />
             </div>
+            <!-- Pagination -->
+            <div v-if="shopCount > 0" class="flex justify-center items-center gap-4 pb-20">
+                <button @click="handlePageChange(currentPage - 1)" :disabled="currentPage === 1"
+                    class="px-4 py-2 rounded-lg border border-arkac-blue-200 disabled:opacity-50 disabled:cursor-not-allowed">
+                    <svg class="w-6 h-6 text-arkac-blue-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 12h14M5 12l4-4m-4 4 4 4" />
+                    </svg>
+                </button>
+                <span class="text-arkac-gray-300">{{ currentPage }} / {{ totalPages }}</span>
+                <button @click="handlePageChange(currentPage + 1)" :disabled="currentPage === totalPages"
+                    class="px-4 py-2 rounded-lg border border-arkac-blue-200 disabled:opacity-50 disabled:cursor-not-allowed">
+                    <svg class="w-6 h-6 text-arkac-blue-200" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 12H5m14 0-4 4m4-4-4-4" />
+                    </svg>
+                </button>
+            </div>
         </div>
         <!-- Footer -->
         <Footer />
@@ -51,6 +71,8 @@ import Search from '@/components/Search.vue';
 import Selection from '@/components/Selection.vue';
 import ShopCard from '@/components/ShopCard.vue';
 import Footer from '@/components/Footer.vue';
+import arrowRight from '@/components/icons/arrow-right.vue'
+import arrowLeft from '@/components/icons/arrow-left.vue'
 export default {
     name: 'Shops',
     components: {
@@ -60,7 +82,9 @@ export default {
         Search,
         Selection,
         ShopCard,
-        Footer
+        Footer,
+        arrowRight,
+        arrowLeft
     },
     data() {
         return {
@@ -72,6 +96,7 @@ export default {
             selectedCategory: null,
             selectedFloor: null,
             searchQuery: '',
+            currentPage: 1,
             floors: [
                 {
                     id: 0,
@@ -105,12 +130,13 @@ export default {
             this.isLoading = true
             this.error = null
             try {
-                let queryParams = 'type_fk=1'
+                let queryParams = `type_fk=1&page=${this.currentPage}`
                 if (category) queryParams += `&category_fk=${category}`
                 if (floor) queryParams += `&floor=${floor}`
                 if (searchQuery) queryParams += `&search=${searchQuery}`
 
                 const response = await api.get(`/places/?${queryParams}`)
+
                 this.shopCount = await response.data.count
                 this.shops = await response.data.results
             } catch (error) {
@@ -132,6 +158,16 @@ export default {
             this.searchQuery = query
             await this.getShops(this.selectedCategory, this.selectedFloor, this.searchQuery)
         },
+        async handlePageChange(page) {
+            if (page < 1 || page > this.totalPages) return
+            this.currentPage = page
+            await this.getShops(this.selectedCategory, this.selectedFloor, this.searchQuery)
+        },
+    },
+    computed: {
+        totalPages() {
+            return Math.ceil(this.shopCount / 8)
+        }
     },
     watch: {
         '$i18n.locale'() {
