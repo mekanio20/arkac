@@ -11,7 +11,7 @@
                 </span>
             </span>
         </div>
-        <div class="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24">
+        <div class="flex items-center justify-center w-24 h-24 sm:w-32 sm:h-32">
             <img :src="image" alt="Logo" class="w-full h-full rounded-full" />
         </div>
 
