@@ -5,7 +5,7 @@
                 {{ $t('titles.terms') }}
             </h2>
             <div class="flex justify-center md:justify-start">
-                <Button text="Görmek" bgColor="bg-arkac-blue-200" borderColor="border-arkac-blue-200" textColor="text-white" iconColor="white" />
+                <Button :link="'/terms'" text="Görmek" bgColor="bg-arkac-blue-200" borderColor="border-arkac-blue-200" textColor="text-white" iconColor="white" />
             </div>
         </div>
         <div class="w-full md:w-[234px] md:block hidden self-end">

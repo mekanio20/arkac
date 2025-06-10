@@ -22,11 +22,19 @@
                         <input type="text" v-model="postData.message" :placeholder="$t('nav.contact')"
                             class="w-full pb-3 placeholder:text-arkac-gray-100 border-b border-black focus:outline-none" />
                     </div>
-                    <Button @click="submintContact" :text="$t('contact.send')" bgColor="bg-arkac-blue-200" borderColor="border-arkac-blue-200" textColor="text-white" iconColor="white" />
+                    <button @click="submintContact"
+                        class="text-white border-arkac-blue-200 bg-arkac-blue-200 w-fit inline-flex items-center justify-center px-12 py-4 border-[1px] rounded-full transition-all duration-300 hover:scale-105 hover:shadow-md">
+                        <span class="font-inter text-xs md:text-sm lg:text-base mr-2 md:mr-3 lg:mr-4 uppercase">
+                            {{ $t('contact.send') }}
+                        </span>
+                        <ArrowRight color="white"
+                            class="w-3 h-3 md:w-4 md:h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </button>
                 </div>
 
                 <!-- Contact Section -->
-                <div class="w-full lg:w-2/5 mt-10 lg:mt-0 lg:pl-10 xl:pl-40 space-y-8 sm:space-y-16 text-sm text-gray-800">
+                <div
+                    class="w-full lg:w-2/5 mt-10 lg:mt-0 lg:pl-10 xl:pl-40 space-y-8 sm:space-y-16 text-sm text-gray-800">
                     <div class="flex flex-col space-y-2 sm:space-y-3">
                         <p class="font-inter font-medium text-base">{{ $t('contact.email') }}</p>
                         <a href="mailto:arkach@gmail.com"
@@ -47,23 +55,31 @@
             <!-- Info Section -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-4 sm:gap-6 pt-6 sm:pt-10">
                 <div class="p-6 sm:p-10 border border-arkac-gray-500 flex flex-col items-center space-y-3 sm:space-y-4">
-                    <h4 class="font-inter font-semibold text-base sm:text-lg pb-3 sm:pb-5">{{ $t('contact.phones') }}</h4>
+                    <h4 class="font-inter font-semibold text-base sm:text-lg pb-3 sm:pb-5">{{ $t('contact.phones') }}
+                    </h4>
                     <p class="font-inter font-normal text-base sm:text-lg">+993 61 61 61 61</p>
                     <p class="font-inter font-normal text-base sm:text-lg">+993 61 61 61 61</p>
                     <p class="font-inter font-normal text-base sm:text-lg">+993 61 61 61 61</p>
                 </div>
                 <div class="p-6 sm:p-10 border border-arkac-gray-500 flex flex-col items-center space-y-3 sm:space-y-4">
-                    <h4 class="font-inter font-semibold text-base sm:text-lg pb-3 sm:pb-5">{{ $t('contact.workTimes') }}</h4>
-                    <p class="font-inter font-normal text-base sm:text-lg"><span class="text-arkac-gray-900 mr-3 sm:mr-5">{{ $t('contact.time') }}:</span>10:00
+                    <h4 class="font-inter font-semibold text-base sm:text-lg pb-3 sm:pb-5">{{ $t('contact.workTimes') }}
+                    </h4>
+                    <p class="font-inter font-normal text-base sm:text-lg"><span
+                            class="text-arkac-gray-900 mr-3 sm:mr-5">{{ $t('contact.time') }}:</span>10:00
                         - 22:00</p>
-                    <p class="font-inter font-normal text-base sm:text-lg"><span class="text-arkac-gray-900 mr-3 sm:mr-5">{{ $t('contact.time2') }}:</span>10:00
+                    <p class="font-inter font-normal text-base sm:text-lg"><span
+                            class="text-arkac-gray-900 mr-3 sm:mr-5">{{ $t('contact.time2') }}:</span>10:00
                         - 22:00</p>
-                    <p class="font-inter font-normal text-base sm:text-lg"><span class="text-arkac-gray-900 mr-3 sm:mr-5">{{ $t('contact.time3') }}:</span>10:00
+                    <p class="font-inter font-normal text-base sm:text-lg"><span
+                            class="text-arkac-gray-900 mr-3 sm:mr-5">{{ $t('contact.time3') }}:</span>10:00
                         - 22:00</p>
                 </div>
-                <div class="p-6 sm:p-10 border border-arkac-gray-500 flex flex-col space-y-3 sm:space-y-4 h-full items-center md:col-span-2 lg:col-span-1">
-                    <h4 class="font-inter font-semibold text-base sm:text-lg pb-3 sm:pb-5">{{ $t('contact.location') }}</h4>
-                    <p class="font-inter font-normal text-base sm:text-lg text-center">Magtymguly şaýoly, Aşgabat, Тürkmenistan</p>
+                <div
+                    class="p-6 sm:p-10 border border-arkac-gray-500 flex flex-col space-y-3 sm:space-y-4 h-full items-center md:col-span-2 lg:col-span-1">
+                    <h4 class="font-inter font-semibold text-base sm:text-lg pb-3 sm:pb-5">{{ $t('contact.location') }}
+                    </h4>
+                    <p class="font-inter font-normal text-base sm:text-lg text-center">Magtymguly şaýoly, Aşgabat,
+                        Тürkmenistan</p>
                 </div>
             </div>
             <!-- Map Section -->
@@ -87,12 +103,14 @@ import Navbar from '@/components/Navbar.vue';
 import TitleSection from '@/components/TitleSection.vue';
 import Footer from '@/components/Footer.vue';
 import Button from '@/components/base/button.vue';
+import ArrowRight from '@/components/icons/arrow-right.vue';
 export default {
     name: 'Cafes',
     components: {
         Header,
         Navbar,
         TitleSection,
+        ArrowRight,
         Footer,
         Button
     },
@@ -137,7 +155,7 @@ export default {
         },
         async submintContact() {
             if (!this.validateForm()) return
-            
+
             this.isLoading = true
             try {
                 const result = await api.post('/contact/', this.postData)
