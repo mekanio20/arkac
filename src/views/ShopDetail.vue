@@ -19,7 +19,7 @@
                         {{ place.name }}
                     </h1>
                     <div class="flex flex-wrap items-center gap-4 sm:gap-6">
-                        <router-link to="#"
+                        <router-link :to="place.virtual_tour"
                             class="bg-arkac-blue-200 rounded-full px-6 sm:px-10 py-2 sm:py-3 font-inter font-medium text-sm text-white">
                             {{ $t('common.view360') }}
                         </router-link>

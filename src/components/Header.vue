@@ -32,9 +32,9 @@
 
             <!-- Right section with language and search -->
             <div class="flex items-center md:space-x-4 lg:space-x-10">
-                <a href="https://yakyn.biz/360/arkac-sowda-dync-alys-merkezi-916/index.htm" class="hidden md:block font-inter font-medium text-sm lg:text-base">
+                <router-link to="/360" class="hidden md:block font-inter font-medium text-sm lg:text-base">
                     {{ $t('common.view360') }}
-                </a>
+                </router-link>
                 <router-link to="/schema/-1" class="hidden md:flex items-center space-x-1 cursor-pointer">
                     <schemaIcon />
                     <p class="font-inter font-medium text-sm lg:text-base">{{ $t('common.schema') }}</p>
