@@ -1,6 +1,6 @@
 <template>
     <div class="iframe-container">
-        <iframe src='https://yakyn.biz/360/917/index.htm' width='100%' height='100%' allowFullScreen />
+        <iframe src="https://yakyn.biz/360/917/index.htm" width="100%" height="100%" allowfullscreen="true" />
     </div>
 </template>
 
