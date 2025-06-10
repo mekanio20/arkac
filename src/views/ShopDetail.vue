@@ -5,8 +5,8 @@
         <!-- Navbar -->
         <Navbar activePage="shops" />
         <!-- Main -->
-        <div v-if="place" class="flex flex-col-reverse lg:flex-row justify-between pt-8 sm:pt-14 sm:pb-10">
-            <div class="flex-1 flex flex-col space-y-4 px-4 sm:px-8 lg:pl-16 lg:pr-8 xl:pr-32">
+        <div v-if="place" class="container flex flex-col-reverse lg:flex-row justify-between pt-8 sm:pt-14 sm:pb-10">
+            <div class="flex-1 flex flex-col space-y-4">
                 <!-- Shop Detail -->
                 <div class="flex flex-col space-y-6 sm:space-y-10 border-b border-arkac-gray-500 pb-6 sm:pb-10">
                     <RouterSection route="/shops" :prevRoute="$t('nav.shops')" :nextRoute="place.name" />
@@ -38,7 +38,10 @@
                         </div>
                         <div class="flex flex-col space-y-4 sm:space-y-6 mt-4 sm:mt-0">
                             <div class="flex items-center space-x-2">
-                                <p v-for="item in place.phone_numbers" :key="item.id"
+                                <p v-if="place.phone_numbers?.lenght === 0" class="font-inter font-medium text-base sm:text-lg">
+                                    -
+                                </p>
+                                <p v-else v-for="item in place.phone_numbers" :key="item.id"
                                     class="font-inter font-medium text-base sm:text-lg">{{ item.phone_number }}</p>
                             </div>
                             <div class="flex flex-col">
@@ -48,11 +51,11 @@
                                 </p>
                             </div>
                             <div class="flex items-center space-x-3 sm:space-x-4">
-                                <a v-if="place.social_instagram" :href="place.social_instagram" target="_blank"
+                                <a :href="place.social_instagram" target="_blank"
                                     class="rounded-full p-2 bg-arkac-blue-900">
                                     <Instagram width="14px" height="14px" :fill="'white'" />
                                 </a>
-                                <a v-if="place.social_tiktok" :href="place.social_tiktok" target="_blank"
+                                <a :href="place.social_tiktok" target="_blank"
                                     class="rounded-full p-2 bg-arkac-blue-900">
                                     <Tiktok width="14px" height="14px" :fill="'white'" />
                                 </a>

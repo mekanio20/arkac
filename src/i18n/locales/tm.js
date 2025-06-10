@@ -9,7 +9,7 @@ export default {
     contact: "Habarlaşmak",
   },
   common: {
-    location: "Nirede yerleşyär?",
+    location: "Nirede ýerleşyär?",
     view360: "360° görmek",
     schema: "SDAM-yň shemasy",
     news: "Täzelikler",

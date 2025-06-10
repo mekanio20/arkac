@@ -5,8 +5,8 @@
         <!-- Navbar -->
         <Navbar activePage="cafes" />
         <!-- Main -->
-        <div v-if="place" class="flex flex-col-reverse lg:flex-row justify-between pt-8 sm:pt-14 sm:pb-10">
-            <div class="flex-1 flex flex-col space-y-4 px-4 sm:px-8 lg:pl-16 lg:pr-8 xl:pr-32">
+        <div v-if="place" class="container flex flex-col-reverse lg:flex-row justify-between pt-8 sm:pt-14 sm:pb-10">
+            <div class="flex-1 flex flex-col space-y-4">
                 <!-- Shop Detail -->
                 <div class="flex flex-col space-y-6 sm:space-y-10 border-b border-arkac-gray-500 pb-6 sm:pb-10">
                     <RouterSection route="/cafes" :prevRoute="$t('nav.cafes')" :nextRoute="place.name" />
@@ -42,7 +42,10 @@
                         </div>
                         <div class="flex flex-col space-y-4 sm:space-y-6 mt-4 sm:mt-0">
                             <div class="flex items-center space-x-2">
-                                <p v-for="item in place.phone_numbers" :key="item.id"
+                                <p v-if="place.phone_numbers?.lenght === 0" class="font-inter font-medium text-base sm:text-lg">
+                                    -
+                                </p>
+                                <p v-else v-for="item in place.phone_numbers" :key="item.id"
                                     class="font-inter font-medium text-base sm:text-lg">{{ item.phone_number }}</p>
                             </div>
                             <div class="flex flex-col">
