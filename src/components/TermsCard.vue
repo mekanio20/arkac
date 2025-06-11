@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="w-full md:w-[234px] md:block hidden self-end">
-            <img src="/imgs/terms-card.png" class="w-full h-full object-cover">
+            <img src="/imgs/terms-card.webp" class="w-full h-full object-cover">
         </div>
         <!-- SVGS -->
         <div class="absolute bottom-0 left-0 rounded-xl">

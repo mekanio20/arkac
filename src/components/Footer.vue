@@ -1,5 +1,5 @@
 <template>
-    <footer class="relative bg-[url('/imgs/footer.png')] bg-cover bg-no-repeat">
+    <footer class="relative bg-[url('/imgs/footer.webp')] bg-cover bg-no-repeat">
         <div class="absolute -top-[90px] left-0 right-0 h-[200px] bg-white clip-path-wave"></div>
         <div
             class="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-4 md:space-x-6 lg:space-x-10 justify-center">

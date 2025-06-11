@@ -1,25 +1,5 @@
 <template>
     <section class="relative px-2 sm:px-4 flex flex-col items-center justify-center min-h-screen">
-        <!-- Left side -->
-        <!-- <CircleIcon class="absolute left-[25px] sm:top-[80px] top-[90px]" imageUrl="/imgs/icon-1.png"
-            alt="Clothing item" />
-
-        <CircleIcon class="absolute sm:left-[50px] left-[-40px] sm:top-[260px] top-[270px]" imageUrl="/imgs/icon-2.png"
-            alt="Clothing item" />
-
-        <CircleIcon class="absolute sm:left-[100px] left-[40px] md:top-[490px] top-[600px]" imageUrl="/imgs/icon-3.png"
-            alt="Clothing item" /> -->
-
-        <!-- Right side -->
-        <!-- <CircleIcon class="absolute right-[25px] sm:top-[80px] top-[90px]" imageUrl="/imgs/icon-4.png"
-            alt="Clothing item" />
-
-        <CircleIcon class="absolute sm:right-[50px] right-[-40px] sm:top-[260px] top-[270px]"
-            imageUrl="/imgs/icon-5.png" alt="Clothing item" />
-
-        <CircleIcon class="absolute sm:right-[100px] right-[40px] md:top-[490px] top-[600px]"
-            imageUrl="/imgs/icon-6.png" alt="Clothing item" /> -->
-
         <!-- Main logo and headline -->
         <div class="relative z-10 text-center md:mb-52 sm:mb-40 mb-20">
             <div class="flex items-center justify-center space-x-2 sm:space-x-4">
@@ -27,7 +7,7 @@
                 </h2>
                 <div
                     class="mt-2 sm:mt-4 h-[30px] w-[90px] sm:h-[50px] sm:w-[150px] overflow-hidden rounded-full sm:block hidden">
-                    <img src="/imgs/arkac.png" alt="Mall view" class="h-full w-full object-cover" />
+                    <img src="/imgs/arkac.webp" alt="Mall view" class="h-full w-full object-cover" />
                 </div>
             </div>
 

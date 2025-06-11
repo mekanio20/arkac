@@ -38,7 +38,7 @@
                         class="font-playfair font-bold text-6xl sm:text-8xl md:text-[120px] lg:text-[140px] arkac-text-gradient pb-2 leading-tight">
                         Arkaç</h1>
                     <img class="w-32 h-auto sm:w-40 md:w-[150px] lg:w-[190px] md:h-[60px] inline-block"
-                        src="/imgs/arkac.png" alt="Arkaç">
+                        src="/imgs/arkac.webp" alt="Arkaç">
                 </div>
                 <p class="font-playfair font-medium text-3xl sm:text-5xl md:text-7xl lg:text-[94px] !leading-none mt-4">
                     {{ $t('subtitles.heroSubtitle') }}</p>
