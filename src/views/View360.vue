@@ -1,8 +1,23 @@
 <template>
     <div class="iframe-container">
-        <iframe src="https://yakyn.biz/360/arkac-sowda-dync-alys-merkezi-916/index.htm" width="100%" height="100%" allowfullscreen="true"></iframe>
+        <iframe :src="link" width="100%" height="100%" allowfullscreen="true"></iframe>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            link: "https://yakyn.biz/360/arkac-sowda-dync-alys-merkezi-916/index.htm"
+        }
+    },
+    created() {
+        if (this.$route.query.url) {
+            this.link = this.$route.query.url
+        }
+    }
+}
+</script>
 
 <style scoped>
 .iframe-container {
