@@ -5,27 +5,14 @@
             <!-- Center Social Icons -->
             <div class="container absolute -top-[150px] sm:left-1/2 right-0 transform sm:-translate-x-1/2 flex justify-center space-x-4 md:space-x-6 z-50">
                 <!-- Instagram Icon -->
-                <a href="#" class="text-black transition-all duration-100 hover:-translate-y-2 hover:scale-110 animate-pulse-text"
+                <a href="https://www.instagram.com/arkach.sdm" target="_blank" class="text-black transition-all duration-100 hover:-translate-y-2 hover:scale-110 animate-pulse-text"
                     style="animation-delay: 1s" aria-label="Instagram">
                     <InstagramIcon class="w-4 h-4 md:w-6 md:h-6" />
                 </a>
-
                 <!-- TikTok Icon -->
-                <a href="#" class="text-black transition-all duration-100 hover:-translate-y-2 hover:scale-110 animate-pulse-text"
+                <a href="https://www.tiktok.com/@arkach.sdam" target="_blank" class="text-black transition-all duration-100 hover:-translate-y-2 hover:scale-110 animate-pulse-text"
                     style="animation-delay: 1s" aria-label="TikTok">
                     <TikTokIcon class="w-4 h-4 md:w-6 md:h-6" />
-                </a>
-
-                <!-- X Icon -->
-                <a href="#" class="text-black transition-all duration-100 hover:-translate-y-2 hover:scale-110 animate-pulse-text"
-                    style="animation-delay: 1s" aria-label="Twitter/X">
-                    <XIcon class="w-4 h-4 md:w-6 md:h-6" />
-                </a>
-
-                <!-- Facebook Icon -->
-                <a href="#" class="text-black transition-all duration-100 hover:-translate-y-2 hover:scale-110 animate-pulse-text"
-                    style="animation-delay: 1s" aria-label="Facebook">
-                    <FacebookIcon class="w-4 h-4 md:w-6 md:h-6" />
                 </a>
             </div>
             <!-- Left image -->
@@ -83,14 +70,10 @@
 <script>
 import InstagramIcon from './icons/instagram.vue';
 import TikTokIcon from './icons/tiktok.vue';
-import XIcon from './icons/x.vue';
-import FacebookIcon from './icons/facebook.vue';
 export default {
     components: {
         InstagramIcon,
         TikTokIcon,
-        XIcon,
-        FacebookIcon
     },
     props: {
         isAbout: {

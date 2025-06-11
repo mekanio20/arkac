@@ -3,10 +3,12 @@
         <div class="absolute -top-[90px] left-0 right-0 h-[200px] bg-white clip-path-wave"></div>
         <div
             class="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-4 md:space-x-6 lg:space-x-10 justify-center">
-            <img src="/svgs/instagram.svg" alt="Instagram" class="w-4 h-4 md:w-6 md:h-6 cursor-pointer">
-            <img src="/svgs/tiktok.svg" alt="Tiktok" class="w-4 h-4 md:w-6 md:h-6 cursor-pointer">
-            <img src="/svgs/x.svg" alt="X" class="w-4 h-4 md:w-6 md:h-6 cursor-pointer">
-            <img src="/svgs/facebook.svg" alt="Facebook" class="w-4 h-4 md:w-6 md:h-6 cursor-pointer">
+            <a href="https://www.instagram.com/arkach.sdm" target="_blank">
+                <img src="/svgs/instagram.svg" alt="Instagram" class="w-4 h-4 md:w-6 md:h-6 cursor-pointer">
+            </a>
+            <a href="https://www.tiktok.com/@arkach.sdam" target="_blank">
+                <img src="/svgs/tiktok.svg" alt="Tiktok" class="w-4 h-4 md:w-6 md:h-6 cursor-pointer">
+            </a>
         </div>
         <div class="container mx-auto pt-20 md:pt-40 pb-8 px-4">
             <div class="flex flex-col lg:flex-row lg:space-y-0 space-y-10 justify-between md:pt-6 pt-20 pb-10">
@@ -101,8 +103,6 @@
 import FooterStar from './icons/footer_star.vue';
 import InstagramIcon from './icons/instagram.vue';
 import TiktokIcon from './icons/tiktok.vue';
-import FacebookIcon from './icons/facebook.vue';
-import XIcon from './icons/x.vue';
 import Mail from './icons/mail.vue';
 export default {
     name: 'Footer',
@@ -111,8 +111,6 @@ export default {
         Mail,
         InstagramIcon,
         TiktokIcon,
-        FacebookIcon,
-        XIcon,
     },
     data() {
         return {

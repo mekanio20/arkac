@@ -20,7 +20,7 @@
                     </router-link>
                     <div class="flex items-start space-x-2">
                         <ClockIcon />
-                        <span class="mt-[1px] text-xs lg:text-sm font-inter font-medium">10:00 - 22:00</span>
+                        <span class="mt-[1px] text-xs lg:text-sm font-inter font-medium">09:00 - 23:00</span>
                     </div>
                 </div>
             </div>

@@ -54,7 +54,7 @@ export default {
     phone: "Telefon numarası:",
     work: "Çalışma saatleri:",
     social: "Sosyal medya:",
-    clock: "Paz-Per: 10:00-22:00, Cum-Cts: 10:00-23:00",
+    clock: "Paz-Per: 09:00-23:00, Cum-Cts: 09:00-23:00",
     send: "Gönder",
     yourEmail: "E-posta adresiniz",
     yourPhone: "Telefon numaranız",

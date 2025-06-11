@@ -59,7 +59,7 @@ export default {
     phone: "Telefon belgisi:",
     work: "Iş wagty:",
     social: "Sosial media:",
-    clock: "Вс-Чт: 10:00-22:00,Пт-Сб: 10:00-23:00",
+    clock: "Вс-Чт: 09:00-23:00,Пт-Сб: 09:00-23:00",
     send: "Ugratmak",
     yourEmail: "Elektron salgyňyz",
     yourPhone: "Telefon belgiňiz",

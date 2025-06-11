@@ -28,7 +28,7 @@
                 </router-link>
                 <div class="flex items-start space-x-2">
                     <ClockIcon />
-                    <span class="mt-[1px] text-xs lg:text-sm font-inter font-medium">10:00 - 22:00</span>
+                    <span class="mt-[1px] text-xs lg:text-sm font-inter font-medium">09:00 - 23:00</span>
                 </div>
             </div>
 
@@ -48,17 +48,11 @@
                 <div class="space-y-6">
                     <!-- Social Media -->
                     <div class="flex items-center space-x-4 pt-2">
-                        <a href="#">
+                        <a href="https://www.instagram.com/arkach.sdm" target="_blank">
                             <Instagram width="14px" fill="#27B7F2" />
                         </a>
-                        <a href="#">
+                        <a href="https://www.tiktok.com/@arkach.sdam" target="_blank">
                             <Tiktok width="14px" fill="#27B7F2" />
-                        </a>
-                        <a href="#">
-                            <X width="14px" fill="#27B7F2" />
-                        </a>
-                        <a href="#">
-                            <Facebook width="14px" fill="#27B7F2" />
                         </a>
                     </div>
                     <!-- Location -->
@@ -80,8 +74,6 @@
 import locationIcon from './icons/location.vue';
 import Instagram from './icons/instagram.vue';
 import Tiktok from './icons/tiktok.vue';
-import X from './icons/x.vue';
-import Facebook from './icons/facebook.vue';
 import SchemaIcon from './icons/schema.vue';
 import ClockIcon from './icons/clock.vue';
 import CloseIcon from './icons/close.vue';
@@ -92,8 +84,6 @@ export default {
         locationIcon,
         Instagram,
         Tiktok,
-        X,
-        Facebook,
         SchemaIcon,
         ClockIcon,
         CloseIcon

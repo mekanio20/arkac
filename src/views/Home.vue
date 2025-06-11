@@ -44,15 +44,15 @@
         <div class="absolute bottom-4 md:bottom-8 right-4 sm:right-8">
           <div class="flex items-center space-x-1 py-1.5 md:py-2 px-3 md:px-4 bg-white rounded-full shadow-md">
             <ClockIcon class="mb-[3px]" />
-            <span class="text-xs md:text-sm font-avenir font-medium mt-[1px]">10:00 - 22:00</span>
+            <span class="text-xs md:text-sm font-avenir font-medium mt-[1px]">09:00 - 23:00</span>
           </div>
         </div>
         <!-- Contact Button -->
         <div class="absolute bottom-16 md:bottom-20 right-4 sm:right-8">
-          <button
+          <a href="tel:+99312276860"
             class="h-10 w-10 md:h-12 md:w-12 bg-arkac-blue-200 hover:bg-arkac-blue-600 rounded-full shadow-lg flex items-center justify-center transition-all duration-300">
             <PhoneIcon />
-          </button>
+          </a>
         </div>
         <!-- Bottom icon -->
         <div

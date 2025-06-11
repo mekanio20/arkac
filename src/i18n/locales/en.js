@@ -55,7 +55,7 @@ export default {
     phone: "Phone number:",
     work: "Working hours:",
     social: "Social media:",
-    clock: "Sun-Thu: 10:00-22:00, Fri-Sat: 10:00-23:00",
+    clock: "Sun-Thu: 09:00-23:00, Fri-Sat: 09:00-23:00",
     send: "Send",
     yourEmail: "Your email address",
     yourPhone: "Your phone number",

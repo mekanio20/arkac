@@ -123,10 +123,8 @@
 
 <script>
 import api from '@/api/index';
-import X from '@/components/icons/x.vue';
 import Footer from '@/components/Footer.vue';
 import Instagram from '@/components/icons/instagram.vue';
-import Facebook from '@/components/icons/facebook.vue';
 import Tiktok from '@/components/icons/tiktok.vue';
 import Header from '@/components/Header.vue';
 import Navbar from '@/components/Navbar.vue';
@@ -148,8 +146,6 @@ export default {
         Footer,
         Instagram,
         Tiktok,
-        X,
-        Facebook,
         ShopCard,
         RouterSection
     },

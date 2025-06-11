@@ -54,25 +54,20 @@
             </div>
             <!-- Info Section -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-4 sm:gap-6 pt-6 sm:pt-10">
-                <div class="p-6 sm:p-10 border border-arkac-gray-500 flex flex-col items-center space-y-3 sm:space-y-4">
+                <div class="p-6 sm:p-10 border border-arkac-gray-500 flex flex-col items-center space-y-3 sm:space-y-4 h-full">
                     <h4 class="font-inter font-semibold text-base sm:text-lg pb-3 sm:pb-5">{{ $t('contact.phones') }}
                     </h4>
-                    <p class="font-inter font-normal text-base sm:text-lg">+993 61 61 61 61</p>
-                    <p class="font-inter font-normal text-base sm:text-lg">+993 61 61 61 61</p>
-                    <p class="font-inter font-normal text-base sm:text-lg">+993 61 61 61 61</p>
+                    <a href="tel:+99312276860" class="font-inter font-normal text-base sm:text-lg">+993 12 276860</a>
                 </div>
                 <div class="p-6 sm:p-10 border border-arkac-gray-500 flex flex-col items-center space-y-3 sm:space-y-4">
                     <h4 class="font-inter font-semibold text-base sm:text-lg pb-3 sm:pb-5">{{ $t('contact.workTimes') }}
                     </h4>
                     <p class="font-inter font-normal text-base sm:text-lg"><span
-                            class="text-arkac-gray-900 mr-3 sm:mr-5">{{ $t('contact.time') }}:</span>10:00
-                        - 22:00</p>
+                            class="text-arkac-gray-900 mr-3 sm:mr-5">{{ $t('contact.time') }}:</span>09:00 - 23:00</p>
                     <p class="font-inter font-normal text-base sm:text-lg"><span
-                            class="text-arkac-gray-900 mr-3 sm:mr-5">{{ $t('contact.time2') }}:</span>10:00
-                        - 22:00</p>
+                            class="text-arkac-gray-900 mr-3 sm:mr-5">{{ $t('contact.time2') }}:</span>09:00 - 23:00</p>
                     <p class="font-inter font-normal text-base sm:text-lg"><span
-                            class="text-arkac-gray-900 mr-3 sm:mr-5">{{ $t('contact.time3') }}:</span>10:00
-                        - 22:00</p>
+                            class="text-arkac-gray-900 mr-3 sm:mr-5">{{ $t('contact.time3') }}:</span>09:00 - 23:00</p>
                 </div>
                 <div
                     class="p-6 sm:p-10 border border-arkac-gray-500 flex flex-col space-y-3 sm:space-y-4 h-full items-center md:col-span-2 lg:col-span-1">
