@@ -3,7 +3,7 @@
         <button @click="toggle"
             class="w-full font-inter font-medium md:text-base text-sm bg-arkac-gray-800 text-arkac-gray-700 rounded-lg px-8 py-4 text-left flex justify-between items-center !cursor-pointer">
             {{ selected.name || placeholder }}
-            <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            <svg :class="{ 'rotate-180 transform duration-300': open }" class="w-4 h-4 ml-2 transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke="#444444">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
@@ -33,7 +33,7 @@ export default {
     props: {
         placeholder: {
             type: String,
-            default: 'Kategoriýa saýlamak'
+            default: 'Select Category'
         },
         categories: {
             type: Array,

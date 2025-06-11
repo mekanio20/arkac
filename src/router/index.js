@@ -59,6 +59,11 @@ const router = createRouter({
       component: () => import("@/views/View360.vue")
     },
     {
+      path: "/terms",
+      name: "Terms",
+      component: () => import("@/views/Terms.vue"),
+    },
+    {
       path: "/schema/:id",
       name: "Schema",
       component: () => import("@/views/Schema.vue"),
