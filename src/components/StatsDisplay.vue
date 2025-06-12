@@ -28,7 +28,7 @@
 
             <!-- Center text -->
             <div class="flex items-baseline space-x-10 text-start animate-float-right z-40">
-                <h1 class="font-inter text-9xl font-bold md:text-[170px] tracking-wider">350</h1>
+                <h1 class="font-inter text-9xl font-bold md:text-[170px] tracking-wider">61</h1>
                 <p class="font-inter font-semibold text-4xl md:text-5xl tracking-wider uppercase">{{ $t('subtitles.shop') }}</p>
             </div>
 
@@ -38,7 +38,7 @@
             </div>
         </div>
 
-        <!-- Second Row with 120 KAFE & RESTORAN -->
+        <!-- Second Row with 10 KAFE & RESTORAN -->
         <div class="relative flex items-center justify-center mt-20">
             <!-- Left image -->
             <div class="absolute left-0 bottom-10 transform translate-y-1/2 animate-float-right"
@@ -48,7 +48,7 @@
 
             <!-- Center text -->
             <div class="flex items-baseline space-x-10 text-start animate-float-left z-40">
-                <h1 class="font-inter text-9xl font-bold md:text-[170px] tracking-wider">120</h1>
+                <h1 class="font-inter text-9xl font-bold md:text-[170px] tracking-wider">10</h1>
                 <p class="font-inter text-4xl font-semibold md:text-5xl tracking-wider uppercase">{{ $t('subtitles.cafe') }}</p>
             </div>
 
