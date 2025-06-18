@@ -8,7 +8,7 @@
 export default {
     data() {
         return {
-            link: "https://yakyn.biz/360/arkac-sowda-dync-alys-merkezi-916/index.htm"
+            link: "https://yakyn.biz/360/916/index.htm"
         }
     },
     created() {
