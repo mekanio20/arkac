@@ -43,9 +43,8 @@ export default {
         return {
             modules: [Navigation, Pagination, Autoplay, EffectCoverflow],
             slides: [
+                '/imgs/about-2.webp',
                 '/imgs/about-1.webp',
-                '/imgs/news-1.webp',
-                '/imgs/news-2.webp',
             ]
         }
     }

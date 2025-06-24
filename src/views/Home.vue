@@ -66,7 +66,7 @@
       <h2 class="container arkac-title pt-8 md:pt-14">
         {{ $t('nav.news') }}
       </h2>
-      <marquee ref="newsMarquee" direction="right"
+      <!-- <marquee ref="newsMarquee" direction="right"
         class="w-full my-8 md:my-14 py-3 md:py-4 rotate-1 arkac-news-gradient flex items-center space-x-4">
         <div class="flex items-center space-x-4 md:space-x-6">
           <p class="font-inter font-medium text-base md:text-[22px] text-white uppercase">
@@ -90,7 +90,7 @@
           </p>
           <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
         </div>
-      </marquee>
+      </marquee> -->
       <!-- News Section -->
       <News />
       <!-- Stats Display  -->
@@ -154,12 +154,12 @@ export default {
       activeId: null,
     }
   },
-  mounted() {
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  beforeUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  },
+  // mounted() {
+  //   window.addEventListener('scroll', this.handleScroll);
+  // },
+  // beforeUnmount() {
+  //   window.removeEventListener('scroll', this.handleScroll);
+  // },
   methods: {
     scrollToContent() {
       const element = document.getElementById('content-section');

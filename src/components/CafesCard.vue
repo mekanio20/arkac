@@ -2,7 +2,7 @@
     <router-link :to="`/cafes/detail/${id}`" class="h-[300px] sm:h-[320px] md:h-[350px] px-4 md:px-6 py-4 sm:py-5 md:py-6 border border-arkac-gray-400 rounded-2xl flex flex-col sm:items-start items-center justify-between space-y-0 sm:space-y-8">
         <div class="flex space-x-2">
             <span class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-arkac-blue-300 text-arkac-blue-200 rounded-md">
-                {{ floor }}-gat
+                {{ floor }}-{{ $t('common.floor').toLowerCase() }}
             </span>
             <span class="px-2 sm:px-3 py-1 text-xs sm:text-sm border border-blue-400 text-arkac-blue-200 rounded-md flex items-center">
                 360°

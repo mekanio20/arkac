@@ -13,36 +13,33 @@
         <div class="py-10 sm:py-16 md:py-20">
             <!-- First Row -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 pb-4 sm:pb-8">
-                <div class="w-full h-[200px] sm:h-[300px] rounded-lg aspect-square md:aspect-auto relative overflow-hidden group transition-all duration-300">
-                    <img class="w-full h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105 cursor-pointer" src="/imgs/b4.png">
-                </div>
-                <div class="w-full h-[200px] sm:h-[300px] rounded-lg aspect-square md:aspect-auto relative overflow-hidden group transition-all duration-300">
-                    <img class="w-full h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105 cursor-pointer" src="/imgs/b2.png">
-                </div>
-                <div class="w-full h-[200px] sm:h-[300px] rounded-lg aspect-square md:aspect-auto relative overflow-hidden group transition-all duration-300">
-                    <img class="w-full h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105 cursor-pointer" src="/imgs/b3.png">
-                </div>
-                <div class="w-full h-[200px] sm:h-[300px] rounded-lg aspect-square md:aspect-auto relative overflow-hidden group transition-all duration-300">
-                    <img class="w-full h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105 cursor-pointer" src="/imgs/b4.png">
-                </div>
+                <router-link to="/cafes" class="w-full h-[200px] sm:h-[300px] rounded-lg aspect-square md:aspect-auto relative overflow-hidden group transition-all duration-300">
+                    <img class="w-full h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105 cursor-pointer" src="/imgs/cafes.webp">
+                </router-link>
+                <router-link to="/films" class="w-full h-[200px] sm:h-[300px] rounded-lg aspect-square md:aspect-auto relative overflow-hidden group transition-all duration-300">
+                    <img class="w-full h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105 cursor-pointer" src="/imgs/cinema.webp">
+                </router-link>
+                <router-link to="/shops?category=4" class="w-full h-[200px] sm:h-[300px] rounded-lg aspect-square md:aspect-auto relative overflow-hidden group transition-all duration-300">
+                    <img class="w-full h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105 cursor-pointer" src="/imgs/home.webp">
+                </router-link>
+                <router-link to="/shops?category=9" class="w-full h-[200px] sm:h-[300px] rounded-lg aspect-square md:aspect-auto relative overflow-hidden group transition-all duration-300">
+                    <img class="w-full h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105 cursor-pointer" src="/imgs/fashion.webp">
+                </router-link>
             </div>
             <!-- Second Row -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-8">
-                <div class="w-full h-[200px] sm:h-[300px] rounded-lg aspect-square md:aspect-auto relative overflow-hidden group transition-all duration-300">
-                    <img class="w-full h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105 cursor-pointer" src="/imgs/b5.png">
-                </div>
-                <div class="w-full h-[200px] sm:h-[300px] rounded-lg aspect-square md:aspect-auto relative overflow-hidden group transition-all duration-300">
-                    <img class="w-full h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105 cursor-pointer" src="/imgs/b6.png">
-                </div>
-                <div class="w-full h-[200px] sm:h-[300px] rounded-lg aspect-square md:aspect-auto relative overflow-hidden group transition-all duration-300">
-                    <img class="w-full h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105 cursor-pointer" src="/imgs/b7.png">
-                </div>
-                <div class="w-full h-[200px] sm:h-[300px] rounded-lg aspect-square md:aspect-auto relative overflow-hidden group transition-all duration-300">
-                    <img class="w-full h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105 cursor-pointer" src="/imgs/b8.png">
-                </div>
-                <div class="w-full h-[200px] sm:h-[300px] rounded-lg aspect-square md:aspect-auto relative overflow-hidden group transition-all duration-300">
-                    <img class="w-full h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105 cursor-pointer" src="/imgs/b9.png">
-                </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8">
+                <router-link to="/shops?category=8" class="w-full h-[200px] sm:h-[300px] rounded-lg aspect-square md:aspect-auto relative overflow-hidden group transition-all duration-300">
+                    <img class="w-full h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105 cursor-pointer" src="/imgs/girl.webp">
+                </router-link>
+                <router-link to="/shops?category=5" class="w-full h-[200px] sm:h-[300px] rounded-lg aspect-square md:aspect-auto relative overflow-hidden group transition-all duration-300">
+                    <img class="w-full h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105 cursor-pointer" src="/imgs/clothes.webp">
+                </router-link>
+                <router-link to="/shops" class="w-full h-[200px] sm:h-[300px] rounded-lg aspect-square md:aspect-auto relative overflow-hidden group transition-all duration-300">
+                    <img class="w-full h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105 cursor-pointer" src="/imgs/child.webp">
+                </router-link>
+                <router-link to="/shops" class="w-full h-[200px] sm:h-[300px] rounded-lg aspect-square md:aspect-auto relative overflow-hidden group transition-all duration-300">
+                    <img class="w-full h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105 cursor-pointer" src="/imgs/beauty.webp">
+                </router-link>
             </div>
         </div>
     </div>

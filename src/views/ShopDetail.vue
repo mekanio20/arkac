@@ -153,9 +153,9 @@ export default {
         }
     },
     methods: {
-        async getShops() {
+        async getShops(category) {
             try {
-                const response = await api.get('/places/');
+                const response = await api.get(`/places/?category_fk=${category}`);
                 this.places = response.data.results;
             } catch (error) {
                 console.error('Error fetching place details:', error);
@@ -170,14 +170,14 @@ export default {
             }
         },
     },
-    created() {
-        this.fetchPlaceDetails();
-        this.getShops()
+    async created() {
+        await this.fetchPlaceDetails();
+        await this.getShops(this.place.category.id)
     },
     watch: {
         '$i18n.locale'() {
             this.fetchPlaceDetails();
-            this.getShops()
+            this.getShops(this.place.category.id)
         }
     }
 }
