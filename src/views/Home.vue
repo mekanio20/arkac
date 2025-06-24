@@ -92,7 +92,7 @@
         </div>
       </marquee> -->
       <!-- News Section -->
-      <News />
+      <!-- <News /> -->
       <!-- Stats Display  -->
       <StatsDisplay leftImage="/imgs/a1.png" rightImage="/imgs/a2.png" bottomCenterImage="/imgs/a3.png"
         bottomLeftImage="/imgs/a4.png" bottomRightImage="/imgs/a1.png" />
