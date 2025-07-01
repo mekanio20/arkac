@@ -28,6 +28,8 @@ export default {
     error: "Ýalňyşlyk ýüze çykdy!",
     networkError: "Tor ýalňyşlygy",
     noResults: "Netijeler tapylmady",
+    showMore: "Dowamyny gör",
+    loading: "Ýüklänýär...",
   },
   titles: {
     cinema: "Şu gün kinoteatrda",

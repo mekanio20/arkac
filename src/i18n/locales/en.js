@@ -25,6 +25,8 @@ export default {
     shopSearch: "Search shop",
     viewAll: "View All",
     noResults: "No results found",
+    showMore: "Show more",
+    loading: "Loading...",
   },
   titles: {
     cinema: "Today in cinema",

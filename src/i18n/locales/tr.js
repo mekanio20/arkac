@@ -25,6 +25,8 @@ export default {
     shopSearch: "Mağaza ara",
     viewAll: "Tümünü Gör",
     noResults: "Sonuç bulunamadı",
+    showMore: "Daha fazla gör",
+    loading: "Yükleniyor...",
   },
   titles: {
     cinema: "Bugün sinemada",

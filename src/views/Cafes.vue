@@ -38,26 +38,6 @@
                 <CafesCard v-for="item in shops" :key="item.id" :id="item.id" :floor="item.floor" :image="item.logo"
                     :name="item.name" :category="item.category?.name" />
             </div>
-            <!-- Pagination -->
-            <div v-if="cafesCount > 0" class="flex justify-center items-center gap-4 pb-20">
-                <button @click="handlePageChange(currentPage - 1)" :disabled="currentPage === 1"
-                    class="px-4 py-2 rounded-lg border border-arkac-blue-200 disabled:opacity-50 disabled:cursor-not-allowed">
-                    <svg class="w-6 h-6 text-arkac-blue-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 12h14M5 12l4-4m-4 4 4 4" />
-                    </svg>
-                </button>
-                <span class="text-arkac-gray-300">{{ currentPage }} / {{ totalPages }}</span>
-                <button @click="handlePageChange(currentPage + 1)" :disabled="currentPage === totalPages"
-                    class="px-4 py-2 rounded-lg border border-arkac-blue-200 disabled:opacity-50 disabled:cursor-not-allowed">
-                    <svg class="w-6 h-6 text-arkac-blue-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 12H5m14 0-4 4m4-4-4-4" />
-                    </svg>
-                </button>
-            </div>
         </div>
         <!-- Footer -->
         <Footer />
@@ -122,7 +102,7 @@ export default {
     methods: {
         async getCategories() {
             const response = await api.get('/places/categories/')
-            this.categories = await response.data.results
+            this.categories = await response.data
         },
         async getCafes(category, floor, searchQuery) {
             this.isLoading = true
@@ -134,8 +114,8 @@ export default {
                 if (searchQuery) queryParams += `&search=${searchQuery}`
 
                 const response = await api.get(`/places/?${queryParams}`)
-                this.cafesCount = await response.data.count
-                this.shops = await response.data.results
+                this.cafesCount = await response.data.length
+                this.shops = await response.data
             } catch (error) {
                 console.error('Error fetching cafes:', error)
                 this.error = this.$t('common.error')

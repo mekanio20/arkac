@@ -25,6 +25,8 @@ export default {
     shopSearch: "Поиск магазина",
     viewAll: 'Посмотреть все',
     noResults: 'Нет результатов',
+    showMore: 'Показать больше',
+    loading: 'Загрузка...',
   },
   titles: {
     cinema: "Сегодня в кинотеатре",

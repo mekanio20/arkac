@@ -52,26 +52,6 @@
                 <CinemaCard v-for="item in movies" :key="item.movie_fk.id" :img="item.movie_fk.image"
                     :title="item.movie_fk.title" :category="item.movie_fk.subtitle" :time="item.time" />
             </div>
-            <!-- Pagination -->
-            <div v-if="filmsCount > 0" class="flex justify-center items-center gap-4 pb-20">
-                <button @click="handlePageChange(currentPage - 1)" :disabled="currentPage === 1"
-                    class="px-4 py-2 rounded-lg border border-arkac-blue-200 disabled:opacity-50 disabled:cursor-not-allowed">
-                    <svg class="w-6 h-6 text-arkac-blue-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 12h14M5 12l4-4m-4 4 4 4" />
-                    </svg>
-                </button>
-                <span class="text-arkac-gray-300">{{ currentPage }} / {{ totalPages }}</span>
-                <button @click="handlePageChange(currentPage + 1)" :disabled="currentPage === totalPages"
-                    class="px-4 py-2 rounded-lg border border-arkac-blue-200 disabled:opacity-50 disabled:cursor-not-allowed">
-                    <svg class="w-6 h-6 text-arkac-blue-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 12H5m14 0-4 4m4-4-4-4" />
-                    </svg>
-                </button>
-            </div>
         </div>
         <!-- Footer -->
         <Footer />
@@ -221,9 +201,9 @@ export default {
         async getFilms() {
             try {
                 const response = await api.get(`/cinema/cinema-sessions/?page=${this.currentPage}`)
-                this.filmsCount = await response.data.count
-                this.films = await response.data.results
-                this.days = await response.data.results
+                this.filmsCount = await response.data.length
+                this.films = await response.data
+                this.days = await response.data
                 this.activeId = this.films[0].id
                 this.changeActiveId(this.activeId)
             } catch (error) {

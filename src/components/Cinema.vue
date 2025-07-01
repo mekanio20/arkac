@@ -193,8 +193,8 @@ export default {
         async getFilms() {
             try {
                 const response = await api.get('/cinema/cinema-sessions/')
-                this.films = await response.data.results
-                this.days = await response.data.results
+                this.films = await response.data
+                this.days = await response.data
                 this.activeId = this.films[0].id
                 this.changeActiveId(this.activeId)
             } catch (error) {

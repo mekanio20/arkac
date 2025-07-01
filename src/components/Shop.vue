@@ -66,8 +66,8 @@ export default {
         async getShops() {
             try {
                 const response = await api.get(`/places/?category_fk=${this.activeId}`)
-                this.shopCount = await response.data.count
-                this.shops = await response.data.results
+                this.shopCount = await response.data.length
+                this.shops = await response.data
             } catch (error) {
                 console.error('Error fetching shops:', error)
             }
@@ -75,7 +75,7 @@ export default {
         async getCategories() {
             try {
                 const categories = await api.get('/places/categories')
-                this.categories = await categories.data.results
+                this.categories = await categories.data
                 this.activeId = await this.categories[0].id
             } catch (error) {
                 console.error('Error fetching shops:', error)
