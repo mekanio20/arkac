@@ -16,10 +16,10 @@
             </button>
 
             <!-- Location -->
-            <div class="hidden z-10 md:flex items-center ml-2 cursor-pointer hover:text-arkac-gray-200 transition-colors">
+            <router-link to="/contact" class="hidden z-10 md:flex items-center ml-2 cursor-pointer hover:text-arkac-gray-200 transition-colors">
               <locationIcon color="white" />
               <span class="ml-3 font-inter font-medium text-base">{{ $t('common.location') }}</span>
-            </div>
+            </router-link>
           </div>
 
           <!-- Center logo -->

@@ -77,7 +77,7 @@ export default {
             searchQuery: '',
             floors: [
                 {
-                    id: 0,
+                    id: -1,
                     name: this.$t('common.floor0'),
                 },
                 {

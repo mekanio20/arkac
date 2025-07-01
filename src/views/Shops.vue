@@ -85,7 +85,7 @@ export default {
             currentPage: 1,
             floors: [
                 {
-                    id: 0,
+                    id: -1,
                     name: this.$t('common.floor0'),
                 },
                 {
