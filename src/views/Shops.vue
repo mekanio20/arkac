@@ -85,7 +85,7 @@ export default {
             currentPage: 1,
             floors: [
                 {
-                    id: -1,
+                    id: 0,
                     name: this.$t('common.floor0'),
                 },
                 {
@@ -120,7 +120,7 @@ export default {
             try {
                 let queryParams = `type_fk=1`
                 if (category) queryParams += `&category_fk=${category}`
-                if (floor) queryParams += `&floor=${floor}`
+                if (floor) queryParams += `&floor=${floor === 0 ? -1 : floor}`
                 if (searchQuery) queryParams += `&search=${searchQuery}`
 
                 const response = await api.get(`/places/?${queryParams}`)

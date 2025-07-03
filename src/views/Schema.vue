@@ -45,8 +45,8 @@ export default {
     },
     data() {
         return {
-            activeFloor: -1,
-            floors: [-1, 1, 2, 3]
+            activeFloor: 0,
+            floors: [0, 1, 2, 3]
         }
     },
     watch: {
