@@ -25,9 +25,9 @@
             <ShopCard v-for="item in shops" :key="item.id" :id="item.id" :floor="item.floor" :image="item.logo"
                 :name="item.name" :category="item.category?.name" />
         </div>
-        <div class="flex items-center justify-center py-10 sm:py-16 md:py-20">
+        <!-- <div class="flex items-center justify-center py-10 sm:py-16 md:py-20">
             <Button link="/shops" :text="$t('common.viewAll')" />
-        </div>
+        </div> -->
     </div>
 </template>
 
