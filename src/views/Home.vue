@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-full overflow-hidden">
-    <div class="h-screen relative bg-gradient-arkac">
+    <div class="h-screen relative">
       <!-- Header -->
       <header class="py-3 md:py-5 border-b-[1px] border-white text-white">
         <div class="container flex items-center justify-between">
@@ -16,7 +16,8 @@
             </button>
 
             <!-- Location -->
-            <router-link to="/contact" class="hidden z-10 md:flex items-center ml-2 cursor-pointer hover:text-arkac-gray-200 transition-colors">
+            <router-link to="/contact"
+              class="hidden z-10 md:flex items-center ml-2 cursor-pointer hover:text-arkac-gray-200 transition-colors">
               <locationIcon color="white" />
               <span class="ml-3 font-inter font-medium text-base">{{ $t('common.location') }}</span>
             </router-link>
@@ -35,64 +36,26 @@
         <!-- Sidebar -->
         <Sidebar :isOpen="isMobileMenuOpen" @close="toggleMobileMenu" />
       </header>
-      <div class="container">
-        <!-- Navbar -->
-        <Navbar color="white" />
-        <!-- Hero Section -->
-        <HeroSection />
-        <!-- Time Section -->
-        <div class="absolute bottom-4 md:bottom-8 right-4 sm:right-8">
-          <div class="flex items-center space-x-1 py-1.5 md:py-2 px-3 md:px-4 bg-white rounded-full shadow-md">
-            <ClockIcon class="mb-[3px]" />
-            <span class="text-xs md:text-sm font-avenir font-medium mt-[1px]">09:00 - 23:00</span>
-          </div>
-        </div>
-        <!-- Contact Button -->
-        <div class="absolute bottom-16 md:bottom-20 right-4 sm:right-8">
-          <a href="tel:+99312276860"
-            class="h-10 w-10 md:h-12 md:w-12 bg-arkac-blue-200 hover:bg-arkac-blue-600 rounded-full shadow-lg flex items-center justify-center transition-all duration-300">
-            <PhoneIcon />
-          </a>
-        </div>
-        <!-- Bottom icon -->
-        <div
-          class="absolute -bottom-[32px] w-[50px] h-[50px] md:w-[65px] md:h-[65px] flex items-center justify-center right-1/2 left-1/2 transform -translate-x-1/2 bg-white border-[1px] border-arkac-gray-100 border-opacity-70 rounded-full cursor-pointer hover:bg-gray-50 transition-colors duration-300"
-          @click="scrollToContent">
-          <img src="/svgs/bottom.svg" class="w-4 h-4 md:w-6 md:h-6">
-        </div>
+      <!-- Hero Section -->
+      <HeroSection />
+      <!-- Background Image -->
+      <div class="absolute top-0 left-0 -z-10 w-full h-full">
+        <div class="absolute top-0 left-0 w-full h-full bg-black/30 z-10"></div>
+        <swiper :slidesPerView="1" :modules="modules" effect="fade" :speed="1000" :loop="true"
+          :autoplay="{ delay: 5000 }" class="w-full h-full">
+          <swiper-slide v-for="item in images" :key="item" class="w-full h-full">
+            <img v-lazy="item" class="w-full h-full object-cover" lazy="loading">
+          </swiper-slide>
+        </swiper>
+      </div>
+      <!-- Scroll to content -->
+      <div
+        class="absolute -bottom-[32px] w-[50px] h-[50px] md:w-[65px] md:h-[65px] flex items-center justify-center right-1/2 left-1/2 transform -translate-x-1/2 bg-white border-[1px] border-arkac-gray-100 border-opacity-70 rounded-full cursor-pointer hover:bg-gray-50 transition-colors duration-300"
+        @click="scrollToContent">
+        <img src="/svgs/bottom.svg" class="w-4 h-4 md:w-6 md:h-6">
       </div>
     </div>
     <div class="bg-white" id="content-section">
-      <!-- <h2 class="container arkac-title pt-8 md:pt-14">
-        {{ $t('nav.news') }}
-      </h2> -->
-      <!-- <marquee ref="newsMarquee" direction="right"
-        class="w-full my-8 md:my-14 py-3 md:py-4 rotate-1 arkac-news-gradient flex items-center space-x-4">
-        <div class="flex items-center space-x-4 md:space-x-6">
-          <p class="font-inter font-medium text-base md:text-[22px] text-white uppercase">
-            {{ $t('nav.news') }}
-          </p>
-          <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
-          <p class="font-inter font-medium text-base md:text-[22px] text-white uppercase">
-            {{ $t('nav.news') }}
-          </p>
-          <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
-          <p class="font-inter font-medium text-base md:text-[22px] text-white uppercase">
-            {{ $t('nav.news') }}
-          </p>
-          <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
-          <p class="font-inter font-medium text-base md:text-[22px] text-white uppercase">
-            {{ $t('nav.news') }}
-          </p>
-          <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
-          <p class="font-inter font-medium text-base md:text-[22px] text-white uppercase">
-            {{ $t('nav.news') }}
-          </p>
-          <img src="/svgs/thunder.svg" alt="Thunder" class="w-4 h-4 md:w-6 md:h-6">
-        </div>
-      </marquee> -->
-      <!-- News Section -->
-      <!-- <News /> -->
       <!-- Stats Display  -->
       <StatsDisplay leftImage="/imgs/a1.png" rightImage="/imgs/a2.png" bottomCenterImage="/imgs/a3.png"
         bottomLeftImage="/imgs/a4.png" bottomRightImage="/imgs/a1.png" />
@@ -124,6 +87,12 @@ import LangSelector from '@/components/LangSelector.vue';
 import ClockIcon from '@/components/icons/clock.vue';
 import PhoneIcon from '@/components/icons/phone.vue'
 
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay, EffectFade } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import 'swiper/css/autoplay';
+
 export default {
   name: 'Home',
   components: {
@@ -140,7 +109,9 @@ export default {
     locationIcon,
     LangSelector,
     ClockIcon,
-    PhoneIcon
+    PhoneIcon,
+    Swiper,
+    SwiperSlide
   },
   data() {
     return {
@@ -152,6 +123,16 @@ export default {
       films: [],
       days: [],
       activeId: null,
+      modules: [Autoplay, EffectFade],
+      images: [
+        '/imgs/hero-1.webp',
+        '/imgs/hero-2.webp',
+        '/imgs/hero-3.webp',
+        '/imgs/hero-4.webp',
+        '/imgs/hero-5.webp',
+        '/imgs/hero-6.webp',
+        '/imgs/hero-7.webp'
+      ]
     }
   },
   // mounted() {

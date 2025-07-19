@@ -11,7 +11,7 @@
                 </span>
             </span>
         </div>
-        <div class="self-center flex items-center justify-center w-full h-40 pr-4">
+        <div class="self-center flex items-center justify-center w-full h-40">
             <img :src="image" alt="Logo" class="w-full h-full object-contain rounded-md" />
         </div>
 

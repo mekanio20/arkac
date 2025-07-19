@@ -1,5 +1,5 @@
 <template>
-    <div class="md:w-fit w-full relative inline-block text-left">
+    <div ref="selection" class="md:w-fit w-full relative text-left">
         <button @click="toggle"
             class="w-full font-inter font-medium md:text-base text-sm bg-arkac-gray-800 text-arkac-gray-700 rounded-lg px-8 py-4 text-left flex justify-between items-center !cursor-pointer">
             {{ selected.name || placeholder }}
@@ -9,7 +9,7 @@
             </svg>
         </button>
 
-        <div v-if="open" class="absolute mt-2 w-full rounded-lg bg-arkac-gray-800 z-10">
+        <div v-if="open" class="absolute mt-2 w-full h-[230px] rounded-lg bg-arkac-gray-800 z-10 overflow-y-auto">
             <ul>
                 <li v-for="category in categories" :key="category.id" @click="select(category)" :class="[
                     'text-nowrap overflow-hidden text-ellipsis cursor-pointer px-6 py-4 hover:bg-arkac-blue-300 hover:text-arkac-blue-200 font-inter font-medium md:text-base sm:text-sm text-xs',
@@ -49,6 +49,13 @@ export default {
             this.$emit('select', category.id);
             this.open = false;
         }
+    },
+    mounted() {
+        document.addEventListener('click', (e) => {
+            if (!this.$refs.selection.contains(e.target)) {
+                this.open = false;
+            }
+        });
     }
 }
 </script>

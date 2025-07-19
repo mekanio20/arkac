@@ -3,7 +3,7 @@
         <!--  -->
         <div class="relative flex items-center justify-center mb-8 pt-20">
             <!-- Center Social Icons -->
-            <div class="container absolute -top-[150px] sm:left-1/2 right-0 transform sm:-translate-x-1/2 flex justify-center space-x-4 md:space-x-6 z-50">
+            <div class="container absolute -top-[120px] sm:left-1/2 right-0 transform sm:-translate-x-1/2 flex justify-center space-x-4 md:space-x-6 z-50">
                 <!-- Instagram Icon -->
                 <a href="https://www.instagram.com/arkach.sdm" target="_blank" class="text-black transition-all duration-100 hover:-translate-y-2 hover:scale-110 animate-pulse-text"
                     style="animation-delay: 1s" aria-label="Instagram">

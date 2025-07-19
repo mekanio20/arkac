@@ -1,47 +1,71 @@
 <template>
     <div class="w-full overflow-hidden">
-        <div class="min-h-screen relative bg-gradient-about-arkac overflow-hidden">
+        <div class="min-h-screen relative overflow-hidden">
             <!-- Header -->
-            <Header />
+            <header class="py-3 md:py-5 border-b-[1px] border-white text-white">
+                <div class="container flex items-center justify-between">
+                    <!-- Left section with hamburger and location -->
+                    <div class="flex items-center">
+                        <!-- Mobile menu button -->
+                        <button class="z-10 md:hidden p-2 focus:outline-none" @click="toggleMobileMenu">
+                            <div class="flex flex-col space-y-1">
+                                <div class="w-[25px] h-[2px] bg-white rounded-full"></div>
+                                <div class="w-[25px] h-[2px] bg-white rounded-full"></div>
+                                <div class="w-[15px] h-[2px] bg-white rounded-full"></div>
+                            </div>
+                        </button>
 
-            <!-- Blur Stars - Responsive positioning -->
-            <div class="absolute top-48 left-1/5 md:left-1/4 lg:left-80 animate-float">
-                <BlurStar />
-            </div>
-            <div class="absolute top-72 -left-4 animate-float" style="animation-delay: 1s;">
-                <BlurStar />
-            </div>
-            <div class="absolute top-[550px] left-28 animate-float" style="animation-delay: 2s;">
-                <BlurStar />
-            </div>
-            <div class="absolute top-48 right-1/5 md:right-1/4 lg:right-64 animate-float"
-                style="animation-delay: 0.5s;">
-                <BlurStar />
-            </div>
-            <div class="absolute top-72 -right-4 animate-float" style="animation-delay: 1.5s;">
-                <BlurStar />
-            </div>
-            <div class="absolute top-[550px] right-28 animate-float" style="animation-delay: 2.5s;">
-                <BlurStar />
-            </div>
-            <div class="absolute top-[650px] left-1/2 -translate-x-1/2 animate-float" style="animation-delay: 3s;">
-                <BlurStar />
-            </div>
+                        <!-- Location -->
+                        <router-link to="/contact"
+                            class="hidden z-10 md:flex items-center ml-2 cursor-pointer hover:text-arkac-gray-200 transition-colors">
+                            <locationIcon color="white" />
+                            <span class="ml-3 font-inter font-medium text-base">{{ $t('common.location') }}</span>
+                        </router-link>
+                    </div>
 
-            <!-- Navbar -->
-            <Navbar activePage="about" />
+                    <!-- Center logo -->
+                    <router-link to="/" class="absolute left-1/2 transform -translate-x-1/2">
+                        <h1 class="text-2xl md:text-3xl font-playfair font-bold text-white">Arkaç</h1>
+                    </router-link>
 
-            <!-- Hero Section -->
-            <div class="flex flex-col items-center mt-[280px] md:mt-[200px] lg:mt-[150px] text-center px-4">
-                <div class="flex flex-col md:flex-row items-center md:items-baseline md:space-x-4 lg:space-x-8">
-                    <h1
-                        class="font-playfair font-bold text-6xl sm:text-8xl md:text-[120px] lg:text-[140px] arkac-text-gradient pb-2 leading-tight">
-                        Arkaç</h1>
-                    <img class="w-32 h-auto sm:w-40 md:w-[150px] lg:w-[190px] md:h-[60px] inline-block"
-                        src="/imgs/arkac.webp" alt="Arkaç">
+                    <!-- Right section with language and search -->
+                    <div class="flex items-center space-x-2 cursor-pointer">
+                        <LangSelector color="white" @language-changed="handleLanguageChange" />
+                    </div>
                 </div>
-                <p class="font-playfair font-medium text-3xl sm:text-5xl md:text-7xl lg:text-[94px] !leading-none mt-4">
-                    {{ $t('subtitles.heroSubtitle') }}</p>
+                <!-- Sidebar -->
+                <Sidebar :isOpen="isMobileMenuOpen" @close="toggleMobileMenu" />
+            </header>
+            <!-- Hero Section -->
+            <HeroSection />
+            <!-- Background Image -->
+            <div class="absolute top-0 left-0 -z-10 w-full h-full">
+                <div class="absolute top-0 left-0 w-full h-full bg-black/30 z-10"></div>
+                <swiper :slidesPerView="1" :modules="modules" effect="fade" :speed="1000" :loop="true"
+                    :autoplay="{ delay: 5000 }" class="w-full h-full">
+                    <swiper-slide v-for="item in images" :key="item" class="w-full h-full">
+                        <img v-lazy="item" class="w-full h-full object-cover" lazy="loading">
+                    </swiper-slide>
+                </swiper>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Navbar -->
+            <Navbar color="white" />
+            <!-- Time Section -->
+            <div class="absolute bottom-4 md:bottom-8 right-4 sm:right-8">
+                <div class="flex items-center space-x-1 py-1.5 md:py-2 px-3 md:px-4 bg-white rounded-full shadow-md">
+                    <ClockIcon class="mb-[3px]" />
+                    <span class="text-xs md:text-sm font-avenir font-medium mt-[1px]">09:00 - 23:00</span>
+                </div>
+            </div>
+            <!-- Contact Button -->
+            <div class="absolute bottom-16 md:bottom-20 right-4 sm:right-8">
+                <a href="tel:+99312276860"
+                    class="h-10 w-10 md:h-12 md:w-12 bg-arkac-blue-200 hover:bg-arkac-blue-600 rounded-full shadow-lg flex items-center justify-center transition-all duration-300">
+                    <PhoneIcon />
+                </a>
             </div>
         </div>
 
@@ -112,7 +136,8 @@
 
         <!-- Stats Display -->
         <StatsDisplay :isAbout="true" leftImage="/imgs/cafes.webp" rightImage="/imgs/cinema.webp"
-            bottomCenterImage="/imgs/clothes.webp" bottomLeftImage="/imgs/cafes.webp" bottomRightImage="/imgs/cafes.webp" />
+            bottomCenterImage="/imgs/clothes.webp" bottomLeftImage="/imgs/cafes.webp"
+            bottomRightImage="/imgs/cafes.webp" />
 
         <!-- Terms Card -->
         <div class="container px-4 md:px-8">
@@ -137,7 +162,19 @@ import StarIcon from '@/components/icons/star.vue';
 import Arrow from '@/components/icons/arrow.vue';
 import StatsDisplay from '@/components/StatsDisplay.vue';
 import TermsCard from '@/components/TermsCard.vue';
+import HeroSection from '@/components/HeroSection.vue';
+import LangSelector from '@/components/LangSelector.vue';
 import GallerySection from '@/components/GallerySection.vue';
+import locationIcon from '@/components/icons/location.vue';
+import ClockIcon from '@/components/icons/clock.vue';
+import PhoneIcon from '@/components/icons/phone.vue';
+import Sidebar from '@/components/Sidebar.vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay, EffectFade } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import 'swiper/css/autoplay';
+
 export default {
     name: 'About',
     components: {
@@ -150,8 +187,30 @@ export default {
         StarIcon,
         StatsDisplay,
         TermsCard,
-        GallerySection
+        GallerySection,
+        LangSelector,
+        HeroSection,
+        locationIcon,
+        ClockIcon,
+        PhoneIcon,
+        Sidebar,
+        Swiper,
+        SwiperSlide
     },
+    data() {
+        return {
+            modules: [Autoplay, EffectFade],
+            images: [
+                '/imgs/hero-1.webp',
+                '/imgs/hero-2.webp',
+                '/imgs/hero-3.webp',
+                '/imgs/hero-4.webp',
+                '/imgs/hero-5.webp',
+                '/imgs/hero-6.webp',
+                '/imgs/hero-7.webp'
+            ]
+        }
+    }
 }
 </script>
 
