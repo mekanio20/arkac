@@ -26,7 +26,8 @@
     
                         <!-- Center logo -->
                         <router-link to="/" class="absolute left-1/2 transform -translate-x-1/2">
-                            <h1 class="text-2xl md:text-3xl font-playfair font-bold text-white">Arkaç</h1>
+                            <!-- <h1 class="text-2xl md:text-3xl font-playfair font-bold text-white">Arkaç</h1> -->
+                            <img class="w-[92px]" src="/svgs/logo-white.svg">
                         </router-link>
     
                         <!-- Right section with language and search -->
@@ -44,7 +45,6 @@
             <HeroSection />
             <!-- Background Image -->
             <div class="absolute top-0 left-0 -z-10 w-full h-full">
-                <div class="absolute top-0 left-0 w-full h-full bg-black/30 z-10"></div>
                 <swiper :slidesPerView="1" :modules="modules" effect="fade" :speed="1000" :loop="true"
                     :autoplay="{ delay: 5000 }" class="w-full h-full">
                     <swiper-slide v-for="item in images" :key="item" class="w-full h-full">
@@ -203,13 +203,8 @@ export default {
         return {
             modules: [Autoplay, EffectFade],
             images: [
-                '/imgs/hero-1.webp',
-                '/imgs/hero-2.webp',
-                '/imgs/hero-3.webp',
-                '/imgs/hero-4.webp',
-                '/imgs/hero-5.webp',
-                '/imgs/hero-6.webp',
-                '/imgs/hero-7.webp'
+                '/imgs/arkac-light.webp',
+                '/imgs/arkac-dark.webp'
             ]
         }
     }

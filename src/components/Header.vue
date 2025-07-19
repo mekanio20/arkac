@@ -27,7 +27,8 @@
 
             <!-- Center logo -->
             <router-link to="/" class="absolute left-1/2 transform -translate-x-1/2">
-                <h1 class="text-2xl md:text-3xl font-playfair font-bold arkac-text-gradient">Arkaç</h1>
+                <!-- <h1 class="text-2xl md:text-3xl font-playfair font-bold arkac-text-gradient">Arkaç</h1> -->
+                <img class="w-[92px]" src="/svgs/logo-blue.svg">
             </router-link>
 
             <!-- Right section with language and search -->

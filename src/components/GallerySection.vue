@@ -5,21 +5,29 @@
         </h4>
         <Swiper 
             :modules="modules" 
-            :slidesPerView="1.2"
             :spaceBetween="30"
+            :duration="1000"
+            :autoplay="{
+                delay: 2500,
+                disableOnInteraction: false
+            }"
             :breakpoints="{
+                200: {
+                    slidesPerView: 1,
+                    spaceBetween: 30
+                },
                 640: {
-                    slidesPerView: 1.2,
+                    slidesPerView: 2,
                     spaceBetween: 30
                 },
                 1024: {
-                    slidesPerView: 1.2,
+                    slidesPerView: 4,
                     spaceBetween: 30
                 }
             }"
         >
             <SwiperSlide v-for="(slide, index) in slides" :key="index">
-                <div class="py-10 md:py-20 select-none h-[750px]">
+                <div class="py-10 md:py-20 select-none h-[600px]">
                     <img :src="slide" class="w-full h-full object-cover rounded-lg">
                 </div>
             </SwiperSlide>

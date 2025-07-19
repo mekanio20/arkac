@@ -3,19 +3,20 @@
         <!-- Main logo and headline -->
         <div class="relative z-10 text-center md:mb-52 sm:mb-40 mb-20">
             <div class="flex items-center justify-center space-x-2 sm:space-x-4">
-                <h2 class="font-playfair font-bold text-5xl sm:text-7xl md:text-[94px] text-white pb-1">Arkaç
-                </h2>
+                <!-- <h2 class="font-playfair font-bold text-5xl sm:text-7xl md:text-[94px] text-white pb-1">Arkaç
+                </h2> -->
+                <img class="w-[343px]" src="/svgs/logo-white.svg" />
                 <div
                     class="mt-2 sm:mt-4 h-[30px] w-[90px] sm:h-[50px] sm:w-[150px] overflow-hidden rounded-full sm:block hidden">
-                    <img src="/imgs/arkac.webp" alt="Mall view" class="h-full w-full object-cover" />
+                    <img src="/imgs/arkac-3.webp" alt="Mall view" class="h-full w-full object-cover" />
                 </div>
             </div>
 
-            <h3 class="text-3xl sm:text-4xl md:text-6xl font-inter font-normal tracking-[1px] sm:tracking-[2px] text-white">
+            <h3 class="text-3xl sm:text-4xl md:text-6xl font-inter font-medium tracking-[1px] sm:tracking-[2px] text-white">
                 {{ $t('subtitles.heroSubtitle') }}
             </h3>
 
-            <p class="my-8 sm:my-[70px] max-w-2xl mx-auto text-center text-base sm:text-lg px-4 text-white">
+            <p class="my-8 sm:my-[70px] max-w-2xl mx-auto text-center text-medium sm:text-lg px-4 text-white">
                 {{ $t('subtitles.subtitle2') }}
             </p>
 

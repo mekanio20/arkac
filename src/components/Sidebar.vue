@@ -13,7 +13,9 @@
                     <button @click="close" class="hover:bg-gray-100 rounded-full transition-colors">
                         <CloseIcon />
                     </button>
-                    <router-link to="/" class="font-playfair font-bold text-2xl arkac-text-gradient">Arkaç</router-link>
+                    <router-link to="/" class="font-playfair font-bold text-2xl arkac-text-gradient">
+                        <img class="w-[92px]" src="/svgs/logo-blue.svg">
+                    </router-link>
                 </div>
                 <router-link to="/schema/-1">
                     <SchemaIcon class="cursor-pointer" />

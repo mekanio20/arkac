@@ -26,7 +26,8 @@
 
             <!-- Center logo -->
             <router-link to="/" class="absolute left-1/2 transform -translate-x-1/2">
-              <h1 class="text-2xl md:text-3xl font-playfair font-bold text-white">Arkaç</h1>
+              <img class="w-[92px]" src="/svgs/logo-white.svg" alt="Logo">
+              <!-- <h1 class="text-2xl md:text-3xl font-playfair font-bold text-white">Arkaç</h1> -->
             </router-link>
 
             <!-- Right section with language and search -->
@@ -44,7 +45,6 @@
       <HeroSection />
       <!-- Background Image -->
       <div class="absolute top-0 left-0 -z-10 w-full h-full">
-        <div class="absolute top-0 left-0 w-full h-full bg-black/30 z-10"></div>
         <swiper :slidesPerView="1" :modules="modules" effect="fade" :speed="1000" :loop="true"
           :autoplay="{ delay: 5000 }" class="w-full h-full">
           <swiper-slide v-for="item in images" :key="item" class="w-full h-full">
@@ -63,6 +63,8 @@
       <!-- Stats Display  -->
       <StatsDisplay leftImage="/imgs/a1.png" rightImage="/imgs/a2.png" bottomCenterImage="/imgs/a3.png"
         bottomLeftImage="/imgs/a4.png" bottomRightImage="/imgs/a1.png" />
+      <!-- Gallery Section -->
+      <GallerySection />
       <!-- Service Section -->
       <Service />
       <!-- Cinema Section -->
@@ -82,6 +84,7 @@ import HeroSection from '@/components/HeroSection.vue';
 import News from '@/components/News.vue';
 import Service from '@/components/Service.vue';
 import StatsDisplay from '@/components/StatsDisplay.vue';
+import GallerySection from '@/components/GallerySection.vue';
 import Sidebar from '@/components/Sidebar.vue';
 import Cinema from '@/components/Cinema.vue';
 import Shop from '@/components/Shop.vue';
@@ -107,6 +110,7 @@ export default {
     Service,
     Sidebar,
     StatsDisplay,
+    GallerySection,
     Cinema,
     Shop,
     Footer,
@@ -129,13 +133,8 @@ export default {
       activeId: null,
       modules: [Autoplay, EffectFade],
       images: [
-        '/imgs/hero-1.webp',
-        '/imgs/hero-2.webp',
-        '/imgs/hero-3.webp',
-        '/imgs/hero-4.webp',
-        '/imgs/hero-5.webp',
-        '/imgs/hero-6.webp',
-        '/imgs/hero-7.webp'
+        '/imgs/arkac-light.webp',
+        '/imgs/arkac-dark.webp'
       ]
     }
   },
