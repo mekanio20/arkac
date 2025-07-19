@@ -72,7 +72,7 @@ export default {
         };
     },
     created() {
-        if (this.$route.name !== 'Home') {
+        if (this.$route.name !== 'Home' && this.$route.name !== 'About') {
             this.isHomepage = false;
         }
     },

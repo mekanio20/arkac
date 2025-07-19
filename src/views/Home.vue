@@ -2,37 +2,41 @@
   <div class="w-full h-full overflow-hidden">
     <div class="h-screen relative">
       <!-- Header -->
-      <header class="py-3 md:py-5 border-b-[1px] border-white text-white">
-        <div class="container flex items-center justify-between">
-          <!-- Left section with hamburger and location -->
-          <div class="flex items-center">
-            <!-- Mobile menu button -->
-            <button class="z-10 md:hidden p-2 focus:outline-none" @click="toggleMobileMenu">
-              <div class="flex flex-col space-y-1">
-                <div class="w-[25px] h-[2px] bg-white rounded-full"></div>
-                <div class="w-[25px] h-[2px] bg-white rounded-full"></div>
-                <div class="w-[15px] h-[2px] bg-white rounded-full"></div>
-              </div>
-            </button>
+      <header class="text-white">
+        <div class="border-b-[1px] border-white py-3 md:py-5">
+          <div class="container flex items-center justify-between ">
+            <!-- Left section with hamburger and location -->
+            <div class="flex items-center">
+              <!-- Mobile menu button -->
+              <button class="z-10 md:hidden p-2 focus:outline-none" @click="toggleMobileMenu">
+                <div class="flex flex-col space-y-1">
+                  <div class="w-[25px] h-[2px] bg-white rounded-full"></div>
+                  <div class="w-[25px] h-[2px] bg-white rounded-full"></div>
+                  <div class="w-[15px] h-[2px] bg-white rounded-full"></div>
+                </div>
+              </button>
 
-            <!-- Location -->
-            <router-link to="/contact"
-              class="hidden z-10 md:flex items-center ml-2 cursor-pointer hover:text-arkac-gray-200 transition-colors">
-              <locationIcon color="white" />
-              <span class="ml-3 font-inter font-medium text-base">{{ $t('common.location') }}</span>
+              <!-- Location -->
+              <router-link to="/contact"
+                class="hidden z-10 md:flex items-center ml-2 cursor-pointer hover:text-arkac-gray-200 transition-colors">
+                <locationIcon color="white" />
+                <span class="ml-3 font-inter font-medium text-base">{{ $t('common.location') }}</span>
+              </router-link>
+            </div>
+
+            <!-- Center logo -->
+            <router-link to="/" class="absolute left-1/2 transform -translate-x-1/2">
+              <h1 class="text-2xl md:text-3xl font-playfair font-bold text-white">Arkaç</h1>
             </router-link>
-          </div>
 
-          <!-- Center logo -->
-          <router-link to="/" class="absolute left-1/2 transform -translate-x-1/2">
-            <h1 class="text-2xl md:text-3xl font-playfair font-bold text-white">Arkaç</h1>
-          </router-link>
-
-          <!-- Right section with language and search -->
-          <div class="flex items-center space-x-2 cursor-pointer">
-            <LangSelector color="white" @language-changed="handleLanguageChange" />
+            <!-- Right section with language and search -->
+            <div class="flex items-center space-x-2 cursor-pointer">
+              <LangSelector color="white" @language-changed="handleLanguageChange" />
+            </div>
           </div>
         </div>
+        <!-- Navbar -->
+        <Navbar />
         <!-- Sidebar -->
         <Sidebar :isOpen="isMobileMenuOpen" @close="toggleMobileMenu" />
       </header>
