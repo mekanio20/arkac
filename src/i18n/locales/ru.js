@@ -17,7 +17,7 @@ export default {
     search: "Поиск",
     selection: "Выбрать вид",
     floor: "Этаж",
-    floor0: "Цокольный этаж",
+    'floor-1': "Цокольный этаж",
     floor1: "1-й этаж",
     floor2: "2-й этаж",
     floor3: "3-й этаж",

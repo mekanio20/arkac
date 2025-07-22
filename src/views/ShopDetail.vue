@@ -156,7 +156,8 @@ export default {
         async getShops(category) {
             try {
                 const response = await api.get(`/places/?category_fk=${category}`);
-                this.places = response.data.results;
+                console.log(response);
+                this.places = response.data;
             } catch (error) {
                 console.error('Error fetching place details:', error);
             }
@@ -176,6 +177,10 @@ export default {
     },
     watch: {
         '$i18n.locale'() {
+            this.fetchPlaceDetails();
+            this.getShops(this.place.category.id)
+        },
+        '$route'() {
             this.fetchPlaceDetails();
             this.getShops(this.place.category.id)
         }

@@ -1,5 +1,5 @@
 <template>
-    <div ref="selection" class="md:w-fit w-full relative text-left">
+    <div ref="selection" class="relative text-left" :class="[isCategory ? 'w-[250px]' : 'md:w-fit w-full']">
         <button @click="toggle"
             class="w-full font-inter font-medium md:text-base text-sm bg-arkac-gray-800 text-arkac-gray-700 rounded-lg px-8 py-4 text-left flex justify-between items-center !cursor-pointer">
             {{ selected.name || placeholder }}
@@ -38,6 +38,10 @@ export default {
         categories: {
             type: Array,
             default: []
+        },
+        isCategory: {
+            type: Boolean,
+            default: false
         }
     },
     methods: {

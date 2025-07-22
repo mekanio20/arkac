@@ -17,7 +17,7 @@ export default {
     search: "Search",
     selection: "Choose view",
     floor: "Floor",
-    floor0: "Ground Floor",
+    'floor-1': "Ground Floor",
     floor1: "1st Floor",
     floor2: "2nd Floor",
     floor3: "3rd Floor",

@@ -160,7 +160,7 @@ export default {
         async getCafes() {
             try {
                 const response = await api.get('/places/?type_fk=3');
-                this.places = response.data.results;
+                this.places = response.data;
             } catch (error) {
                 console.error('Error fetching place details:', error);
             }
@@ -183,6 +183,10 @@ export default {
         '$i18n.locale'() {
             this.fetchPlaceDetails();
             this.getCafes()
+        },
+        '$route'() {
+            this.fetchPlaceDetails();
+            this.getCafes(this.place.category.id)
         }
     }
 }

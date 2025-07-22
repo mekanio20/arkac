@@ -15,7 +15,7 @@
                 <div class="w-full flex flex-col sm:flex-row items-start gap-4">
                     <!-- Selection -->
                     <Selection :placeholder="$t('common.selection')" :categories="categories"
-                        @select="handleCategorySelect" />
+                        @select="handleCategorySelect" :isCategory="true" />
                     <!-- Selection floor -->
                     <Selection :placeholder="$t('common.floor')" :categories="floors" @select="handleFloorSelect" />
                 </div>
@@ -78,7 +78,7 @@ export default {
             floors: [
                 {
                     id: 0,
-                    name: this.$t('common.floor0'),
+                    name: this.$t('common.floor-1'),
                 },
                 {
                     id: 1,
@@ -110,7 +110,7 @@ export default {
             try {
                 let queryParams = `type_fk=3&page=${this.currentPage}`
                 if (category) queryParams += `&category_fk=${category}`
-                if (floor) queryParams += `&floor=${floor === 0 ? -1 : floor}`
+                if (typeof floor === 'number') queryParams += `&floor=${floor === 0 ? -1 : floor}`
                 if (searchQuery) queryParams += `&search=${searchQuery}`
 
                 const response = await api.get(`/places/?${queryParams}`)

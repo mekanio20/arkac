@@ -54,23 +54,6 @@
             </div>
         </div>
 
-        <div class="container">
-            <!-- Time Section -->
-            <div class="absolute bottom-4 md:bottom-8 right-4 sm:right-8">
-                <div class="flex items-center space-x-1 py-1.5 md:py-2 px-3 md:px-4 bg-white rounded-full shadow-md">
-                    <ClockIcon class="mb-[3px]" />
-                    <span class="text-xs md:text-sm font-avenir font-medium mt-[1px]">09:00 - 23:00</span>
-                </div>
-            </div>
-            <!-- Contact Button -->
-            <div class="absolute bottom-16 md:bottom-20 right-4 sm:right-8">
-                <a href="tel:+99312276860"
-                    class="h-10 w-10 md:h-12 md:w-12 bg-arkac-blue-200 hover:bg-arkac-blue-600 rounded-full shadow-lg flex items-center justify-center transition-all duration-300">
-                    <PhoneIcon />
-                </a>
-            </div>
-        </div>
-
         <!-- Marquee Section -->
         <div class="w-full py-2 md:py-4 mb-20 md:mb-40 rotate-1 arkac-news-gradient overflow-hidden">
             <marquee direction="right" class="animate-marquee flex items-center space-x-6">
@@ -103,10 +86,13 @@
         <div class="container relative pb-20 md:pb-40 lg:pb-60 px-4 md:px-8">
             <div class="flex flex-col lg:flex-row lg:items-start lg:space-x-10 space-y-8 lg:space-y-0">
                 <div class="flex-1">
-                    <h4
+                    <!-- <h4
                         class="w-fit py-2 px-6 bg-arkac-blue-800 -rotate-1 text-white font-inter font-semibold text-lg inline-block mb-4">
                         Arkaç
-                    </h4>
+                    </h4> -->
+                    <div class="w-fit py-2 inline-block">
+                        <img src="/svgs/logo-blue.svg">
+                    </div>
                     <span class="font-inter font-normal text-lg md:text-xl lg:text-[22px] block">
                         {{ $t('subtitles.subtitle3') }}
                     </span>

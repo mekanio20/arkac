@@ -2451,6 +2451,7 @@ __metadata:
     tailwindcss: "npm:3"
     vite: "npm:^6.3.1"
     vue: "npm:^3.5.13"
+    vue-easy-lightbox: "npm:^1.19.0"
     vue-i18n: "npm:9"
     vue-lazyload: "npm:^3.0.0"
     vue-router: "npm:^4.5.0"
@@ -2509,6 +2510,15 @@ __metadata:
   bin:
     vite: bin/vite.js
   checksum: 10c0/7ea27d2c80a9e0b7ccf6cbd6c251455501286568160e8b632984e5332440f21a6d05f9236408212ba7653f7d2d4790f848956d8a620bbf4dd2ecb792a2fe1ab1
+  languageName: node
+  linkType: hard
+
+"vue-easy-lightbox@npm:^1.19.0":
+  version: 1.19.0
+  resolution: "vue-easy-lightbox@npm:1.19.0"
+  peerDependencies:
+    vue: ^3.0.0
+  checksum: 10c0/1b33a952580618d691ccefc88b254a9999804fbcbaad537dcb8e11d793950e1362cfc28837ab12210901ee20db073467d5ce93663514c3a047adc5e17cdf673e
   languageName: node
   linkType: hard
 

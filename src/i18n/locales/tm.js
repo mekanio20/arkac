@@ -17,7 +17,7 @@ export default {
     search: "Gözlemek",
     selection: "Görnüşini saýlamak",
     floor: "Gat",
-    floor0: "0-nji gat",
+    'floor-1': "0-nji gat",
     floor1: "1-nji gat",
     floor2: "2-nji gat",
     floor3: "3-nji gat",

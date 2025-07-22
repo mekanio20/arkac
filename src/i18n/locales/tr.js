@@ -17,7 +17,7 @@ export default {
     search: "Ara",
     selection: "Kategori seç",
     floor: "Kat",
-    floor0: "Zemin Kat",
+    'floor-1': "Zemin Kat",
     floor1: "1. Kat",
     floor2: "2. Kat",
     floor3: "3. Kat",
