@@ -72,4 +72,12 @@ export default {
     time3: 'вс',
     location: "Наше местоположение",
   },
+  categories: {
+    furniture: "Мебель",
+    technica: "Электроника",
+    beauty: "Салон красоты",
+    clothes: "Одежда",
+    childClothes: "Детская одежда",
+    girlClothes: "Одежда для девочек"
+  }
 };

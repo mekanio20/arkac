@@ -72,4 +72,12 @@ export default {
     time3: "Sun",
     location: "Our location",
   },
+  categories: {
+    furniture: "Furniture",
+    technica: "Electronics",
+    beauty: "Beauty Salon",
+    clothes: "Clothes",
+    childClothes: "Children's Clothes",
+    girlClothes: "Girls' Clothes"
+  }
 };

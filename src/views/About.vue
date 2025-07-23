@@ -15,7 +15,7 @@
                                     <div class="w-[15px] h-[2px] bg-white rounded-full"></div>
                                 </div>
                             </button>
-    
+
                             <!-- Location -->
                             <router-link to="/contact"
                                 class="hidden z-10 md:flex items-center ml-2 cursor-pointer hover:text-arkac-gray-200 transition-colors">
@@ -23,13 +23,13 @@
                                 <span class="ml-3 font-inter font-medium text-base">{{ $t('common.location') }}</span>
                             </router-link>
                         </div>
-    
+
                         <!-- Center logo -->
                         <router-link to="/" class="absolute left-1/2 transform -translate-x-1/2">
                             <!-- <h1 class="text-2xl md:text-3xl font-playfair font-bold text-white">Arkaç</h1> -->
                             <img class="w-[92px]" src="/svgs/logo-white.svg">
                         </router-link>
-    
+
                         <!-- Right section with language and search -->
                         <div class="flex items-center space-x-2 cursor-pointer">
                             <LangSelector color="white" @language-changed="handleLanguageChange" />
@@ -187,12 +187,19 @@ export default {
     },
     data() {
         return {
+            isMobileMenuOpen: false,
             modules: [Autoplay, EffectFade],
             images: [
                 '/imgs/arkac-light.webp',
                 '/imgs/arkac-dark.webp'
             ]
         }
+    },
+    methods: {
+        toggleMobileMenu() {
+            this.isMobileMenuOpen = !this.isMobileMenuOpen;
+            document.body.style.overflow = this.isMobileMenuOpen ? 'hidden' : '';
+        },
     }
 }
 </script>

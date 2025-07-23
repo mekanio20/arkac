@@ -71,4 +71,12 @@ export default {
     time3: "Pazar",
     location: "Konumumuz",
   },
+  categories: {
+    furniture: "Mobilya",
+    technica: "Elektronik",
+    beauty: "Güzellik salonu",
+    clothes: "Kıyafet",
+    childClothes: "Çocuk kıyafeti",
+    girlClothes: "Kız çocuk kıyafeti"
+  }
 };

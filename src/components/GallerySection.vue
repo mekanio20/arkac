@@ -1,6 +1,6 @@
 <template>
-    <div class="container text-center md:pt-20 pb-20">
-        <h4 class="w-fit md:mt-10 py-5 px-8 md:px-16 bg-arkac-blue-800 -rotate-1 text-white font-inter font-medium text-xl md:text-2xl lg:text-[36px] inline-block uppercase rounded-sm">
+    <div class="container text-center md:pt-20">
+        <h4 class="w-fit md:mt-10 py-5 px-8 md:px-16 bg-arkac-blue-800 -rotate-1 text-white font-inter font-medium text-xl md:text-2xl lg:text-[36px] inline-block uppercase rounded-lg">
             {{ $t('titles.gallery') }}
         </h4>
         <Swiper 

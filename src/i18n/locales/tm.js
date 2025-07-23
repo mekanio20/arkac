@@ -79,4 +79,12 @@ export default {
     invalidEmail: "Nädogry email!",
     invalidPhone: "Nädogry telefon belgisi!",
   },
+  categories: {
+    furniture: "Mebel",
+    technica: "Tehnika",
+    beauty: "Gözellik salony",
+    clothes: "Egin-eşik",
+    childClothes: "Çaga egin-eşik",
+    girlClothes: "Gyz egin-eşik"
+  }
 };
