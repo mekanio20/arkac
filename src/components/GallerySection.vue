@@ -32,78 +32,64 @@
                 </div>
             </SwiperSlide>
         </Swiper>
-        <VueEasyLightbox
-            :visible="showLightbox"
-            :imgs="slides"
-            :index="lightboxIndex"
-            @hide="handleHide"
-        />
     </div>
 </template>
 
 <script>
-import VueEasyLightbox from 'vue-easy-lightbox';
 import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
+import { useRouter } from 'vue-router';
+
 export default {
     components: {
         Swiper,
-        SwiperSlide,
-        VueEasyLightbox
+        SwiperSlide
     },
-    data() {
-        return {
-            modules: [Navigation, Pagination, Autoplay, EffectCoverflow],
-            slides: [
-                '/imgs/-1/galery1.webp',
-                '/imgs/-1/galery2.webp',
-                '/imgs/-1/galery3.webp',
-                '/imgs/-1/galery4.webp',
-                '/imgs/-1/galery5.webp',
-                '/imgs/-1/galery6.webp',
-                '/imgs/0/galery1.webp',
-                '/imgs/0/galery2.webp',
-                '/imgs/0/galery3.webp',
-                '/imgs/1/galery1.webp',
-                '/imgs/1/galery2.webp',
-                '/imgs/1/galery3.webp',
-                '/imgs/1/galery4.webp',
-                '/imgs/1/galery5.webp',
-                '/imgs/1/galery6.webp',
-                '/imgs/1/galery7.webp',
-                '/imgs/2/galery1.webp',
-                '/imgs/2/galery2.webp',
-                '/imgs/2/galery3.webp',
-                '/imgs/2/galery4.webp',
-                '/imgs/2/galery5.webp',
-                '/imgs/3/galery1.webp',
-                '/imgs/3/galery2.webp',
-                '/imgs/3/galery3.webp',
-                '/imgs/3/galery4.webp',
-                '/imgs/3/galery5.webp',
-                '/imgs/3/galery6.webp',
-                '/imgs/3/galery7.webp',
-                '/imgs/3/galery8.webp',
-                '/imgs/3/galery9.webp',
-                '/imgs/3/galery10.webp',
-                '/imgs/3/galery11.webp'
-            ],
-            showLightbox: false,
-            lightboxIndex: 0
+    setup() {
+        const router = useRouter();
+        const modules = [Navigation, Pagination, Autoplay, EffectCoverflow];
+        const slides = [
+            '/imgs/-1/galery1.webp',
+            '/imgs/-1/galery2.webp',
+            '/imgs/-1/galery3.webp',
+            '/imgs/-1/galery4.webp',
+            '/imgs/-1/galery5.webp',
+            '/imgs/-1/galery6.webp',
+            '/imgs/0/galery1.webp',
+            '/imgs/0/galery2.webp',
+            '/imgs/0/galery3.webp',
+            '/imgs/1/galery1.webp',
+            '/imgs/1/galery2.webp',
+            '/imgs/1/galery3.webp',
+            '/imgs/1/galery4.webp',
+            '/imgs/1/galery5.webp',
+            '/imgs/1/galery6.webp',
+            '/imgs/1/galery7.webp',
+            '/imgs/2/galery1.webp',
+            '/imgs/2/galery2.webp',
+            '/imgs/2/galery3.webp',
+            '/imgs/2/galery4.webp',
+            '/imgs/2/galery5.webp',
+            '/imgs/3/galery1.webp',
+            '/imgs/3/galery2.webp',
+            '/imgs/3/galery3.webp',
+            '/imgs/3/galery4.webp',
+            '/imgs/3/galery5.webp',
+            '/imgs/3/galery6.webp',
+            '/imgs/3/galery7.webp',
+            '/imgs/3/galery8.webp',
+            '/imgs/3/galery9.webp',
+            '/imgs/3/galery10.webp',
+            '/imgs/3/galery11.webp'
+        ];
+        function openLightbox(index) {
+            router.push({ name: 'GalleryViewer', params: { index } });
         }
-    },
-    methods: {
-        openLightbox(index) {
-            this.lightboxIndex = index;
-            this.showLightbox = true;
-        },
-        handleHide() {
-            this.showLightbox = false;
-        }
+        return { modules, slides, openLightbox };
     }
 }
 </script>

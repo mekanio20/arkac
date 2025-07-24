@@ -68,6 +68,11 @@ const router = createRouter({
       name: "Schema",
       component: () => import("@/views/Schema.vue"),
     },
+    {
+      path: "/gallery-viewer/:index",
+      name: "GalleryViewer",
+      component: () => import("@/views/GalleryViewer.vue")
+    },
   ],
   scrollBehavior() {
     document.getElementById("app").scrollIntoView();
