@@ -2,9 +2,9 @@
   <div class="fixed inset-0 bg-black flex flex-col items-center justify-center z-50">
     <button @click="goBack" class="absolute top-6 left-6 text-white text-3xl">&larr;</button>
     <div class="flex items-center justify-center w-full h-full">
-      <button @click="prevImage" class="p-2"><Prev color="white" v-if="currentIndex > 0" /></button>
+      <button @click="prevImage" class="p-2 absolute left-4"><Prev color="white" v-if="currentIndex > 0" /></button>
       <img :src="currentImage" class="max-h-[90vh] max-w-[90vw] object-contain rounded-lg shadow-2xl" />
-      <button @click="nextImage" class="p-2"><Next color="white" v-if="currentIndex < slides.length - 1" /></button>
+      <button @click="nextImage" class="p-2 absolute right-4"><Next color="white" v-if="currentIndex < slides.length - 1" /></button>
     </div>
     <div class="absolute bottom-8 text-white text-lg pb-2">{{ currentIndex + 1 }} / {{ slides.length }}</div>
   </div>
